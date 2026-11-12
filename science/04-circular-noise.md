@@ -8,25 +8,27 @@ A displacement of fixed magnitude and uniformly random direction perturbs both o
 
 Write
 
+**(C1)**
+
 ```math
 D(z)=\exp(za^\dagger-\overline z a),\qquad
 Z=r e^{i\Theta},\qquad
-\Theta\sim\operatorname{Unif}[0,2\pi),\qquad r\gt 0.
-\tag{C1}
+\Theta\sim\mathrm{Unif}[0,2\pi),\qquad r\gt 0.
 ```
 
 The channel independently samples a new angle on every use:
+
+**(C2)**
 
 ```math
 \mathcal C_r(\rho)
 =\frac1{2\pi}\int_0^{2\pi}
 D(r e^{i\theta})\rho D(r e^{i\theta})^\dagger\,d\theta.
-\tag{C2}
 ```
 
 The realized angle is unavailable to the sender and receiver. The capacity $`Q_r(E)`$ is the ordinary unassisted quantum capacity with unconditional mean input photon number at most $`E`$, averaged across uses, as in the [model](01-model.md). Encoding and decoding may be collective; no efficient encoder is asserted.
 
-For $`q=(a+a^\dagger)/\sqrt2`$ and $`p=(a-a^\dagger)/(i\sqrt2)`$, the displacement changes the quadrature means by $`(\sqrt2\operatorname{Re}Z,\sqrt2\operatorname{Im}Z)`$. Consequently the added classical quadrature covariance is $`r^2 I_2`$, and the mean added photon number is $`r^2`$.
+For $`q=(a+a^\dagger)/\sqrt2`$ and $`p=(a-a^\dagger)/(i\sqrt2)`$, the displacement changes the quadrature means by $`(\sqrt2\mathrm{Re}Z,\sqrt2\mathrm{Im}Z)`$. Consequently the added classical quadrature covariance is $`r^2 I_2`$, and the mean added photon number is $`r^2`$.
 
 Although the angle is one real parameter, this is not photon-number dephasing. Displacements in different directions do not have a common eigenbasis; the degrading-map argument for commuting phase rotations does not apply.
 
@@ -34,20 +36,22 @@ Although the angle is one real parameter, this is not photon-number dephasing. D
 
 Let $`\mu_r`$ be the law in (C1), and retain the main theorem's definition
 
+**(C3)**
+
 ```math
 H_t(\mu_r)
-=H\!\left(\left\lfloor t\operatorname{Re}Z\right\rfloor,
-           \left\lfloor t\operatorname{Im}Z\right\rfloor\right).
-\tag{C3}
+=H\!\left(\left\lfloor t\mathrm{Re}Z\right\rfloor,
+           \left\lfloor t\mathrm{Im}Z\right\rfloor\right).
 ```
 
 There are universal constants $`c_0,c_1`$ such that, for every $`t,r\gt 0`$,
+
+**(C4)**
 
 ```math
 \log_2(1+tr)-c_0
 \le H_t(\mu_r)
 \le \log_2(1+tr)+c_1.
-\tag{C4}
 ```
 
 In particular, at each fixed $`r\gt 0`$, $`H_t(\mu_r)=\log_2t+O_r(1)`$ as $`t\to\infty`$.
@@ -64,19 +68,21 @@ The squares have disjoint interiors and unit area. The annulus area is at most a
 
 Applying the [capacity theorem](02-capacity-law.md) with $`t_E=\sqrt{E+1}`$ gives
 
+**(C5)**
+
 ```math
 \boxed{
 Q_r(E)=\frac12\log_2(E+1)
        +O_r\!\bigl(1+\log_2\log_2(E+2)\bigr).
 }
-\tag{C5}
 ```
 
 Thus the optimized, regularized capacity satisfies
 
+**(C6)**
+
 ```math
 \lim_{E\to\infty}\frac{Q_r(E)}{\log_2E}=\frac12.
-\tag{C6}
 ```
 
 The constants can be chosen uniformly when $`r`$ ranges over any compact interval $`[r_-,r_+]\subset(0,\infty)`$. They are not uniform as $`r\to0`$ or $`r\to\infty`$.
@@ -85,42 +91,48 @@ The constants can be chosen uniformly when $`r`$ ranges over any compact interva
 
 An explicit achievable rate makes the mechanism concrete. Define
 
+**(C7)**
+
 ```math
 \tau_E=\frac1{E+1}\sum_{n=0}^\infty
 \left(\frac E{E+1}\right)^n|n\rangle\langle n|,
 \qquad
 g(E)=(E+1)\log_2(E+1)-E\log_2E,
-\tag{C7}
 ```
 
 with $`g(0)=0`$. A purification is the two-mode-squeezed state
+
+**(C8)**
 
 ```math
 |\psi_E\rangle_{RB}
 =\frac1{\sqrt{E+1}}\sum_{n=0}^\infty
 \left(\frac E{E+1}\right)^{n/2}|n\rangle_R|n\rangle_B.
-\tag{C8}
 ```
 
 Let $`J=N_B-N_R`$ and $`|\phi_0\rangle=(I_R\otimes D(r))|\psi_E\rangle`$. Since $`J|\psi_E\rangle=0`$ and rotation conjugates $`D(r)`$ into $`D(r e^{i\theta})`$,
 
+**(C9)**
+
 ```math
 (I_R\otimes D(r e^{i\theta}))|\psi_E\rangle
 =e^{i\theta J}|\phi_0\rangle.
-\tag{C9}
 ```
 
 If $`P_k`$ is the spectral projector of $`J`$ with eigenvalue $`k\in\mathbb Z`$, angular averaging produces
 
+**(C10)**
+
 ```math
 \rho_{RB}^{\rm out}
 =\sum_{k\in\mathbb Z}P_k|\phi_0\rangle\langle\phi_0|P_k.
-\tag{C10}
 ```
 
 Each nonzero summand has rank one, and different summands have orthogonal support. Therefore the nonzero eigenvalues of $`\rho_{RB}^{\rm out}`$ are exactly $`p_k=\|P_k\phi_0\|^2`$. This reduces its entropy to a classical charge distribution without asserting that the channel itself is degradable.
 
 The characteristic function of this distribution is
+
+**(C11)**
 
 ```math
 \begin{aligned}
@@ -130,25 +142,26 @@ The characteristic function of this distribution is
 &=\exp\!\left[\lambda_+(e^{it}-1)+\lambda_-(e^{-it}-1)\right],\\
 \lambda_+&=r^2(E+1),\qquad\lambda_-=r^2E.
 \end{aligned}
-\tag{C11}
 ```
 
-Here the thermal displacement identity is $`\operatorname{Tr}(\tau_E D(z))=\exp[-(E+1/2)|z|^2]`$. Equation (C11) identifies $`J`$ with the difference of two independent Poisson variables, the [Skellam distribution](../references/README.md#skellam). In particular,
+Here the thermal displacement identity is $`\mathrm{Tr}(\tau_E D(z))=\exp[-(E+1/2)|z|^2]`$. Equation (C11) identifies $`J`$ with the difference of two independent Poisson variables, the [Skellam distribution](../references/README.md#skellam). In particular,
+
+**(C12)**
 
 ```math
 \mathbb EJ=r^2,\qquad
-\operatorname{Var}J=r^2(2E+1),\qquad
-S(\rho_{RB}^{\rm out})=H\!\left(\operatorname{Skellam}(r^2(E+1),r^2E)\right).
-\tag{C12}
+\mathrm{Var}J=r^2(2E+1),\qquad
+S(\rho_{RB}^{\rm out})=H\!\left(\mathrm{Skellam}(r^2(E+1),r^2E)\right).
 ```
 
 For $`E\gt 0`$, its probabilities can be written as
+
+**(C13)**
 
 ```math
 p_k=e^{-(\lambda_++\lambda_-)}
 \left(\frac{\lambda_+}{\lambda_-}\right)^{k/2}
 I_{|k|}(2\sqrt{\lambda_+\lambda_-}),
-\tag{C13}
 ```
 
 where $`I_j`$ is the modified Bessel function. At $`E=0`$, the distribution is Poisson with mean $`r^2`$, supported on nonnegative integers. This limiting case should not be evaluated by dividing by $`\lambda_-=0`$ in (C13).
@@ -157,12 +170,15 @@ where $`I_j`$ is the modified Bessel function. At $`E=0`$, the distribution is P
 
 The receiver output is a mixture of displaced copies of $`\tau_E`$. Entropy concavity and the maximum entropy at a fixed mean photon number give
 
+**(C14)**
+
 ```math
 g(E)\le S(\mathcal C_r(\tau_E))\le g(E+r^2).
-\tag{C14}
 ```
 
 Consequently,
+
+**(C15)**
 
 ```math
 \begin{aligned}
@@ -171,34 +187,36 @@ g(E)-H(J)
 \le g(E+r^2)-H(J),\\
 Q_r(E)&\ge\max\{0,g(E)-H(J)\}.
 \end{aligned}
-\tag{C15}
 ```
 
 These are coherent-information achievable rates under the [energy-constrained coding theorem](../references/README.md#wilde-qi). A negative displayed lower bound is uninformative; it is not a negative capacity.
 
 The order of $`H(J)`$ can be proved without a normal approximation. Set $`V=\lambda_++\lambda_-=r^2(2E+1)`$. Fourier inversion and $`1-\cos t\ge2t^2/\pi^2`$ on $`[-\pi,\pi]`$ yield
 
+**(C16)**
+
 ```math
 p_k\le\frac1{2\pi}\int_{-\pi}^{\pi}e^{-V(1-\cos t)}\,dt
 \le\frac{\sqrt\pi}{2\sqrt{2V}}.
-\tag{C16}
 ```
 
 Thus $`H(J)\ge\tfrac12\log_2V-O(1)`$. For the other direction, the [integer entropy bound](../references/README.md#integer-entropy) gives
 
+**(C17)**
+
 ```math
 H(J)\le\frac12\log_2\!\left[2\pi e\left(V+\frac1{12}\right)\right].
-\tag{C17}
 ```
 
 For completeness, if $`U`$ is independent and uniform on $`[-1/2,1/2]`$, the translated intervals are disjoint, so $`h(J+U)=H(J)`$. Its variance is $`V+1/12`$, and the continuous Gaussian maximum-entropy bound proves (C17).
 
 At fixed $`r\gt 0`$, equations (C14)–(C17) show
 
+**(C18)**
+
 ```math
 I_c(\tau_E,\mathcal C_r)
 =\frac12\log_2E+O_r(1).
-\tag{C18}
 ```
 
 The [general converse](03-converse.md), rather than this single input calculation, establishes optimality of the coefficient against arbitrary collective codes.

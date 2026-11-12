@@ -61,3 +61,9 @@ The finite-jitter rate is an achievable lower bound supplied by the [analytical 
 The Fock-space and Gaussian-quadrature checks are finite numerical consistency checks. Increasing both resolutions tests a concrete truncation concern, but the observed agreement is not a rigorous infinite-dimensional simulation error bound. It also does not certify the general capacity converse, information-dimension law, or joint crossover. Those conclusions depend on the mathematical arguments in `science/`.
 
 The program never labels a single-input coherent information as an optimized capacity. Negative coherent-information lower bounds are retained in the detailed output and clipped to zero only when reporting an achievable nonnegative rate.
+
+## Hosted mathematics
+
+The [read-only workflow](../.github/workflows/hosted-math.yml) checks the exact head commit of a pull request originating in this repository. It first probes the overview, then visits every tracked Markdown reader page on GitHub at widths of 1440 and 760 pixels. The [collector](hosted_math/capture_hosted_math.cjs) compares the hosted MathML with the source expressions, checks missing or altered symbols and suspicious geometry, and saves screenshots alongside its reports.
+
+This verifies the displayed mathematical content at the captured source and time. The screenshots still require visual inspection, and neither rendering comparisons nor a passing workflow establish mathematical correctness. A failed or interrupted attempt remains a failed attempt; changes require a new capture of the affected source.
