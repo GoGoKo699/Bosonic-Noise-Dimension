@@ -1,0 +1,23 @@
+# Bosonic Noise Dimension
+
+The project studies ordinary unassisted quantum communication through one-mode iid random Weyl displacements under an unconditional mean input-photon constraint. The noise law is known, the draw is hidden, and its second moment is finite. Its principal theorem identifies capacity up to a logarithmic-logarithmic error from the Shannon entropy of the noise quantized at inverse-square-root energy resolution.
+
+## Authoritative reading routes
+
+- Orientation and principal results: README.md, then science/README.md.
+- Channel, code, photon and Gaussian conventions: science/01-model.md.
+- Exact finite-resolution statement, thermal-input lower bound and information-dimension corollaries: science/02-capacity-law.md.
+- Arbitrary-block converse, finite-squeezing limit, smoothing/continuity estimates and bounded-capacity criterion: science/03-converse.md.
+- Circular displacement noise, exact Skellam entropy and Gaussian covariance comparison: science/04-circular-noise.md.
+- Nonzero-jitter achievable rate, saturation and joint energy–broadening limits: science/05-broadening.md.
+- Inherited mechanisms and distinctions from prior work: science/06-related-work.md.
+- Primary-source identities and exact imported ingredients: references/README.md and references/references.bib.
+- Reproducible finite calculations, dependencies and numerical error limits: verification/README.md.
+
+## Scientific distinctions to preserve
+
+The coherent information of the thermal input is an achievable lower bound. Optimality of the leading coefficient requires the separate arbitrary-code converse. Random displacement operators generally do not commute, even though their random-unitary channels compose by classical convolution. Information dimension is neither covariance rank nor support dimension alone.
+
+Zero logarithmic energy slope does not imply a bounded capacity. Finite Gaussian-relative entropy supplies the exact boundedness criterion under the noise-moment hypothesis. Fixed positive Gaussian broadening has a finite ceiling; a vanishing broadening parameter leads to the separately stated crossover. The energy and blocklength limits must follow the specified order.
+
+The proofs do not establish efficient coding, loss robustness, assisted-capacity equality, a universal constant remainder or exact finite-energy Gaussian quantum capacity. The comparison with the phase-noise project credits the shared entropy-resolution principle and keeps the different error algebra, resolution and converse tools explicit.
