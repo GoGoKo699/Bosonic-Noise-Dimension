@@ -1,0 +1,162 @@
+{
+  "status": "passed",
+  "conventions": {
+    "displacement": "D(z)=exp(z a†-conj(z) a)",
+    "standard_complex_gaussian": "density exp(-|z|^2)/pi; E|G|^2=1",
+    "capacity_energy": "unconditional mean input photon number per use",
+    "entropy_unit": "bits"
+  },
+  "finite_jitter_witness": {
+    "input_energy": 100.0,
+    "circle_radius": 2.0,
+    "gaussian_amplitude_scale": 0.01,
+    "gaussian_mean_squared_amplitude": 0.0001,
+    "thermal_entropy_bits": 8.093740780458798,
+    "gaussian_entropy_exchange_bits": 0.16122134836179008,
+    "charge_variance": 804.02090001,
+    "charge_entropy_upper_bits": 6.872714942698384,
+    "coherent_information_lower_bits": 1.0598044893986245,
+    "achievable_rate_lower_bits": 1.0598044893986245,
+    "matched_gaussian_mean_squared_amplitude": 4.0001,
+    "matched_gaussian_is_entanglement_breaking": true
+  },
+  "circle_entropy_table": [
+    {
+      "input_energy": 0.0,
+      "circle_radius": 2.0,
+      "lambda_plus": 4.0,
+      "lambda_minus": 0.0,
+      "symmetric_integer_cutoff": 45,
+      "retained_probability": 0.9999999999999997,
+      "omitted_probability_upper": 2.8071626940902264e-31,
+      "omitted_entropy_upper_bits": 4.391638925198237e-29,
+      "entropy_partial_bits": 3.01043235607665,
+      "variance_entropy_upper_bits": 3.061969256877667,
+      "thermal_coherent_information_lower_bits": -3.01043235607665
+    },
+    {
+      "input_energy": 1.0,
+      "circle_radius": 2.0,
+      "lambda_plus": 8.0,
+      "lambda_minus": 4.0,
+      "symmetric_integer_cutoff": 57,
+      "retained_probability": 1.0000000000000004,
+      "omitted_probability_upper": 2.0721781513866066e-30,
+      "omitted_entropy_upper_bits": 3.1571875249753564e-28,
+      "entropy_partial_bits": 3.838368753216354,
+      "variance_entropy_upper_bits": 3.84456887982753,
+      "thermal_coherent_information_lower_bits": -1.8383687532163542
+    },
+    {
+      "input_energy": 10.0,
+      "circle_radius": 2.0,
+      "lambda_plus": 44.0,
+      "lambda_minus": 40.0,
+      "symmetric_integer_cutoff": 107,
+      "retained_probability": 1.0000000000000013,
+      "omitted_probability_upper": 8.593603372603125e-26,
+      "omitted_entropy_upper_bits": 1.1194829071560427e-23,
+      "entropy_partial_bits": 5.243246896108104,
+      "variance_entropy_upper_bits": 5.243969564373241,
+      "thermal_coherent_information_lower_bits": -0.4087800399714574
+    },
+    {
+      "input_energy": 100.0,
+      "circle_radius": 2.0,
+      "lambda_plus": 404.0,
+      "lambda_minus": 400.0,
+      "symmetric_integer_cutoff": 280,
+      "retained_probability": 0.9999999999999997,
+      "omitted_probability_upper": 3.2491880034888227e-21,
+      "omitted_entropy_upper_bits": 3.5408822900559884e-19,
+      "entropy_partial_bits": 6.87262138063677,
+      "variance_entropy_upper_bits": 6.872696193429699,
+      "thermal_coherent_information_lower_bits": 1.2211193998220287
+    },
+    {
+      "input_energy": 1000.0,
+      "circle_radius": 2.0,
+      "lambda_plus": 4004.0,
+      "lambda_minus": 4000.0,
+      "symmetric_integer_cutoff": 830,
+      "retained_probability": 0.9999999999999988,
+      "omitted_probability_upper": 4.1589164652367478e-19,
+      "omitted_entropy_upper_bits": 4.164008143010448e-17,
+      "entropy_partial_bits": 8.530348310660653,
+      "variance_entropy_upper_bits": 8.530355821375945,
+      "thermal_coherent_information_lower_bits": 2.878852122081822
+    }
+  ],
+  "independent_fock_charge_checks": [
+    {
+      "input_energy": 0.4,
+      "circle_radius": 0.7,
+      "fock_dimension_per_mode": 48,
+      "omitted_input_thermal_probability": 7.668914063806022e-27,
+      "fock_vs_skellam_l1_difference": 1.0404423307272542e-15,
+      "fock_charge_mean": 0.49000000000000055,
+      "fock_charge_variance": 0.8820000000000003,
+      "analytic_charge_variance": 0.8819999999999998
+    },
+    {
+      "input_energy": 1.0,
+      "circle_radius": 1.1,
+      "fock_dimension_per_mode": 80,
+      "omitted_input_thermal_probability": 8.271806125530277e-25,
+      "fock_vs_skellam_l1_difference": 2.0959651149180158e-15,
+      "fock_charge_mean": 1.21,
+      "fock_charge_variance": 3.6300000000000017,
+      "analytic_charge_variance": 3.630000000000001
+    }
+  ],
+  "independent_broadened_circle_checks": [
+    {
+      "input_energy": 1.0,
+      "circle_radius": 0.4,
+      "gaussian_amplitude_scale": 0.1,
+      "fock_dimension_per_mode": 40,
+      "hermite_order_per_real_component": 8,
+      "omitted_input_thermal_probability": 9.094947017729282e-13,
+      "computed_trace": 1.0,
+      "computed_entropy_exchange_bits": 1.5369465043232444,
+      "computed_receiver_entropy_bits": 2.1603643824339085,
+      "computed_coherent_information_bits": 0.6234178781106641,
+      "analytic_coherent_information_lower_bits": 0.10488990418780597
+    },
+    {
+      "input_energy": 1.0,
+      "circle_radius": 0.4,
+      "gaussian_amplitude_scale": 0.1,
+      "fock_dimension_per_mode": 48,
+      "hermite_order_per_real_component": 12,
+      "omitted_input_thermal_probability": 3.552713678800501e-15,
+      "computed_trace": 0.9999999999999998,
+      "computed_entropy_exchange_bits": 1.5369465043850739,
+      "computed_receiver_entropy_bits": 2.1603643824975123,
+      "computed_coherent_information_bits": 0.6234178781124384,
+      "analytic_coherent_information_lower_bits": 0.10488990418780597
+    }
+  ],
+  "broadened_circle_refinement_difference_bits": 1.7743584379559252e-12,
+  "gaussian_entropy_check": {
+    "input_energy": 0.5,
+    "circle_radius": 0.0,
+    "gaussian_amplitude_scale": 0.25,
+    "fock_dimension_per_mode": 32,
+    "hermite_order_per_real_component": 12,
+    "omitted_input_thermal_probability": 5.396595277354281e-16,
+    "computed_trace": 1.0,
+    "computed_entropy_exchange_bits": 0.6409705481747895,
+    "computed_receiver_entropy_bits": 1.4729424832116567,
+    "computed_coherent_information_bits": 0.8319719350368672,
+    "analytic_coherent_information_lower_bits": -0.1925052090287105
+  },
+  "gaussian_exact_entropy_exchange_bits": 0.6409705481748432,
+  "gaussian_entropy_difference_bits": 5.3734794391857577e-14,
+  "limits": [
+    "The asymptotic capacity theorems are analytic, not numerical conclusions.",
+    "The Skellam omitted-tail bound is analytic; floating-point errors are separate.",
+    "Fock-space and quadrature refinement are numerical checks, not rigorous truncation certificates.",
+    "No numerical optimization of regularized quantum capacity is performed."
+  ]
+}
