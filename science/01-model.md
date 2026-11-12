@@ -16,7 +16,7 @@ Let $`a`$ be the annihilation operator, $`N=a^\dagger a`$ the photon-number obse
 D(z)=\exp(za^\dagger-\bar z a),\qquad z\in\mathbb C.
 ```
 
-Write $`q=(a+a^\dagger)/\sqrt2`$ and $`p=(a-a^\dagger)/(i\sqrt2)`$, so $`[q,p]=i`$ and the vacuum quadrature covariance is $`I_2/2`$. The displacement changes the quadrature means by $`(\sqrt2\operatorname{Re}z,\sqrt2\operatorname{Im}z)`$. Every energy and Gaussian variance in this account uses this convention.
+Write $`q=(a+a^\dagger)/\sqrt2`$ and $`p=(a-a^\dagger)/(i\sqrt2)`$, so $`[q,p]=i`$ and the vacuum quadrature covariance is $`I_2/2`$. The displacement changes the quadrature means by $`(\sqrt2\mathrm{Re}z,\sqrt2\mathrm{Im}z)`$. Every energy and Gaussian variance in this account uses this convention.
 
 Fix a known Borel probability measure $`\mu`$ on $`\mathbb C`$ with
 
@@ -48,7 +48,7 @@ Commutativity of these random-unitary channels under composition does not turn t
 For fixed $`E\ge0`$, a block code uses $`\mathcal N_\mu^{\otimes n}`$ to transmit one half of a maximally entangled state of Schmidt rank $`K_n`$. The encoder and decoder are arbitrary local quantum operations; the entanglement fidelity tends to one as $`n\to\infty`$. If $`\rho_{A^n}`$ is the encoded maximally mixed logical input, the constraint is
 
 ```math
-\operatorname{Tr}\!\left[\rho_{A^n}\sum_{j=1}^{n}N_j\right]\le nE.
+\mathrm{Tr}\!\left[\rho_{A^n}\sum_{j=1}^{n}N_j\right]\le nE.
 ```
 
 This is an unconditional average input-photon constraint. It is not a hard Fock-space cutoff, a maximum energy per codeword, or a promise that every mode has energy at most $`E`$. Uneven allocation across modes is allowed. The capacity $`Q_\mu(E)`$ is the supremum of achievable rates $`\liminf_n n^{-1}\log_2 K_n`$, in qubits per channel use.
@@ -58,7 +58,7 @@ There is no free preshared entanglement or communication side channel in this de
 For this oscillator Hamiltonian the Gibbs condition holds. The finite noise moment also gives, for any input with mean energy at most $`E`$,
 
 ```math
-\operatorname{Tr}[N\mathcal N_\mu(\rho)]
+\mathrm{Tr}[N\mathcal N_\mu(\rho)]
 \le E+2\sqrt{EM}+M
 \le2E+2M.
 ```
@@ -81,8 +81,8 @@ For $`Z\sim\mu`$, define the square-bin entropy
 
 ```math
 H_t(\mu)
-=H\!\left(\lfloor t\operatorname{Re}Z\rfloor,
-           \lfloor t\operatorname{Im}Z\rfloor\right),\qquad t\gt0.
+=H\!\left(\lfloor t\mathrm{Re}Z\rfloor,
+           \lfloor t\mathrm{Im}Z\rfloor\right),\qquad t\gt0.
 ```
 
 Finite second moment makes this discrete entropy finite. The bin side length is $`1/t`$. Changes of grid origin or fixed scale change the entropy by at most a bounded amount at comparable resolutions; the theorem nevertheless uses the displayed grid exactly. The physically relevant resolution is

@@ -11,7 +11,7 @@ Write
 ```math
 D(z)=\exp(za^\dagger-\overline z a),\qquad
 Z=r e^{i\Theta},\qquad
-\Theta\sim\operatorname{Unif}[0,2\pi),\qquad r\gt 0.
+\Theta\sim\mathrm{Unif}[0,2\pi),\qquad r\gt 0.
 \tag{C1}
 ```
 
@@ -26,7 +26,7 @@ D(r e^{i\theta})\rho D(r e^{i\theta})^\dagger\,d\theta.
 
 The realized angle is unavailable to the sender and receiver. The capacity $`Q_r(E)`$ is the ordinary unassisted quantum capacity with unconditional mean input photon number at most $`E`$, averaged across uses, as in the [model](01-model.md). Encoding and decoding may be collective; no efficient encoder is asserted.
 
-For $`q=(a+a^\dagger)/\sqrt2`$ and $`p=(a-a^\dagger)/(i\sqrt2)`$, the displacement changes the quadrature means by $`(\sqrt2\operatorname{Re}Z,\sqrt2\operatorname{Im}Z)`$. Consequently the added classical quadrature covariance is $`r^2 I_2`$, and the mean added photon number is $`r^2`$.
+For $`q=(a+a^\dagger)/\sqrt2`$ and $`p=(a-a^\dagger)/(i\sqrt2)`$, the displacement changes the quadrature means by $`(\sqrt2\mathrm{Re}Z,\sqrt2\mathrm{Im}Z)`$. Consequently the added classical quadrature covariance is $`r^2 I_2`$, and the mean added photon number is $`r^2`$.
 
 Although the angle is one real parameter, this is not photon-number dephasing. Displacements in different directions do not have a common eigenbasis; the degrading-map argument for commuting phase rotations does not apply.
 
@@ -36,8 +36,8 @@ Let $`\mu_r`$ be the law in (C1), and retain the main theorem's definition
 
 ```math
 H_t(\mu_r)
-=H\!\left(\left\lfloor t\operatorname{Re}Z\right\rfloor,
-           \left\lfloor t\operatorname{Im}Z\right\rfloor\right).
+=H\!\left(\left\lfloor t\mathrm{Re}Z\right\rfloor,
+           \left\lfloor t\mathrm{Im}Z\right\rfloor\right).
 \tag{C3}
 ```
 
@@ -133,12 +133,12 @@ The characteristic function of this distribution is
 \tag{C11}
 ```
 
-Here the thermal displacement identity is $`\operatorname{Tr}(\tau_E D(z))=\exp[-(E+1/2)|z|^2]`$. Equation (C11) identifies $`J`$ with the difference of two independent Poisson variables, the [Skellam distribution](../references/README.md#skellam). In particular,
+Here the thermal displacement identity is $`\mathrm{Tr}(\tau_E D(z))=\exp[-(E+1/2)|z|^2]`$. Equation (C11) identifies $`J`$ with the difference of two independent Poisson variables, the [Skellam distribution](../references/README.md#skellam). In particular,
 
 ```math
 \mathbb EJ=r^2,\qquad
-\operatorname{Var}J=r^2(2E+1),\qquad
-S(\rho_{RB}^{\rm out})=H\!\left(\operatorname{Skellam}(r^2(E+1),r^2E)\right).
+\mathrm{Var}J=r^2(2E+1),\qquad
+S(\rho_{RB}^{\rm out})=H\!\left(\mathrm{Skellam}(r^2(E+1),r^2E)\right).
 \tag{C12}
 ```
 

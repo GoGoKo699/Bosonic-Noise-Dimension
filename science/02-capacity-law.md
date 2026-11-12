@@ -14,8 +14,8 @@ For $`Z\sim\mu`$ and $`t\gt 0`$, define the square-grid entropy
 
 ```math
 H_t(\mu)
-=H\!\left(\lfloor t\,\operatorname{Re}Z\rfloor,
-          \lfloor t\,\operatorname{Im}Z\rfloor\right).
+=H\!\left(\lfloor t\,\mathrm{Re}Z\rfloor,
+          \lfloor t\,\mathrm{Im}Z\rfloor\right).
 ```
 
 All logarithms and entropies are in bits. Finite second moment makes this discrete entropy finite at every fixed $`t`$: the quantized vector has finite second moment, and comparison with a discrete Gaussian bounds its entropy. The single-mode thermal entropy is
@@ -105,8 +105,8 @@ Set
 ```math
 \Delta=(E+1)^{-1/2},\qquad
 B=\left(
-\lfloor \operatorname{Re}Z/\Delta\rfloor,
-\lfloor \operatorname{Im}Z/\Delta\rfloor
+\lfloor \mathrm{Re}Z/\Delta\rfloor,
+\lfloor \mathrm{Im}Z/\Delta\rfloor
 \right).
 ```
 

@@ -13,6 +13,9 @@ The project studies ordinary unassisted quantum communication through one-mode i
 - Inherited mechanisms and distinctions from prior work: science/06-related-work.md.
 - Primary-source identities and exact imported ingredients: references/README.md and references/references.bib.
 - Reproducible finite calculations, dependencies and numerical error limits: verification/README.md.
+- Conceptual introduction and connected learning route: learning/README.md.
+- Common project-defined M01–M30 understanding map, with twelve background and eighteen narrative targets: learning/MILESTONES.md.
+- Sole educational anchor, Holevo's second revised and expanded edition (2019), with verified source locations, notation translation and worked example: learning/HOLEVO_BRIDGE.md.
 
 ## Scientific distinctions to preserve
 

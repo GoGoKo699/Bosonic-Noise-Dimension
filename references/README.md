@@ -4,6 +4,13 @@
 
 The capacity statements in this repository combine established coding, continuity and simulation tools with the displacement-resolution argument proved in the scientific account. The entries below identify the specific role of each source. Citation does not mean that a source proves the new combination or the circular-noise conclusions.
 
+<a id="holevo"></a>
+## Holevo: selected educational anchor
+
+Alexander S. Holevo, **Quantum Systems, Channels, Information: A Mathematical Introduction**, second revised and expanded edition, De Gruyter (2019). [DOI](https://doi.org/10.1515/9783110642490) · [Publisher](https://www.degruyterbrill.com/document/doi/10.1515/9783110642490/html) · [Publisher-produced preview with detailed contents](https://api.pageplace.de/preview/DT0400.9783110642490_A39059069/preview-9783110642490_A39059069.pdf). PDF ISBN: 978-3-11-064249-0.
+
+This is the project's single educational anchor. The [bridge](../learning/HOLEVO_BRIDGE.md) maps the relevant entropy, coding, energy-constraint and Gaussian-system foundations to the present conventions and explains the additional arguments. The [thirty-milestone map](../learning/MILESTONES.md) gives edition-specific section and page pointers. The research sources below retain their distinct roles in the proof.
+
 <a id="wilde-qi"></a>
 ## Wilde–Qi: energy-constrained coding
 

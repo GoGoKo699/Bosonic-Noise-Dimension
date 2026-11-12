@@ -10,7 +10,7 @@ Use the displacement convention of the [model](01-model.md), and define
 
 ```math
 Z=r e^{i\Theta}+\sigma G,\qquad
-\Theta\sim\operatorname{Unif}[0,2\pi),\qquad
+\Theta\sim\mathrm{Unif}[0,2\pi),\qquad
 p_G(z)=\pi^{-1}e^{-|z|^2},\qquad
 v=\sigma^2.
 \tag{B1}
@@ -44,7 +44,7 @@ They follow from the covariance blocks
 ```math
 A=(E_0+1/2)I_2,\qquad
 B=(E_0+1/2+v)I_2,\qquad
-C=\sqrt{E_0(E_0+1)}\operatorname{diag}(1,-1),
+C=\sqrt{E_0(E_0+1)}\mathrm{diag}(1,-1),
 \tag{B4}
 ```
 
@@ -58,7 +58,7 @@ S_G(E_0,v)
 
 The Gaussian state is invariant under $`e^{i\theta(N_B-N_R)}`$. Apply a fixed displacement $`D(r)`$ to its second mode and then average over this rotation. This is exactly the noisy-circle output on the purification, because the Gaussian displacement law is isotropic.
 
-For any state $`\rho`$ and integer-charge projectors $`\{P_k\}`$, let $`p_k=\operatorname{Tr}(P_k\rho)`$. Charge dephasing obeys
+For any state $`\rho`$ and integer-charge projectors $`\{P_k\}`$, let $`p_k=\mathrm{Tr}(P_k\rho)`$. Charge dephasing obeys
 
 ```math
 S\!\left(\sum_kP_k\rho P_k\right)\le S(\rho)+H(p).
@@ -71,11 +71,11 @@ For a fixed complete displacement $`z`$, the charge $`J=N_B-N_R`$ has the Skella
 
 ```math
 \mathbb E[J\mid Z=z]=|z|^2,\qquad
-\operatorname{Var}(J\mid Z=z)=(2E_0+1)|z|^2.
+\mathrm{Var}(J\mid Z=z)=(2E_0+1)|z|^2.
 \tag{B7}
 ```
 
-Under (B1), $`\mathbb E|Z|^2=r^2+v`$ and $`\operatorname{Var}(|Z|^2)=v^2+2r^2v`$. The law of total variance gives
+Under (B1), $`\mathbb E|Z|^2=r^2+v`$ and $`\mathrm{Var}(|Z|^2)=v^2+2r^2v`$. The law of total variance gives
 
 ```math
 V_J(E_0,r,v)

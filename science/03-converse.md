@@ -21,9 +21,9 @@ for every finite $`E`$. In particular, the same bound holds after taking the sup
 Let $`\Phi_R=|\phi_R\rangle\langle\phi_R|`$ be a two-mode squeezed vacuum with mean photon number $`R`$ in each mode. Define
 
 ```math
-\omega_R^f=(\operatorname{id}\otimes\mathcal N_f)(\Phi_R),
+\omega_R^f=(\mathrm{id}\otimes\mathcal N_f)(\Phi_R),
 \qquad
-\omega_R^\gamma=(\operatorname{id}\otimes\mathcal N_{g_1})(\Phi_R).
+\omega_R^\gamma=(\mathrm{id}\otimes\mathcal N_{g_1})(\Phi_R).
 ```
 
 The unit-variance Gaussian displacement channel is the heterodyne-and-prepare channel
@@ -91,7 +91,7 @@ For this fixed code, $`\rho_R`$ converges in trace norm to the actual decoded st
 The first inequality follows by telescoping the product channels; local trace-preserving maps on other factors do not change the relevant input marginal. The second uses concavity and $`\sum_jE_j\le nE`$.
 
 Suppose the decoded target is a maximally entangled state $`\Phi_d`$, with squared fidelity
-$`F=\operatorname{Tr}(\Phi_d\rho)`$. A separable state has overlap at most $`1/d`$ with $`\Phi_d`$. Applying the binary measurement $`\{\Phi_d,I-\Phi_d\}`$ to the relative entropy gives, for $`F\ge1/d`$,
+$`F=\mathrm{Tr}(\Phi_d\rho)`$. A separable state has overlap at most $`1/d`$ with $`\Phi_d`$. Applying the binary measurement $`\{\Phi_d,I-\Phi_d\}`$ to the relative entropy gives, for $`F\ge1/d`$,
 
 ```math
 E_{\mathrm R}(\rho)\ge F\log_2d-h_2(F).
@@ -276,7 +276,7 @@ The phases in the Weyl multiplication law cancel in conjugation; this identity d
 For an input of mean photon number $`x`$,
 
 ```math
-\operatorname{Tr}\!\left[\hat n\,\mathcal N_\mu(\rho)\right]
+\mathrm{Tr}\!\left[\hat n\,\mathcal N_\mu(\rho)\right]
 \le x+M+2\sqrt{xM}
 \le2x+2M.
 ```
@@ -284,7 +284,7 @@ For an input of mean photon number $`x`$,
 For $`\sigma\le1`$, the original and smoothed channels consequently share the affine energy bound
 
 ```math
-\operatorname{Tr}\!\left[\hat n\,\mathcal N(\rho)\right]
+\mathrm{Tr}\!\left[\hat n\,\mathcal N(\rho)\right]
 \le 2x+2M+2.
 ```
 

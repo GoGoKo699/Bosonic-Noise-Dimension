@@ -5,8 +5,8 @@
 Write $`Q_\mu(E)`$ for the ordinary unassisted quantum capacity with an unconditional mean input-photon budget $`E`$ per channel use. For $`Z\sim\mu`$, define
 
 ```math
-H_t(\mu)=H\!\left(\lfloor t\operatorname{Re}Z\rfloor,
-                   \lfloor t\operatorname{Im}Z\rfloor\right).
+H_t(\mu)=H\!\left(\lfloor t\mathrm{Re}Z\rfloor,
+                   \lfloor t\mathrm{Im}Z\rfloor\right).
 ```
 
 The [finite-resolution theorem](science/02-capacity-law.md) proves, for every $`E\ge1`$,
@@ -50,6 +50,10 @@ Start with the [scientific overview](science/README.md) and [model](science/01-m
 The [related-work account](science/06-related-work.md) separates the contribution from earlier bosonic dephasing, non-Gaussian classical communication and channel-simulation results. In particular, the entropy-resolution principle is shared with the pinned [Bosonic Phase Noise Capacity](references/README.md#phase-project) antecedent. The new displacement argument treats noncommuting planar errors and a different energy-dependent resolution. See the [bibliography](references/README.md) for the coding, continuity, simulation and classical-entropy ingredients.
 
 [The LLM reading guide](llms.txt) maps scientific questions to their authoritative pages.
+
+## Learn the mechanism
+
+The [learning route](learning/README.md) connects the physical question to the proof and examples. Its [thirty-milestone map](learning/MILESTONES.md) develops twelve foundation targets and eighteen targets covering the argument and its consequences. The single educational anchor is Holevo's *Quantum Systems, Channels, Information*, second revised and expanded edition (2019); the [source bridge](learning/HOLEVO_BRIDGE.md) translates conventions, identifies the additional research ingredients and works through the nonzero-jitter example.
 
 ## Reproduce the finite calculations
 
