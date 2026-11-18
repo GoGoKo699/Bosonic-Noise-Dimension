@@ -8,10 +8,10 @@ Write $`g_1(z)=\pi^{-1}e^{-\lvert z\rvert^2}`$ for the density of the standard c
 
 Let $`Q_{2,f}(E)`$ denote the adaptive two-way assisted quantum capacity for displacement density $`f`$, with the [unconditional transmitted-photon budget](01-model.md). For a bipartite state $`\rho`$, let $`E_{\mathrm R}(\rho)`$ be the infimum of its relative entropy to a separable state across the current Alice–Bob cut.
 
-**Lemma 1.** If $`D(f\|g_1)\lt\infty`$, a single use of the channel with law $`f`$ increases the relative entropy of entanglement by at most $`D(f\|g_1)`$, including arbitrary prior Alice–Bob correlations. In particular,
+**Lemma 1.** If $`D(f\Vertg_1)\lt\infty`$, a single use of the channel with law $`f`$ increases the relative entropy of entanglement by at most $`D(f\Vertg_1)`$, including arbitrary prior Alice–Bob correlations. In particular,
 
 ```math
-Q_f(E)\le Q_{2,f}(E)\le D(f\|g_1).
+Q_f(E)\le Q_{2,f}(E)\le D(f\Vertg_1).
 ```
 
 ### Compare the two displacement laws on each use
@@ -19,12 +19,12 @@ Q_f(E)\le Q_{2,f}(E)\le D(f\|g_1).
 Immediately before a use, let $`A'A`$ belong to Alice and $`B'`$ to Bob. The sent oscillator is $`A`$. Write $`\rho`$ for the actual input and $`\omega`$ for any separable comparison state across $`A'A:B'`$. The two displacement channels can be realized by the same processor controlled by classical kicks with different laws. Relative-entropy data processing gives
 
 ```math
-D\!\left((\mathrm{id}\otimes\mathcal N_f)(\rho)\,\middle\|\,
+D\!\left((\mathrm{id}\otimes\mathcal N_f)(\rho)\,\Vert\,
           (\mathrm{id}\otimes\mathcal N_{g_1})(\omega)\right)
-\le D(\rho\|\omega)+D(f\|g_1).
+\le D(\rho\Vert\omega)+D(f\Vertg_1).
 ```
 
-Here the identity acts on both memories. To justify the comparison for continuous kicks, partition a growing square into finitely many cells of shrinking diameter and take one additional tail cell. Replace each kick by the fixed representative of its cell, using the same representatives for both laws. The finite classical registers have relative entropy at most $`D(f\|g_1)`$ by coarse-graining. Tensoring each register with its respective input, applying the controlled displacement, and tracing out the register proves the inequality for the two discrete approximations. The channel outputs converge in trace norm on each fixed input by strong continuity of the displacements and dominated convergence. Joint lower semicontinuity of relative entropy gives the displayed bound for the exact channels. This is the displacement version of the [environment-parametrized comparison argument](../references/README.md#environment-parametrized).
+Here the identity acts on both memories. To justify the comparison for continuous kicks, partition a growing square into finitely many cells of shrinking diameter and take one additional tail cell. Replace each kick by the fixed representative of its cell, using the same representatives for both laws. The finite classical registers have relative entropy at most $`D(f\Vertg_1)`$ by coarse-graining. Tensoring each register with its respective input, applying the controlled displacement, and tracing out the register proves the inequality for the two discrete approximations. The channel outputs converge in trace norm on each fixed input by strong continuity of the displacements and dominated convergence. Joint lower semicontinuity of relative entropy gives the displayed bound for the exact channels. This is the displacement version of the [environment-parametrized comparison argument](../references/README.md#environment-parametrized).
 
 The channel with density $`g_1`$ has the heterodyne-and-prepare form
 
@@ -44,7 +44,7 @@ Local operations and classical communication do not increase $`E_{\mathrm R}`$. 
 F\log_2 d-h_2(F)\le E_{\mathrm R}(\rho_{\mathrm{dec}})\le nL.
 ```
 
-Along a reliable sequence, $`F\to1`$, so its asymptotic rate is at most $`L`$. Applying this with $`L=D(f\|g_1)`$ proves the capacity statement. The argument uses the states of the actual adaptive code.
+Along a reliable sequence, $`F\to1`$, so its asymptotic rate is at most $`L`$. Applying this with $`L=D(f\Vertg_1)`$ proves the capacity statement. The argument uses the states of the actual adaptive code.
 
 ### Gaussian reference variance can be optimized
 
@@ -57,7 +57,7 @@ g_w(z)=\frac{1}{\pi w}e^{-\lvert z\rvert^2/w}
 describes the heterodyne-and-prepare channel followed by independent Gaussian displacement of variance $`w-1`$. The same comparison therefore yields
 
 ```math
-Q_{2,f}(E)\le D(f\|g_w)
+Q_{2,f}(E)\le D(f\Vertg_w)
 =\log_2(\pi w)+\frac{\mathbb E_f\lvert Z\rvert^2}{w}\log_2e-h(f).
 ```
 
@@ -153,7 +153,7 @@ Rescaling from $`Y`$ to $`\sigma Y=Z+\sigma G`$ proves both sides of Lemma 2. Al
 Since $`\mathbb E|Z+\sigma G|^2=M+\sigma^2`$,
 
 ```math
-D(f_\sigma\|g_1)
+D(f_\sigma\Vertg_1)
 =-h(f_\sigma)+\log_2\pi
  +(M+\sigma^2)\log_2e.
 ```
@@ -162,7 +162,7 @@ Lemma 2 therefore implies
 
 ```math
 \boxed{
-D(f_\sigma\|g_1)
+D(f_\sigma\Vertg_1)
 \le 2\log_2(1/\sigma)-H_{1/\sigma}(\mu)
  +C_{\mathrm{int}}+(M+\sigma^2-1)\log_2e.
 }
@@ -200,7 +200,7 @@ E_{\mathrm R}(A:BF)
 \le E_{\mathrm R}(A:B)+2S(F).
 ```
 
-In finite dimensions, use a separable comparator $`\omega_{AB}\otimes\rho_F`$. Its relative entropy from the state on $`ABF`$ equals $`D(\rho_{AB}\|\omega_{AB})+I(AB:F)_\rho`$. Infimize over comparisons and use $`I(AB:F)\le2S(F)`$. The same inequality holds in the oscillator setting with arbitrary local memories. Compress each local system onto increasing finite-rank subspaces, resetting the discarded tail to one local flag. Choose the projectors for $`F`$ in the eigenbasis of its marginal, so grouping tail eigenvalues cannot increase $`S(F)`$. The finite-dimensional inequalities then have right sides bounded by the original right side by local monotonicity. The compressed states converge in trace norm, and [lower semicontinuity of the relative entropy of entanglement](../references/README.md#lami-shirokov) yields the claim. This argument never forms a difference of possibly infinite marginal entropies.
+In finite dimensions, use a separable comparator $`\omega_{AB}\otimes\rho_F`$. Its relative entropy from the state on $`ABF`$ equals $`D(\rho_{AB}\Vert\omega_{AB})+I(AB:F)_\rho`$. Infimize over comparisons and use $`I(AB:F)\le2S(F)`$. The same inequality holds in the oscillator setting with arbitrary local memories. Compress each local system onto increasing finite-rank subspaces, resetting the discarded tail to one local flag. Choose the projectors for $`F`$ in the eigenbasis of its marginal, so grouping tail eigenvalues cannot increase $`S(F)`$. The finite-dimensional inequalities then have right sides bounded by the original right side by local monotonicity. The compressed states converge in trace norm, and [lower semicontinuity of the relative entropy of entanglement](../references/README.md#lami-shirokov) yields the claim. This argument never forms a difference of possibly infinite marginal entropies.
 
 Apply the attenuation and amplification isometry locally at Bob, keeping the two unused modes together as $`F`$. The isometry preserves the original relative entropy of entanglement across the Alice–Bob cut. Tracing out $`F`$ gives the output for the smoothed noise density $`f_\sigma`$ by composition of the Weyl conjugations. The preceding inequality, subadditivity of entropy and the thermal maximum-entropy bound give a per-use loss of at most
 
@@ -225,10 +225,10 @@ Since $`\sum_j e_j\le nE`$, the average of $`x_j`$ is at most $`2E+2M`$. Hence f
 \le4n g(2+2M).
 ```
 
-Lemma 1 charges at most $`D(f_\sigma\|g_1)`$ to the smoothed output at each actual input. Adding the entropy cost just proved bounds the entanglement increment of each original use. The adaptive rate test consequently yields
+Lemma 1 charges at most $`D(f_\sigma\Vertg_1)`$ to the smoothed output at each actual input. Adding the entropy cost just proved bounds the entanglement increment of each original use. The adaptive rate test consequently yields
 
 ```math
-Q_{2,\mu}(E)\le D(f_\sigma\|g_1)+4g(2+2M).
+Q_{2,\mu}(E)\le D(f_\sigma\Vertg_1)+4g(2+2M).
 ```
 
 Finally apply [the smoothing entropy estimate](#relative-entropy-of-the-smoothed-law) with $`\sigma=(E+1)^{-1/2}`$:
@@ -257,29 +257,29 @@ Q_\mu(\infty)=\sup_{E\lt\infty}Q_\mu(E),\qquad Q_{2,\mu}(\infty)=\sup_{E\lt\inft
 \boxed{
 Q_\mu(\infty)\lt\infty\quad\Longleftrightarrow\quad Q_{2,\mu}(\infty)\lt\infty
 \quad\Longleftrightarrow\quad
-D(\mu\|\gamma)\lt \infty.
+D(\mu\Vert\gamma)\lt \infty.
 }
 ```
 
 Moreover, when the relative entropy is finite,
-$`Q_\mu(\infty)\le Q_{2,\mu}(\infty)\le D(\mu\|\gamma)`$.
+$`Q_\mu(\infty)\le Q_{2,\mu}(\infty)\le D(\mu\Vert\gamma)`$.
 
 ### Finite relative entropy implies finite capacity
 
-Finite $`D(\mu\|\gamma)`$ implies that $`\mu`$ has a density with respect to the strictly positive Gaussian density $`g_1`$, and hence with respect to Lebesgue measure. Lemma 1 bounds $`Q_{2,\mu}(E)`$ by the same finite number for every $`E`$. Taking the supremum proves this direction.
+Finite $`D(\mu\Vert\gamma)`$ implies that $`\mu`$ has a density with respect to the strictly positive Gaussian density $`g_1`$, and hence with respect to Lebesgue measure. Lemma 1 bounds $`Q_{2,\mu}(E)`$ by the same finite number for every $`E`$. Taking the supremum proves this direction.
 
 ### Infinite relative entropy is detected by resolved thermal inputs
 
 For $`t=2^m`$, let $`\mathcal P_m`$ be the countable partition of $`\mathbb R^2`$ into dyadic squares of side $`1/t`$. Write $`p_{m,k}`$ and $`q_{m,k}`$ for the probabilities of cell $`k`$ under $`\mu`$ and $`\gamma`$, and set
 
 ```math
-D_m=D(p_m\|q_m).
+D_m=D(p_m\Vertq_m).
 ```
 
 These are relative entropies of classical noise distributions. The partitions are nested and generate the Borel sigma algebra. Classical relative-entropy approximation therefore gives
 
 ```math
-D_m\uparrow D(\mu\|\gamma),
+D_m\uparrow D(\mu\Vert\gamma),
 ```
 
 including when $`\mu`$ has a singular component or the limit is infinite.
@@ -325,14 +325,14 @@ Q_\mu(E_m)
 \end{aligned}
 ```
 
-If $`D(\mu\|\gamma)=\infty`$, the right-hand side tends to infinity. Thus the capacity is unbounded as input energy increases. This argument does not depend on whether the information dimension exists.
+If $`D(\mu\Vert\gamma)=\infty`$, the right-hand side tends to infinity. Thus the capacity is unbounded as input energy increases. This argument does not depend on whether the information dimension exists.
 
 ### Equivalent density criterion and its limits
 
 For an absolutely continuous law with density $`f`$ and finite second moment,
 
 ```math
-D(\mu\|\gamma)
+D(\mu\Vert\gamma)
 =\log_2\pi+M\log_2e-h(f),
 ```
 

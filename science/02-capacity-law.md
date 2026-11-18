@@ -241,7 +241,7 @@ The [bounded-capacity criterion](03-converse.md#when-is-the-unconstrained-capaci
 \boxed{
 \sup_{E\lt\infty}Q_\mu(E)\lt\infty\quad\Longleftrightarrow\quad\sup_{E\lt\infty}Q_{2,\mu}(E)\lt\infty
 \quad\Longleftrightarrow\quad
-D(\mu\|\gamma)\lt \infty.
+D(\mu\Vert\gamma)\lt \infty.
 }
 ```
 
