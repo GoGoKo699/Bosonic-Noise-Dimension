@@ -8,7 +8,7 @@ This map follows one scientific question: **how does the amount of classical noi
 
 The sole educational anchor is Alexander S. Holevo, [*Quantum Systems, Channels, Information: A Mathematical Introduction*, second revised and expanded edition (2019)](https://doi.org/10.1515/9783110642490). Section numbers and printed starting pages below refer to that edition and were checked against its [publisher-origin preview, contents pp. XI–XV](https://api.pageplace.de/preview/DT0400.9783110642490_A39059069/preview-9783110642490_A39059069.pdf).
 
-The anchor supplies foundations in entropy, quantum channels, coding, infinite-dimensional constraints and Gaussian systems. A section pointer identifies the relevant foundation, not a claim that the book contains this project's result. In particular, the energy-constrained coding and continuity theorems, teleportation-simulation converse and local derivations retain their research-level attribution in the [scientific account](../science/README.md) and [research bibliography](../references/README.md). These research dependencies are not additional educational anchors.
+The anchor supplies foundations in entropy, quantum channels, coding, infinite-dimensional constraints and Gaussian systems. Each section pointer identifies a foundation used in the proof. The energy-constrained coding theorem, relative-entropy converse and local derivations retain their research-level attribution in the [scientific account](../science/README.md) and [research bibliography](../references/README.md).
 
 ## Allocation and dependency structure
 
@@ -30,24 +30,24 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 | M08 | Background/preliminaries | Entanglement-breaking channels and separable comparisons |
 | M09 | Background/preliminaries | Coherent information as an achievable quantum rate |
 | M10 | Background/preliminaries | Collective codes and regularized capacity |
-| M11 | Background/preliminaries | Mean energy, convergence and continuity in infinite dimension |
+| M11 | Background/preliminaries | Unconditional mean energy and entropy in infinite dimension |
 | M12 | Background/preliminaries | The complete operational model and proof obligations |
 | M13 | Narrative/innovation | Why the relevant displacement scale is inverse square-root energy |
 | M14 | Narrative/innovation | A thermal lower bound from resolved noise entropy |
-| M15 | Narrative/innovation | A smooth-law resource comparison with Gaussian noise |
-| M16 | Narrative/innovation | Turning finite-resource simulation into an arbitrary-code converse |
+| M15 | Narrative/innovation | A one-use smooth-law comparison with Gaussian noise |
+| M16 | Narrative/innovation | Tracking entanglement through an adaptive protocol |
 | M17 | Narrative/innovation | The bridge between smoothing and quantization entropy |
-| M18 | Narrative/innovation | Choosing a smoothing scale compatible with capacity continuity |
-| M19 | Narrative/innovation | The finite-resolution capacity sandwich |
+| M18 | Narrative/innovation | Charging the smoothing environments at the physical resolution |
+| M19 | Narrative/innovation | The shared finite-resolution law and the additive value of feedback |
 | M20 | Narrative/innovation | Information dimension and the coefficient of logarithmic growth |
 | M21 | Narrative/innovation | Finite alphabets and mixed discrete–continuous laws |
-| M22 | Narrative/innovation | The exact criterion for bounded unconstrained capacity |
+| M22 | Narrative/innovation | Bounded capacity and triple-logarithmic growth at dimension two |
 | M23 | Narrative/innovation | A circle's one-dimensional noise and two-dimensional covariance |
 | M24 | Narrative/innovation | Exact circular entropy exchange through charge sectors |
 | M25 | Narrative/innovation | A capacity separation at matched covariance |
 | M26 | Narrative/innovation | A positive finite-energy rate with nonzero Gaussian jitter |
 | M27 | Narrative/innovation | The finite ceiling created by fixed broadening |
-| M28 | Narrative/innovation | The joint energy–broadening crossover |
+| M28 | Narrative/innovation | The general joint energy–broadening crossover |
 | M29 | Narrative/innovation | How the mechanism relates to existing capacity results |
 | M30 | Narrative/innovation | The complete contribution and its operational boundaries |
 
@@ -107,7 +107,7 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 - **Understanding target.** Interpret classical and quantum relative entropy as comparison quantities and use data processing for the map from a classical displacement label to a displaced quantum state. Recognize that a comparison measure must assign nonzero weight wherever the original measure does.
 - **Dependencies and story role.** M03, M04 and M06. Connects classical probability comparisons to quantum-state bounds.
 - **Conceptual connection.** The converse will bound a quantum entanglement resource by the classical relative entropy between two displacement laws.
-- **Sources.** **Holevo:** §§7.1–7.2 (pp. 126, 127), 11.2 (p. 237). **Science:** [a separable comparison at finite squeezing](../science/03-converse.md#a-separable-comparison-state-at-every-finite-squeezing).
+- **Sources.** **Holevo:** §§7.1–7.2 (pp. 126, 127), 11.2 (p. 237). **Science:** [compare the two displacement laws](../science/03-converse.md#compare-the-two-displacement-laws-on-each-use).
 
 ### M08 — Entanglement breaking and separable references
 
@@ -130,23 +130,23 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 - **Central question.** Why is evaluating one input on one channel use insufficient for a general capacity formula?
 - **Understanding target.** Distinguish an achievable rate, a one-use coherent-information expression and the capacity optimized over arbitrary collective codes. Understand regularization and the extra structural assumption needed to simplify it through degradability.
 - **Dependencies and story role.** M04 and M09. Expands a local rate calculation into the full optimization that a converse must cover.
-- **Conceptual connection.** The project proves a leading capacity law without declaring the displacement channel degradable or its capacity single-letter.
-- **Sources.** **Holevo:** §§10.2.1–10.2.2 (pp. 195, 197), 10.3.1–10.3.3 (pp. 202, 206, 208). **Science:** [what capacity counts](../science/01-model.md#what-the-capacity-counts); [established scope](../science/02-capacity-law.md#what-is-established-and-what-is-not).
+- **Conceptual connection.** The unassisted coding theorem provides a regularized benchmark. The adaptive model allows classical messages and local operations between uses.
+- **Sources.** **Holevo:** §§10.2.1–10.2.2 (pp. 195, 197), 10.3.1–10.3.3 (pp. 202, 206, 208). **Science:** [what capacity counts](../science/01-model.md#what-the-capacity-counts); [scope of the capacity law](../science/02-capacity-law.md#scope-of-the-capacity-law).
 
 ### M11 — Energy constraints and infinite-dimensional limits
 
-- **Central question.** What must be controlled before a small channel perturbation implies a small capacity change?
-- **Understanding target.** Distinguish trace convergence, energy-constrained channel distance and continuity of a regularized communication rate. Explain why a total mean-energy bound allows uneven allocation across modes, and why a common output-energy bound is needed in the infinite-dimensional argument.
-- **Dependencies and story role.** M01, M03 and M10. Adds the analytical conditions under which local approximations remain operationally useful.
-- **Conceptual connection.** A finite energy constraint controls entropy without replacing the oscillator by an exact finite-dimensional cutoff.
-- **Sources.** **Holevo:** §§7.4 (p. 134), 11.1–11.2 (pp. 233, 237), 11.5 (p. 243). **Science:** [operational energy constraint](../science/01-model.md#what-the-capacity-counts); [energy-constrained continuity ingredients](../science/03-converse.md#smoothing-below-the-energy-resolution-changes-capacity-little). The needed capacity continuity theorem is a separately cited research ingredient.
+- **Central question.** How can a mean constraint control the entropy of many modes whose energies may vary widely?
+- **Understanding target.** Distinguish unconditional mean photon number from per-branch and per-mode maxima. Use the thermal entropy bound $`g(x)`$ for a mode of mean energy $`x`$, then use concavity to control the sum over a block. Connect trace-norm convergence and lower semicontinuity of relative entropy to finite approximations of a displacement law.
+- **Dependencies and story role.** M01, M03, M07 and M10. Establishes the tools needed to account for the actual inputs and compare channels.
+- **Conceptual connection.** A mean constraint bounds total entropy even when some uses or measurement histories carry large energy.
+- **Sources.** **Holevo:** §§7.1–7.2 (pp. 126, 127), 11.1–11.2 (pp. 233, 237), 11.5 (p. 243). **Science:** [operational energy constraint](../science/01-model.md#what-the-capacity-counts) and [converse](../science/03-converse.md).
 
 ### M12 — The complete problem and its proof obligations
 
-- **Central question.** What exactly must be proved to turn the geometry of random kicks into an unassisted quantum-capacity statement?
-- **Understanding target.** Assemble a fixed known IID displacement law, unobserved noise draws, finite second moment and a mean-photon constraint. Separate the blocklength limit at fixed energy from the later high-energy limit, and identify the required achievable-rate and arbitrary-code upper bounds.
+- **Central question.** Which rate claims require an unassisted code and which require an adaptive converse?
+- **Understanding target.** Assemble a fixed known IID displacement law, unobserved kicks, finite second moment and an unconditional mean-photon constraint. Distinguish unassisted quantum capacity from two-way quantum capacity, which allows adaptive local operations and two-way classical communication from a separable initial state. Take the coding limit at fixed channel and energy before considering the high-energy limit.
 - **Dependencies and story role.** M01–M11. Integrates the background into the complete operational framework.
-- **Conceptual connection.** The project must connect quantum coding, classical resolution entropy and an infinite-dimensional converse while retaining the same channel and resource model.
+- **Conceptual connection.** A thermal input supplies the lower bound for both tasks. The converse follows the entanglement generated in an adaptive protocol with its actual energy budget.
 - **Sources.** **Holevo:** §§10.3.1–10.3.2 (pp. 202, 206), 11.5 (p. 243), 12.6.3–12.6.4 (pp. 325, 328). **Science:** [model and operational question](../science/01-model.md); [connected argument](../science/README.md#the-connected-argument).
 
 ## Phase II — Narrative/innovation
@@ -169,19 +169,19 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 
 ### M15 — The smooth-law comparison resource
 
-- **Central question.** How can a classical density comparison bound entanglement in a bosonic channel resource?
-- **Understanding target.** Compare finite-squeezing channel resource states generated by a smooth density $`f`$ and by the unit-variance Gaussian density $`g_1`$. Combine classical-to-quantum data processing with the Gaussian reference's separability to bound the resource's relative entropy of entanglement by $`D(f\|g_1)`$.
-- **Dependencies and story role.** M05, M07, M08 and M12. Builds a finite, normalizable comparison before any infinite-squeezing limit.
-- **Conceptual connection.** The Gaussian channel is a calculable reference for arbitrary smooth displacement noise; Gaussian optimality of the target channel is not assumed.
-- **Sources.** **Holevo:** §§7.1–7.2 (pp. 126, 127), 11.7 (p. 248), 12.4.4 (p. 294). **Science:** [finite-squeezing separable comparison](../science/03-converse.md#a-separable-comparison-state-at-every-finite-squeezing); [Gaussian reference variance](../science/03-converse.md#gaussian-reference-variance-can-be-optimized).
+- **Central question.** How can a classical density comparison bound the entanglement generated on one channel use?
+- **Understanding target.** Compare the actual input and a separable input with the same displacement processor, driven by a smooth density $`f`$ and the unit-variance Gaussian density $`g_1`$, respectively. Track the input relative entropy and the classical cost $`D(f\Vert g_1)`$ through data processing. Explain why the exact Gaussian output remains separable across the new sender–receiver split.
+- **Dependencies and story role.** M05, M07, M08, M11 and M12. Turns classical relative entropy into a bound on the relative entropy of entanglement gained per use.
+- **Conceptual connection.** Sender and receiver memories can be present in both inputs, so the comparison applies inside an adaptive protocol.
+- **Sources.** **Holevo:** §§7.1–7.2 (pp. 126, 127), 11.7 (p. 248), 12.4.4 (p. 294). **Science:** [smooth-noise comparison](../science/03-converse.md#compare-the-two-displacement-laws-on-each-use).
 
-### M16 — From simulation to a full converse
+### M16 — From a one-use estimate to an adaptive converse
 
-- **Central question.** How does a bound on a finite-squeezing resource constrain every reliable finite-energy code?
-- **Understanding target.** Explain the teleportation simulation, its residual Gaussian noise and the resulting bound on output entanglement. Keep the limit order explicit: fix a finite code, remove simulation error by increasing squeezing, and only then take the coding limit. Understand how a Bell-state test converts the entanglement bound into a rate bound.
-- **Dependencies and story role.** M08, M10, M11 and M15. Expands the resource comparison into $`Q_f(E)\le D(f\|g_1)`$ for arbitrary collective codes.
-- **Conceptual connection.** Allowing local operations and classical communication in an upper-bound simulation does not add assistance to the rate claimed achievable by the original channel.
-- **Sources.** **Holevo:** §§3.3.2 (p. 46), 3.3.4 (p. 48), 10.3.1 (p. 202), 11.1 (p. 233). **Science:** [fixed finite code simulation limit](../science/03-converse.md#the-simulation-limit-is-taken-for-a-fixed-finite-code), including the cited simulation and entanglement-converse literature.
+- **Central question.** Why does a one-use entanglement bound constrain the rate of a feedback protocol?
+- **Understanding target.** Begin with a separable state, sum the entanglement gained at channel uses and apply monotonicity under the local operations and classical communication between them. Convert the final bound into a rate with a maximally entangled-state test whose acceptance probability on any separable comparison is at most the reciprocal of the target dimension.
+- **Dependencies and story role.** M08, M10, M11 and M15. Shows why the smooth-law upper bound covers adaptive codes.
+- **Conceptual connection.** The rate bound follows the actual protocol, even when inputs correlate with earlier messages and channel outputs.
+- **Sources.** **Holevo:** §§3.3.2 (p. 46), 7.1–7.2 (pp. 126, 127), 10.3.1 (p. 202), 11.1 (p. 233). **Science:** [adaptive converse](../science/03-converse.md#from-entanglement-accounting-to-a-rate-bound).
 
 ### M17 — Smoothing entropy equals resolved entropy up to scale
 
@@ -191,26 +191,26 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 - **Conceptual connection.** Differential entropy becomes useful only after its smoothing scale is matched to a discrete resolution; the relation remains meaningful for singular measures.
 - **Sources.** **Holevo:** §§4.1–4.2 (pp. 55, 57), 7.1 (p. 126). **Science:** [smoothing and quantization lemma](../science/03-converse.md#smoothing-entropy-and-quantization-entropy-differ-by-a-constant); [relative entropy after smoothing](../science/03-converse.md#relative-entropy-of-the-smoothed-law).
 
-### M18 — A smoothing scale that controls capacity
+### M18 — Charging the smoothing environments
 
-- **Central question.** How small must the artificial Gaussian noise be so that the converse transfers back with a bounded continuity cost?
-- **Understanding target.** Connect the energy-constrained diamond-distance estimate to a common output-energy bound and the imported capacity continuity theorem. Understand the choice $`\sigma=[\log_2(E+2)]^{-2}/\sqrt{4E+2}`$: it leaves a bounded continuity correction while refining the noise grid by a logarithmic factor.
-- **Dependencies and story role.** M02, M11, M16 and M17. Makes the smooth approximation operationally uniform at the energy being considered.
-- **Conceptual connection.** Small one-use disturbance alone is insufficient; the continuity theorem controls the already regularized capacity.
-- **Sources.** **Holevo:** §§7.4 (p. 134), 11.1–11.2 (pp. 233, 237), 11.5 (p. 243). **Science:** [smoothing below the energy resolution](../science/03-converse.md#smoothing-below-the-energy-resolution-changes-capacity-little); [collecting the upper bound](../science/03-converse.md#collecting-the-finite-resolution-upper-bound).
+- **Central question.** Why can the converse smooth at the physical resolution and still incur only a constant loss per use?
+- **Understanding target.** Set the Gaussian displacement variance to $`v=(E+1)^{-1}`$. Follow receiver-side pure loss and vacuum amplification with net gain one. Compare the relative entropy of entanglement before and after discarding the two environments. Bound their mean energies using the actual transmitted energies and the noise moment, then apply the thermal entropy bound and concavity.
+- **Dependencies and story role.** M02, M03, M11, M16 and M17. Transfers the smooth-law upper bound to the actual channel at the same resolution as achievability.
+- **Conceptual connection.** The environments belong to a local comparison operation in the proof. Their entropy budget is averaged over actual uses and their histories.
+- **Sources.** **Holevo:** §§7.3 (p. 132), 7.6 (p. 141), 11.5 (p. 243), 12.3.4 (p. 281), 12.6.2 (p. 324). **Science:** [smoothing comparison and environment budget](../science/03-converse.md#adaptive-converse-at-the-energy-resolution).
 
 ### M19 — The finite-resolution capacity law
 
-- **Central question.** What survives after the achievable rate and arbitrary-code converse are combined?
-- **Understanding target.** State the two-sided bound around $`\log_2(E+1)-H_{\sqrt{E+1}}(\mu)`$: a universal constant loss below and an upper error $`4\log_2\log_2(E+2)+C_M`$ for $`E\ge1`$. Track which constants are uniform over laws with bounded second moment and why the result is not an exact finite-energy formula.
+- **Central question.** How much can adaptive two-way communication improve the rate?
+- **Understanding target.** State that the unassisted and two-way quantum capacities both lie within a bounded additive term of $`\log_2(E+1)-H_{\sqrt{E+1}}(\mu)`$ for $`E\ge1`$. Use the unassisted lower bound and adaptive upper bound to bound the gap by a constant depending only on the noise second-moment bound.
 - **Dependencies and story role.** M14 and M18. Integrates the two proof branches into the main theorem.
-- **Conceptual connection.** The same resolved classical entropy controls both what a thermal input achieves and what arbitrary codes can exceed.
+- **Conceptual connection.** Both tasks have the same resolved classical entropy cost up to a bounded term. The theorem permits an additive benefit from feedback.
 - **Sources.** **Holevo:** §§10.3.2 (p. 206), 11.5 (p. 243), for the capacity framework. **Science:** [finite-resolution theorem](../science/02-capacity-law.md#the-finite-resolution-capacity-law); [explicit converse constants](../science/03-converse.md#collecting-the-finite-resolution-upper-bound).
 
 ### M20 — Information dimension becomes a capacity coefficient
 
 - **Central question.** How does increasingly fine classical resolution determine the leading energy dependence?
-- **Understanding target.** Derive $`Q_\mu(E)/\log_2E\to1-d(\mu)/2`$ when information dimension exists. Explain the factor one-half from $`t=\sqrt{E+1}`$ and the exchange of lower/upper limits when the noise has different lower and upper information dimensions.
+- **Understanding target.** Derive the high-energy coefficient $`1-d(\mu)/2`$ for both quantum capacities when information dimension exists. Explain the factor one-half from $`t=\sqrt{E+1}`$ and the exchange of lower and upper limits when the two information dimensions differ.
 - **Dependencies and story role.** M06 and M19. Converts a finite-scale theorem into a global asymptotic classification.
 - **Conceptual connection.** Information dimension measures entropy growth with resolution; it need not equal support dimension or the number of nonzero covariance eigenvalues.
 - **Sources.** **Holevo:** §§4.1 (p. 55), 10.3.2 (p. 206), as entropy and capacity foundations. **Science:** [dimension corollary](../science/02-capacity-law.md#information-dimension-fixes-the-leading-energy-dependence); [dimension definitions](../science/01-model.md#entropies-and-phase-space-resolution).
@@ -223,13 +223,13 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 - **Conceptual connection.** Probability weights affect resolved entropy and hence capacity growth even when a continuous component fills two-dimensional phase space.
 - **Sources.** **Holevo:** §§4.1–4.2 (pp. 55, 57), 6.3 (p. 108), 10.3.2 (p. 206). **Science:** [dimension-law consequences](../science/02-capacity-law.md#consequences); [unobserved-noise model](../science/01-model.md#one-oscillator-and-a-fixed-noise-law).
 
-### M22 — Boundedness beyond the leading coefficient
+### M22 — Boundedness and very slow divergence
 
-- **Central question.** When does capacity remain finite as the photon budget is removed?
-- **Understanding target.** Explain the equivalence between finite $`Q_\mu(\infty)`$ and finite relative entropy $`D(\mu\|\gamma)`$ to the standard Gaussian measure, under the finite-second-moment assumption. Follow why nested dyadic partitions detect infinite relative entropy and why the thermal lower bound then diverges.
-- **Dependencies and story role.** M07, M14, M16 and M20. Refines the leading-coefficient classification to distinguish bounded capacity from slower unbounded growth.
-- **Conceptual connection.** Dimension two is compatible with unbounded sublogarithmic capacity; the full entropy deficit, not only its slope, decides boundedness.
-- **Sources.** **Holevo:** §§7.1–7.2 (pp. 126, 127), 11.2 (p. 237), for relative-entropy foundations. **Science:** [bounded-capacity criterion and proof](../science/03-converse.md#when-is-the-unconstrained-capacity-finite); [why zero coefficient is insufficient](../science/02-capacity-law.md#boundedness-requires-more-than-a-zero-leading-coefficient).
+- **Central question.** What can happen to capacity at full information dimension?
+- **Understanding target.** Explain why finite relative entropy $`D(\mu\Vert\gamma)`$ to the standard Gaussian gives bounded capacity, and how nested dyadic grids detect infinite relative entropy in the thermal lower bound. For the full-dimensional mixture of nested squares, relate the entropy deficit at dyadic grid depth $`m`$ to the truncated mean of the random square depth. The slowly decaying tail produces triple-logarithmic growth in energy.
+- **Dependencies and story role.** M07, M14, M16, M19 and M20. Refines the slope classification and uses the constant-error theorem to resolve a slow growth law.
+- **Conceptual connection.** Full information dimension permits either bounded capacity or unbounded sublogarithmic growth. The resolved entropy deficit decides which occurs.
+- **Sources.** **Holevo:** §§7.1–7.2 (pp. 126, 127), 11.2 (p. 237), for relative-entropy foundations. **Science:** [bounded-capacity criterion and proof](../science/03-converse.md#when-is-the-unconstrained-capacity-finite) and [full-dimensional example](../science/02-capacity-law.md#a-full-dimensional-noise-density-with-unbounded-capacity).
 
 ### M23 — Circular geometry with isotropic covariance
 
@@ -273,24 +273,24 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 
 ### M28 — The joint energy–broadening crossover
 
-- **Central question.** Which scale controls capacity when energy increases while Gaussian jitter decreases?
-- **Understanding target.** Interpret the effective energy $`E_*=\min\{E,\sigma^{-2}\}`$ and the two-sided half-logarithmic bound in $`E_*`$ for fixed positive radius. Explain why the upper remainder after saturation cannot grow with unused input energy and how $`\sigma(E)=E^{-\alpha}`$ gives coefficient $`\min\{1/2,\alpha\}`$.
-- **Dependencies and story role.** M19 and M25–M27. Integrates the ideal circle, finite witness and fixed-background ceiling into a two-parameter account.
-- **Conceptual connection.** Input energy sets an improving resolution until it resolves the thickness of the broadened ring.
-- **Sources.** **Holevo:** §§11.5 (p. 243), 12.3.4 (p. 281), 12.6.4 (p. 328), as constraint and entropy foundations. **Science:** [joint crossover theorem](../science/05-broadening.md#the-joint-energybroadening-crossover); [orders of limits](../science/05-broadening.md#orders-of-limits-and-scope).
+- **Central question.** Which scale controls capacity when energy increases and Gaussian jitter decreases?
+- **Understanding target.** For jitter variance $`b`$, combine the independent Gaussian variances into $`b+(E+1)^{-1}`$. Use the smoothing entropy comparison to identify that effective variance for an arbitrary finite-second-moment noise law. Recover the circular result with effective energy $`\min\{E,\sigma^{-2}\}`$ for $`b=\sigma^2`$ and the coefficient $`\min\{1/2,\alpha\}`$ for $`\sigma(E)=E^{-\alpha}`$ with positive $`\alpha`$.
+- **Dependencies and story role.** M17, M19 and M25–M27. Reconciles the ideal circle and its finite-jitter limits using the general crossover law.
+- **Conceptual connection.** Input energy improves resolution until it reaches the thickness created by independent Gaussian jitter.
+- **Sources.** **Holevo:** §§11.5 (p. 243), 12.3.4 (p. 281), 12.6.4 (p. 328), as constraint and entropy foundations. **Science:** [general crossover](../science/05-broadening.md#the-general-energybroadening-crossover) and [order of limits](../science/05-broadening.md#orders-of-limits-and-scope).
 
 ### M29 — Relation to existing capacity mechanisms
 
 - **Central question.** Which parts of the argument are inherited, and what changes when the errors are noncommuting displacements?
-- **Understanding target.** Relate the resolved-entropy principle to the commuting phase-noise antecedent while distinguishing its resolution scale and degradability route. Separate earlier classical or entanglement-assisted capacity results from this unassisted quantum-capacity theorem, and identify coding, continuity and simulation as imported proof ingredients.
+- **Understanding target.** Relate the resolved-entropy principle to the commuting phase-noise antecedent while distinguishing its resolution scale and degradability route. Distinguish the two-way classical assistance used here from entanglement assistance and classical communication tasks. Attribute energy-constrained coding, Gaussian channel dilation and relative-entropy tools to their sources.
 - **Dependencies and story role.** M10, M12, M19, M22 and M28. Places the integrated contribution in the correct scientific landscape.
-- **Conceptual connection.** The contribution is the extension to arbitrary finite-moment Weyl noise, its arbitrary-code converse and consequences, rather than a new invention of every method it uses.
+- **Conceptual connection.** The new conclusion combines the matched-scale entropy estimate with an adaptive converse that pays for the local smoothing environments.
 - **Sources.** **Holevo:** §§9.1 (p. 173), 10.3.2–10.3.3 (pp. 206, 208), 12.6.4 (p. 328). **Science:** [relation to prior work](../science/06-related-work.md), which supplies the primary research references.
 
 ### M30 — The complete operational conclusion
 
 - **Central question.** What does the project establish about quantum communication through random phase-space noise, and where does the conclusion stop?
-- **Understanding target.** Connect the finite-resolution law, dimension coefficient, boundedness criterion, circular separation and broadening crossover into one account. Keep the assumptions visible: IID unobserved kicks, fixed-law limits when specified, finite second moment, ordinary unassisted coding and a mean-photon resource. Distinguish capacity achievability from an explicit efficient implementation and from claims about loss or correlated drift.
+- **Understanding target.** Connect the finite-resolution law, dimension coefficient, boundedness criterion, slow full-dimensional example, circular separation and broadening crossover. Keep the assumptions visible for both capacities, including IID unobserved kicks, finite second moment and the unconditional input budget. Identify efficient implementation, physical loss and correlated drift as separate scientific questions.
 - **Dependencies and story role.** M12, M19–M22 and M25–M29. Synthesizes the narrative rather than adding another independent result.
 - **Conceptual connection.** The physically relevant description is noise uncertainty at the resolution supported by the carrier, with smoothing setting a second scale when present.
-- **Sources.** **Holevo:** §§10.3.1–10.3.2 (pp. 202, 206), 11.5 (p. 243), 12.6.4 (p. 328). **Science:** [connected scientific account](../science/README.md#the-connected-argument); [theorem scope](../science/02-capacity-law.md#what-is-established-and-what-is-not); [physical boundaries](../science/01-model.md#boundaries-of-the-physical-comparison); [broadening limits](../science/05-broadening.md#orders-of-limits-and-scope).
+- **Sources.** **Holevo:** §§10.3.1–10.3.2 (pp. 202, 206), 11.5 (p. 243), 12.6.4 (p. 328). **Science:** [connected scientific account](../science/README.md#the-connected-argument); [theorem scope](../science/02-capacity-law.md#scope-of-the-capacity-law); [physical boundaries](../science/01-model.md#boundaries-of-the-physical-comparison); [broadening limits](../science/05-broadening.md#orders-of-limits-and-scope).

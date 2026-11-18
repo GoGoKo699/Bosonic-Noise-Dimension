@@ -73,7 +73,7 @@ Applying the [capacity theorem](02-capacity-law.md) with $`t_E=\sqrt{E+1}`$ give
 ```math
 \boxed{
 Q_r(E)=\frac12\log_2(E+1)
-       +O_r\!\bigl(1+\log_2\log_2(E+2)\bigr).
+       +O_r(1).
 }
 ```
 
@@ -128,7 +128,7 @@ If $`P_k`$ is the spectral projector of $`J`$ with eigenvalue $`k\in\mathbb Z`$,
 =\sum_{k\in\mathbb Z}P_k|\phi_0\rangle\langle\phi_0|P_k.
 ```
 
-Each nonzero summand has rank one, and different summands have orthogonal support. Therefore the nonzero eigenvalues of $`\rho_{RB}^{\rm out}`$ are exactly $`p_k=\|P_k\phi_0\|^2`$. This reduces its entropy to a classical charge distribution without asserting that the channel itself is degradable.
+Each nonzero summand has rank one, and different summands have orthogonal support. Therefore the nonzero eigenvalues of $`\rho_{RB}^{\rm out}`$ are exactly $`p_k=\Vert P_k\phi_0\Vert^2`$. This reduces its entropy to a classical charge distribution without asserting that the channel itself is degradable.
 
 The characteristic function of this distribution is
 
@@ -219,7 +219,7 @@ I_c(\tau_E,\mathcal C_r)
 =\frac12\log_2E+O_r(1).
 ```
 
-The [general converse](03-converse.md), rather than this single input calculation, establishes optimality of the coefficient against arbitrary collective codes.
+The [general converse](03-converse.md), also covers adaptive two-way assistance and establishes the coefficient with a bounded remainder.
 
 ## Comparison with covariance-matched Gaussian noise
 

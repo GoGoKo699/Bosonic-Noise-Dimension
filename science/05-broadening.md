@@ -2,7 +2,7 @@
 
 [Overview](../README.md) · [Circular noise](04-circular-noise.md) · [Verification](../verification/README.md)
 
-The exact circular law has a half-logarithmic capacity growth. Any fixed Gaussian background smooths that law and gives a finite unconstrained capacity bound. Both statements can hold together with a positive finite-energy communication rate: a small nonzero background leaves a useful energy window before saturation.
+An independent Gaussian background coarsens the phase-space resolution in the capacity law. For a circular displacement, the same background eventually caps the half-logarithmic growth with energy. The finite-energy example below certifies a positive unassisted rate in this window.
 
 ## Independently broadened circular kicks
 
@@ -19,7 +19,7 @@ v=\sigma^2.
 
 The angle and $`G`$ are independent, and both are independently resampled at every channel use. Thus $`\mathbb E|\sigma G|^2=v`$, and the total added quadrature covariance is $`(r^2+v)I_2`$. The symbol $`\sigma`$ is a complex-amplitude scale; each real component of $`\sigma G`$ has variance $`\sigma^2/2`$.
 
-Denote the resulting channel by $`\mathcal C_{r,\sigma}`$ and its unassisted mean-energy capacity by $`Q_{r,\sigma}(E)`$. Since phases from Weyl composition disappear under conjugation,
+Denote the resulting channel by $`\mathcal C_{r,\sigma}`$. Its unassisted and two-way-assisted mean-energy capacities are $`Q_{r,\sigma}(E)`$ and $`Q_{2,r,\sigma}(E)`$. The convolution identity for Weyl conjugations gives
 
 **(B2)**
 
@@ -107,7 +107,7 @@ g(E_0)-S_G(E_0,\sigma^2)
 }
 ```
 
-This is a sufficient achievable-rate bound. It is not an exact coherent-information formula for broadened noise, because the charge-twirling entropy inequality can be strict. The supremum permits using less than the available energy; sending more photons need not improve this particular lower-bound expression.
+The charge-twirling inequality can be strict, so (B9) certifies an achievable rate. The supremum lets the encoder choose the thermal energy that gives the strongest bound.
 
 ### A nonzero-jitter example
 
@@ -121,9 +121,9 @@ Take $`r=2`$, $`E=E_0=100`$, and $`\sigma=0.01`$, so $`v=10^{-4}`$. Evaluating t
 | Integer entropy upper bound | 6.8727149427 |
 | Achievable-rate lower bound | **1.0598044894 qubits/use** |
 
-Thus the analytic bound certifies a rate greater than $`1.05`$ qubits per use at these parameters. This is a capacity achievability statement under unrestricted coding, not an implementation benchmark.
+Thus the analytic bound certifies a rate greater than $`1.05`$ qubits per use at these parameters. The bound uses the unconstrained choice of coding operations in the model.
 
-The Gaussian displacement law with the same covariance has mean squared amplitude $`r^2+v=4.0001`$. It is entanglement breaking and has zero quantum capacity. The distinction therefore persists at finite input energy with nonzero Gaussian jitter; exact singular support is not required for this particular separation.
+The Gaussian displacement law with the same covariance has mean squared amplitude $`r^2+v=4.0001`$. It is entanglement breaking and has zero capacity even with two-way classical communication. The distinction therefore persists at finite input energy with nonzero Gaussian jitter; exact singular support is not required for this particular separation.
 
 ## Capacity saturation at fixed background noise
 
@@ -132,7 +132,7 @@ For every fixed $`\sigma\gt 0`$, the distribution in (B1) has a bounded smooth d
 **(B10)**
 
 ```math
-Q_{r,\sigma}(E)
+Q_{r,\sigma}(E)\le Q_{2,r,\sigma}(E)
 \le D\!\left(p_{r,\sigma}\middle\|g_w\right)\lt \infty
 \quad\text{for every }E,
 \qquad w\ge1,
@@ -148,89 +148,66 @@ where $`g_w(z)=(\pi w)^{-1}e^{-|z|^2/w}`$ is the circular complex Gaussian densi
 -h(p_{r,\sigma}).
 ```
 
-Choosing $`w=\max\{1,r^2+\sigma^2\}`$ is convenient but not required. The capacity is nondecreasing in $`E`$ and bounded above by (B10), so it has a finite large-energy limit. The limit's exact value is not determined here.
+Choosing $`w=\max\{1,r^2+\sigma^2\}`$ is convenient but not required. Both capacities are nondecreasing in $`E`$ and bounded above by (B10), so each has a finite large-energy limit. The bound leaves their exact limits open.
 
 In particular,
 
 **(B12)**
 
 ```math
-\lim_{E\to\infty}\frac{Q_{r,\sigma}(E)}{\log_2E}=0
+\lim_{E\to\infty}\frac{Q_{r,\sigma}(E)}{\log_2E}
+=\lim_{E\to\infty}\frac{Q_{2,r,\sigma}(E)}{\log_2E}=0
 \qquad(\sigma\gt 0\text{ fixed}).
 ```
 
-## The joint energy–broadening crossover
+## The general energy–broadening crossover
 
-Fix $`r\gt 0`$. Uniformly for $`E\ge2`$ and
+Let $`Z\sim\mu`$ be any displacement with $`\mathbb E|Z|^2\le M`$. Write $`\mu_\sigma`$ for the law of $`Z+\sigma G`$, with independent standard complex Gaussian $`G`$ and $`0\le\sigma\le1`$. Define the effective bin side length by
 
 **(B13)**
 
 ```math
-0\lt \sigma\le\min\{1/2,r/2\},\qquad
-E_*:=\min\{E,\sigma^{-2}\},
+\ell(E,\sigma)=\sqrt{\sigma^2+(E+1)^{-1}}.
 ```
 
-the bounds above imply
+For either of the two capacity definitions, use $`Q^\ast_{\mu_\sigma}(E)`$ to denote the corresponding rate. The estimate
+
+```math
+\boxed{
+Q^\ast_{\mu_\sigma}(E)
+=2\log_2(1/\ell(E,\sigma))-H_{1/\ell(E,\sigma)}(\mu)+O_M(1)
+}
+```
+
+holds uniformly over $`E\ge1`$, $`0\le\sigma\le1`$ and every law with the stated second-moment bound. The two capacities may have different bounded errors. The expression resolves the original law $`\mu`$ at the coarser scale set jointly by the physical jitter and the available energy.
+
+To prove it, set $`\delta=(E+1)^{-1/2}`$ and let $`G'`$ be a standard complex Gaussian independent of $`(Z,G)`$. The [smoothing lemma](03-converse.md#smoothing-entropy-and-quantization-entropy-differ-by-a-constant) applied to $`\mu_\sigma`$ gives
+
+```math
+h(Z+\sigma G+\delta G')
+=2\log_2\delta+H_{1/\delta}(\mu_\sigma)+O(1).
+```
+
+The two Gaussian terms sum to a Gaussian of variance $`\ell(E,\sigma)^2`$. Applying the same lemma at that scale to the original law gives
+
+```math
+h(Z+\sigma G+\delta G')
+=2\log_2\ell(E,\sigma)+H_{1/\ell(E,\sigma)}(\mu)+O(1).
+```
+
+The constants in the smoothing lemma are independent of the smoothing scale and the law. Since $`\mu_\sigma`$ has second moment at most $`M+1`$, applying the [capacity law](02-capacity-law.md#the-finite-resolution-capacity-law) to $`\mu_\sigma`$ proves the claimed estimate.
+
+## The joint energy–broadening crossover
+
+For circular noise at fixed radius $`r\gt0`$, the [arc-length bound](04-circular-noise.md) gives $`H_t(\mu_r)=\log_2t+O_r(1)`$ for $`t\ge1`$. For $`E\ge2`$ and $`0\lt\sigma\le\min\{1/2,r/2\}`$, the inverse squared bin side length in (B13) is within fixed factors of $`E_*=\min\{E,\sigma^{-2}\}`$. Hence either capacity obeys
 
 **(B14)**
 
 ```math
-\boxed{
-\frac12\log_2E_*-c_r
-\le Q_{r,\sigma}(E)
-\le\frac12\log_2E_*
-+4\log_2\log_2(E_*+2)+C_r.
-}
+Q^\ast_{r,\sigma}(E)=\frac12\log_2 E_*+O_r(1).
 ```
 
-The constants depend on $`r`$ but can be chosen uniformly on every compact interval $`[r_-,r_+]\subset(0,\infty)`$. No uniform statement as $`r\to0`$ is implied.
-
-**Lower bound.** Use thermal energy $`E_0=E_*`$ in (B9). Then $`E_0v\le1`$ and $`v\le1/4`$, so both symplectic eigenvalues in (B3), and hence $`S_G(E_0,v)`$, are bounded by constants independent of $`E`$ and $`\sigma`$. Also $`V_J(E_0,r,v)\le C'_r(E_0+1)`$. Since $`g(E_0)\ge\log_2(E_0+1)`$, (B9) gives $`Q_{r,\sigma}(E)\ge\tfrac12\log_2E_*-c_r`$.
-
-**Upper bound before saturation.** If $`E\le\sigma^{-2}`$, (B2) and data processing give $`Q_{r,\sigma}(E)\le Q_r(E)`$. Equation (C5), with the explicit logarithmic remainder from the main theorem, gives the upper bound in (B14) with $`E_*=E`$.
-
-**Upper bound after saturation.** If $`E\ge\sigma^{-2}`$, it remains to control (B11) independently of $`E`$. The broadened ring density at $`z`$ with $`\rho=|z|`$ is
-
-**(B15)**
-
-```math
-p_{r,\sigma}(z)
-=\frac{e^{-(\rho-r)^2/\sigma^2}}{2\pi^2\sigma^2}
-\int_{-\pi}^{\pi}
-\exp\!\left[-\frac{2\rho r(1-\cos\theta)}{\sigma^2}\right]d\theta.
-```
-
-For $`\rho\ge r/2`$, use $`1-\cos\theta\ge2\theta^2/\pi^2`$ and extend the Gaussian integral to the real line. This gives
-
-**(B16)**
-
-```math
-p_{r,\sigma}(z)
-\le\frac1{4\sqrt\pi\,\sigma\sqrt{\rho r}}
-\le\frac{\sqrt2}{4\sqrt\pi\,r\sigma}
-\le\frac1{r\sigma}.
-```
-
-For $`\rho\lt r/2`$, the Gaussian density itself gives
-
-**(B17)**
-
-```math
-p_{r,\sigma}(z)
-\le\frac1{\pi\sigma^2}e^{-r^2/(4\sigma^2)}
-\le\frac1{r\sigma},
-```
-
-where the last inequality follows by setting $`x=r/\sigma\ge2`$ and using $`x e^{-x^2/4}/\pi\le1`$. Thus $`h(p_{r,\sigma})\ge\log_2(r\sigma)`$. Inserting this into (B11) gives
-
-**(B18)**
-
-```math
-Q_{r,\sigma}(E)\le\log_2(1/\sigma)+C''_r
-=\frac12\log_2E_*+C''_r.
-```
-
-This is stronger than the displayed upper bound in the saturated regime and completes (B14). The proof does not allow a remainder growing with the unused energy $`E`$ once $`E_* =\sigma^{-2}`$.
+The two error bounds can be taken uniformly on every compact radius interval within $`(0,\infty)`$. Below the crossover, the bound grows as $`\tfrac12\log_2 E`$. Above it, the bound is within a radius-dependent constant of $`\log_2(1/\sigma)`$, independently of any further increase in energy. The quantitative witness (B9) supplies a direct lower bound at specified finite parameters.
 
 ## Orders of limits and scope
 
@@ -238,19 +215,19 @@ For each fixed $`r\gt 0`$, the following distinctions are essential:
 
 | Limit or regime | Established consequence |
 |---|---|
-| Exactly $`\sigma=0`$, then $`E\to\infty`$ | Capacity coefficient $`1/2`$ in front of $`\log_2E`$. |
-| Fixed $`\sigma\gt 0`$, then $`E\to\infty`$ | A finite capacity ceiling; coefficient zero. |
-| $`E\to\infty`$ and $`\sigma\to0`$ jointly | The effective energy is $`\min\{E,\sigma^{-2}\}`$ as in (B14). |
+| Exactly $`\sigma=0`$, then $`E\to\infty`$ | Both capacity coefficients are $`1/2`$ in front of $`\log_2E`$. |
+| Fixed $`\sigma\gt 0`$, then $`E\to\infty`$ | Both capacities are bounded, with logarithmic coefficient zero. |
+| $`E\to\infty`$ and $`\sigma\to0`$ jointly | The circular effective energy is $`\min\{E,\sigma^{-2}\}`$ as in (B14). |
 | Fixed finite $`E`$ and $`\sigma\to0`$ | The channel approaches the circular channel in energy-constrained diamond norm, and its unassisted capacity converges by the cited [continuity theorem](../references/README.md#winter). |
 
 For example, if $`\sigma(E)=E^{-\alpha}`$ with fixed $`\alpha\gt 0`$, then (B14) gives
 
-**(B19)**
+**(B15)**
 
 ```math
 \lim_{E\to\infty}
-\frac{Q_{r,\sigma(E)}(E)}{\log_2E}
+\frac{Q^\ast_{r,\sigma(E)}(E)}{\log_2E}
 =\min\{1/2,\alpha\}.
 ```
 
-All these statements concern a known iid displacement channel and an input-photon constraint. They do not price preparation of the noise law or the computational cost of an encoder, include photon loss, or apply to one fixed unknown kick reused across transmissions. The finite-jitter lower bound addresses one explicit perturbation family; it is not robustness against arbitrary additional noise.
+The estimates describe known iid displacement laws under the input-photon constraint. The finite-energy witness concerns the specified Gaussian perturbation. The costs of preparing the noise law or implementing the encoder lie outside the model.

@@ -2,7 +2,7 @@
 
 [Learning route](README.md) · [Milestone map](MILESTONES.md) · [Scientific account](../science/README.md)
 
-The project's central question is how much quantum communication survives when a bosonic mode receives a random displacement whose probability law may be singular. Holevo supplies the language of channels, entropy, coding and canonical variables. The project combines that foundation with energy-constrained coding, continuity and simulation results, then supplies the displacement-resolution arguments needed for its capacity law.
+The project's central question is how much quantum communication survives when a bosonic mode receives a random displacement whose probability law may be singular. Holevo supplies the language of channels, entropy, coding and canonical variables. This bridge connects those foundations to the thermal lower bound, the adaptive entanglement converse and the photon accounting that puts both at the same noise resolution.
 
 ## Selected edition and source map
 
@@ -24,10 +24,10 @@ Earlier foundations can be located at §2.2, p. 13, for states; §3.1.3, p. 37, 
 | Layer | What it contributes | Where the contribution enters |
 |---|---|---|
 | Textbook foundations | States, purifications, channels, entropy, coherent information, canonical variables and Gaussian states. | Definitions and calculations throughout the [model](../science/01-model.md), lower bound and examples. |
-| Primary research tools | [Wilde–Qi](../references/README.md#wilde-qi) for the mean-energy coding theorem; [Winter](../references/README.md#winter) for capacity continuity; [Braunstein–Kimble](../references/README.md#braunstein-kimble) and [PLOB](../references/README.md#plob) for finite-squeezing simulation and entanglement bounds; [Rényi](../references/README.md#renyi) for information dimension. | The operational lower bound, the converse and the meaning of the limiting dimension. |
-| Derivations supplied here | Bin-conditioned entropy exchange, inverse squeezing at the energy resolution, smoothing-versus-quantization entropy, the resulting capacity law, the boundedness criterion, and the circular and broadened examples. | [Capacity law](../science/02-capacity-law.md), [converse](../science/03-converse.md), [circle](../science/04-circular-noise.md) and [broadening](../science/05-broadening.md). |
+| Primary research tools | [Wilde–Qi](../references/README.md#wilde-qi) for the mean-energy coding theorem, [Wilde–Berta–Hirche–Kaur](../references/README.md#environment-parametrized) and [Lami–Shirokov](../references/README.md#lami-shirokov) for relative-entropy tools, [Sharma–Wilde–Adhikari–Takeoka](../references/README.md#sharma-wilde) for Gaussian channel decomposition, and [Rényi](../references/README.md#renyi) for information dimension. | The operational lower bound, the [converse](../science/03-converse.md) and the meaning of the limiting dimension. |
+| Derivations supplied here | Bin-conditioned entropy exchange, smoothing at the energy resolution, the entropy budget of the local smoothing dilation and the noisy-law examples. | [Capacity law](../science/02-capacity-law.md), [converse](../science/03-converse.md), [circle](../science/04-circular-noise.md) and [broadening](../science/05-broadening.md). |
 
-The distinction matters in infinite dimensions. Chapter 10 provides the quantum-coding foundation; the precise average-photon operational theorem used here is the Wilde–Qi result. The finite-dimensional continuity material in §7.4, p. 134, supplies useful background, while the needed channel-capacity modulus comes from Winter. Likewise, the teleportation introduction at §3.3.4, p. 48, is supplemented by the continuous-variable finite-squeezing protocol and its channel-simulation analysis.
+Chapter 10 provides the quantum-coding foundation. Wilde–Qi supplies the average-photon operational theorem used for the lower bound. Sections 7.1–7.3 give the entropy tools used to follow entanglement through the adaptive converse, and Chapter 12 gives the Gaussian transformations used for the smoothing environments.
 
 ## Translating canonical variables into the project's photon scale
 
@@ -92,8 +92,9 @@ The assumptions that carry the argument are concrete:
 
 - The probability law is known, is fixed as energy increases, and is independently sampled on each use.
 - The realized displacement is unobserved. No classical flag telling the receiver which error occurred accompanies the channel output.
-- A block of $`n`$ uses satisfies $`\mathrm{Tr}\rho_{A^n}\sum_jN_j\le nE`$ on the encoded maximally mixed logical input. This is an unconditional average input constraint.
-- The task is unassisted quantum communication with arbitrary block encoders and collective decoders. Blocklength tends to infinity at fixed $`E`$ and fixed $`\mu`$ before the high-energy limit is taken.
+- The unassisted task allows arbitrary block encoders and collective decoders under a total mean input-photon budget $`nE`$ on the encoded maximally mixed logical input.
+- The two-way task starts from a separable state and allows adaptive local operations and two-way classical communication between channel uses. Its budget is $`\sum_j e_j\le nE`$, where $`e_j`$ is the expected photon number of the actual transmitted mode on use $`j`$, averaged over histories.
+- For both tasks, blocklength tends to infinity at fixed $`E`$ and fixed $`\mu`$ before the high-energy limit is taken.
 
 For a purification $`\psi_{RA}`$ of an input $`\rho_A`$, coherent information is
 
@@ -167,51 +168,35 @@ This is the local use of purification, Gaussian transformations and entropy ineq
 
 ### Obtaining an upper bound for arbitrary codes
 
-For a smooth noise density $`f`$, the simulation argument compares its channel resource state to that of the entanglement-breaking Gaussian density $`g_1(z)=\pi^{-1}e^{-|z|^2}`$. Classical-to-quantum relative-entropy data processing gives the useful upper bound
+For a smooth displacement density $`f`$, compare the actual pre-use state to a separable pre-use state. Pass both through the same displacement processor, using $`f`$ for the first input and the entanglement-breaking Gaussian law of density $`g_1(z)=\pi^{-1}e^{-|z|^2}`$ for the second. Relative-entropy data processing bounds the output relative entropy by the input relative entropy plus $`D(f\Vert g_1)`$. The Gaussian reference output remains separable across the new sender–receiver split, so the estimate bounds the relative entropy of entanglement gained at one use, including both parties' memories.
+
+Summing over uses and using monotonicity under the intervening local operations and classical communication gives $`Q_{2,f}(E)\le D(f\Vert g_1)`$. The [converse](../science/03-converse.md) supplies the finite-partition argument for the continuous displacement label and the maximally entangled-state test that converts the output entanglement bound into a rate bound.
+
+For an arbitrary law $`\mu`$, let $`f_\sigma`$ be the density of the smoothed random variable $`Z+\sigma G`$. Its differential entropy equals
 
 ```math
-Q_f(E)\le D(f\Vert g_1).
+h(f_\sigma)=2\log_2\sigma+H_{1/\sigma}(\mu)+O(1).
 ```
 
-The relative entropy here is between classical displacement laws. Its connection to quantum communication uses the separable comparison state and the inherited simulation framework; classical data processing alone is insufficient. The simulation limit is taken at fixed finite blocklength and code before the reliable-code sequence is considered. Using local operations and classical communication to construct a converse does not add such resources to the operational definition of $`Q_\mu(E)`$. See the [finite-squeezing argument](../science/03-converse.md#the-simulation-limit-is-taken-for-a-fixed-finite-code).
+The constant is universal. The classical proof controls the uncertainty of the integer bin after adding unit Gaussian noise. This lets the converse use a differential entropy for the smoothed distribution even when the original law is singular.
 
-For a singular law, $`D(\mu\Vert g_1)`$ is infinite and this direct bound is uninformative. Introduce $`f_\sigma`$, the density of $`Z+\sigma G`$. The locally proved classical lower estimate needed for the converse is
+To compare the smoothed and actual channels, choose the variance $`v=\sigma^2=(E+1)^{-1}`$. On the receiver's output, pure loss with transmissivity $`1/(1+v)`$ followed by vacuum amplification of gain $`1+v`$ has net gain one and adds exactly this independent Gaussian displacement. If the output on the actual protocol's use $`j`$ has mean photon number $`x_j`$, the two discarded environment modes have means
 
 ```math
-h(f_\sigma)
-\ge2\log_2\sigma+H_{1/\sigma}(\mu)
-   +\log_2(\pi e)-C_{\mathrm{int}},
+\frac{v}{1+v}x_j,\qquad v\left(\frac{x_j}{1+v}+1\right).
 ```
 
-with a universal constant $`C_{\mathrm{int}}`$. The entropy on the left is differential entropy; the entropy on the right is discrete, and $`2\log_2\sigma`$ accounts for the two-dimensional change of scale. The bound is established by controlling the uncertainty of the integer bin after adding unit Gaussian noise, without assigning a differential entropy to the original singular measure.
+The local isometry that keeps both environments preserves the relative entropy of entanglement. Discarding the environments can reduce it by at most twice their joint entropy. The inequality $`x_j\le2e_j+2M`$ and the bound $`\sum_j e_j\le nE`$ give a constant mean energy per use in each discarded mode on average across the protocol. The thermal entropy bound and its concavity therefore give a total penalty of order $`n`$ with a coefficient depending only on $`M`$. This comparison follows the actual protocol and uses its unconditional mean budget throughout.
 
-Smoothing is a channel postprocessing, so by itself it gives $`Q_{f_\sigma}(E)\le Q_\mu(E)`$. To obtain an upper bound on the original capacity, the proof also needs the quantitative continuity estimate. The displacement-generator calculation yields
-
-```math
-\frac12\|\mathcal N_\mu-\mathcal N_{f_\sigma}\|_{\diamond,E}
-\le\sigma\sqrt{4E+2}.
-```
-
-For $`E\ge1`$, taking $`L=\log_2(E+2)`$ and $`\sigma=L^{-2}/\sqrt{4E+2}`$ lets [Winter's theorem](../references/README.md#winter) keep the capacity difference bounded at fixed second-moment bound. Combining this with the entropy estimate yields
+The smoothing entropy estimate now uses the same resolution $`\sqrt{E+1}`$ as the thermal lower bound. Together the two arguments give, for $`E\ge1`$,
 
 ```math
-A_\mu(E)-2g(2)\le Q_\mu(E)
-\le A_\mu(E)+4\log_2\log_2(E+2)+C_M,
+A_\mu(E)-2g(2)\le Q_\mu(E)\le Q_{2,\mu}(E)\le A_\mu(E)+C_M,
 \qquad
 A_\mu(E)=\log_2(E+1)-H_{\sqrt{E+1}}(\mu).
 ```
 
-The [converse](../science/03-converse.md) supplies the common output-energy bound, continuity constants and comparison of nonnested grids. The double-logarithmic remainder belongs to this proof; it has not been replaced by a uniform constant for arbitrary laws.
-
-When the information dimension $`d(\mu)`$ exists, the capacity coefficient is $`1-d(\mu)/2`$. The separate [boundedness argument](../science/03-converse.md#when-is-the-unconstrained-capacity-finite) proves
-
-```math
-\sup_{E\lt\infty}Q_\mu(E)\lt\infty
-\quad\Longleftrightarrow\quad
-D(\mu\Vert g_1)\lt\infty.
-```
-
-These are different conclusions. A zero logarithmic coefficient does not imply bounded capacity; an absolutely continuous finite-moment law can have differential entropy $`-\infty`$.
+The constant $`C_M`$ depends only on the noise second-moment bound. Both capacities have the high-energy coefficient $`1-d(\mu)/2`$ whenever the information dimension exists. The [boundedness argument](../science/03-converse.md#when-is-the-unconstrained-capacity-finite) proves that both capacities are bounded over all input energies exactly when $`D(\mu\Vert g_1)\lt\infty`$. A zero logarithmic coefficient can coexist with slow unbounded growth, as in the [full-dimensional density with triple-logarithmic growth](../science/02-capacity-law.md#a-full-dimensional-noise-density-with-unbounded-capacity).
 
 ## Worked example: a broadened ring versus its Gaussian comparator
 
@@ -278,8 +263,8 @@ The [broadening proof](../science/05-broadening.md#a-nonzero-jitter-example) est
 
 Now replace the noise by a centered Gaussian with the same added covariance. Its complex displacement variance is also $`4.0001`$. Variance one already gives the heterodyne measure-and-prepare channel in these units; larger variance follows it with extra displacement noise. The matched Gaussian is therefore entanglement breaking and has zero quantum capacity. The comparison depends on the full probability law, even though its second moments agree.
 
-The broadened ring itself has a bounded smooth density and finite second moment, so its unrestricted capacity is finite. For an exact ring, the circle's grid entropy instead obeys $`H_t=\log_2t+O_r(1)`$, giving capacity coefficient $`1/2`$. The [joint crossover](../science/05-broadening.md#the-joint-energybroadening-crossover) reconciles the two: for small $`\sigma`$, the effective energy is $`\min(E,\sigma^{-2})`$. Holding positive $`\sigma`$ fixed while increasing $`E`$ eventually reaches saturation; setting $`\sigma=0`$ first gives a different limiting problem.
+The broadened ring has a bounded smooth density and finite second moment, so its capacity is bounded as the input budget increases. The exact ring has grid entropy $`H_t=\log_2t+O_r(1)`$, giving capacity coefficient $`1/2`$. In the [general crossover](../science/05-broadening.md), Gaussian jitter and the energy resolution contribute the combined variance $`\sigma^2+(E+1)^{-1}`$. For the ring this gives an effective energy of order $`\min(E,\sigma^{-2})`$ at small positive $`\sigma`$.
 
 ## What the bridge leaves to the scientific account
 
-The textbook concepts organize the calculations, while the linked scientific pages retain the full hypotheses, constants and limit order. In particular, the non-Gaussian capacity law does not follow from a Gaussian entropy formula, a covariance matrix, or a degradability assertion. Its decisive steps are the bounded entropy inside a displacement bin and the upper bound obtained by combining smoothing, energy-constrained continuity and simulation. The circle and nonzero-jitter example then show how those abstract bounds distinguish physically different noise laws with identical covariance.
+The textbook concepts organize the calculations, and the linked scientific pages give the full hypotheses, constants and limit order. The decisive steps are the bounded entropy inside a displacement bin and the upper bound obtained by charging the entropy of the smoothing environments. The circle and nonzero-jitter example show how these estimates distinguish physically different noise laws with identical covariance.
