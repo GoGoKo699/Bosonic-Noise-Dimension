@@ -170,7 +170,7 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 ### M15 — The smooth-law comparison resource
 
 - **Central question.** How can a classical density comparison bound the entanglement generated on one channel use?
-- **Understanding target.** Compare the actual input and a separable input with the same displacement processor, driven by a smooth density $`f`$ and the unit-variance Gaussian density $`g_1`$, respectively. Track the input relative entropy and the classical cost $`D(f\Vertg_1)`$ through data processing. Explain why the exact Gaussian output remains separable across the new sender–receiver split.
+- **Understanding target.** Compare the actual input and a separable input with the same displacement processor, driven by a smooth density $`f`$ and the unit-variance Gaussian density $`g_1`$, respectively. Track the input relative entropy and the classical cost $`D(f\Vert g_1)`$ through data processing. Explain why the exact Gaussian output remains separable across the new sender–receiver split.
 - **Dependencies and story role.** M05, M07, M08, M11 and M12. Turns classical relative entropy into a bound on the relative entropy of entanglement gained per use.
 - **Conceptual connection.** Sender and receiver memories can be present in both inputs, so the comparison applies inside an adaptive protocol.
 - **Sources.** **Holevo:** §§7.1–7.2 (pp. 126, 127), 11.7 (p. 248), 12.4.4 (p. 294). **Science:** [smooth-noise comparison](../science/03-converse.md#compare-the-two-displacement-laws-on-each-use).

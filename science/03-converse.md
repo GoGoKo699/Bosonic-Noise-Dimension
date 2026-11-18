@@ -8,10 +8,10 @@ Write $`g_1(z)=\pi^{-1}e^{-\lvert z\rvert^2}`$ for the density of the standard c
 
 Let $`Q_{2,f}(E)`$ denote the adaptive two-way assisted quantum capacity for displacement density $`f`$, with the [unconditional transmitted-photon budget](01-model.md). For a bipartite state $`\rho`$, let $`E_{\mathrm R}(\rho)`$ be the infimum of its relative entropy to a separable state across the current Alice–Bob cut.
 
-**Lemma 1.** If $`D(f\Vertg_1)\lt\infty`$, a single use of the channel with law $`f`$ increases the relative entropy of entanglement by at most $`D(f\Vertg_1)`$, including arbitrary prior Alice–Bob correlations. In particular,
+**Lemma 1.** If $`D(f\Vert g_1)\lt\infty`$, a single use of the channel with law $`f`$ increases the relative entropy of entanglement by at most $`D(f\Vert g_1)`$, including arbitrary prior Alice–Bob correlations. In particular,
 
 ```math
-Q_f(E)\le Q_{2,f}(E)\le D(f\Vertg_1).
+Q_f(E)\le Q_{2,f}(E)\le D(f\Vert g_1).
 ```
 
 ### Compare the two displacement laws on each use
@@ -21,10 +21,10 @@ Immediately before a use, let $`A'A`$ belong to Alice and $`B'`$ to Bob. The sen
 ```math
 D\!\left((\mathrm{id}\otimes\mathcal N_f)(\rho)\,\Vert\,
           (\mathrm{id}\otimes\mathcal N_{g_1})(\omega)\right)
-\le D(\rho\Vert\omega)+D(f\Vertg_1).
+\le D(\rho\Vert\omega)+D(f\Vert g_1).
 ```
 
-Here the identity acts on both memories. To justify the comparison for continuous kicks, partition a growing square into finitely many cells of shrinking diameter and take one additional tail cell. Replace each kick by the fixed representative of its cell, using the same representatives for both laws. The finite classical registers have relative entropy at most $`D(f\Vertg_1)`$ by coarse-graining. Tensoring each register with its respective input, applying the controlled displacement, and tracing out the register proves the inequality for the two discrete approximations. The channel outputs converge in trace norm on each fixed input by strong continuity of the displacements and dominated convergence. Joint lower semicontinuity of relative entropy gives the displayed bound for the exact channels. This is the displacement version of the [environment-parametrized comparison argument](../references/README.md#environment-parametrized).
+Here the identity acts on both memories. To justify the comparison for continuous kicks, partition a growing square into finitely many cells of shrinking diameter and take one additional tail cell. Replace each kick by the fixed representative of its cell, using the same representatives for both laws. The finite classical registers have relative entropy at most $`D(f\Vert g_1)`$ by coarse-graining. Tensoring each register with its respective input, applying the controlled displacement, and tracing out the register proves the inequality for the two discrete approximations. The channel outputs converge in trace norm on each fixed input by strong continuity of the displacements and dominated convergence. Joint lower semicontinuity of relative entropy gives the displayed bound for the exact channels. This is the displacement version of the [environment-parametrized comparison argument](../references/README.md#environment-parametrized).
 
 The channel with density $`g_1`$ has the heterodyne-and-prepare form
 
@@ -44,7 +44,7 @@ Local operations and classical communication do not increase $`E_{\mathrm R}`$. 
 F\log_2 d-h_2(F)\le E_{\mathrm R}(\rho_{\mathrm{dec}})\le nL.
 ```
 
-Along a reliable sequence, $`F\to1`$, so its asymptotic rate is at most $`L`$. Applying this with $`L=D(f\Vertg_1)`$ proves the capacity statement. The argument uses the states of the actual adaptive code.
+Along a reliable sequence, $`F\to1`$, so its asymptotic rate is at most $`L`$. Applying this with $`L=D(f\Vert g_1)`$ proves the capacity statement. The argument uses the states of the actual adaptive code.
 
 ### Gaussian reference variance can be optimized
 
@@ -57,7 +57,7 @@ g_w(z)=\frac{1}{\pi w}e^{-\lvert z\rvert^2/w}
 describes the heterodyne-and-prepare channel followed by independent Gaussian displacement of variance $`w-1`$. The same comparison therefore yields
 
 ```math
-Q_{2,f}(E)\le D(f\Vertg_w)
+Q_{2,f}(E)\le D(f\Vert g_w)
 =\log_2(\pi w)+\frac{\mathbb E_f\lvert Z\rvert^2}{w}\log_2e-h(f).
 ```
 
@@ -153,7 +153,7 @@ Rescaling from $`Y`$ to $`\sigma Y=Z+\sigma G`$ proves both sides of Lemma 2. Al
 Since $`\mathbb E|Z+\sigma G|^2=M+\sigma^2`$,
 
 ```math
-D(f_\sigma\Vertg_1)
+D(f_\sigma\Vert g_1)
 =-h(f_\sigma)+\log_2\pi
  +(M+\sigma^2)\log_2e.
 ```
@@ -162,7 +162,7 @@ Lemma 2 therefore implies
 
 ```math
 \boxed{
-D(f_\sigma\Vertg_1)
+D(f_\sigma\Vert g_1)
 \le 2\log_2(1/\sigma)-H_{1/\sigma}(\mu)
  +C_{\mathrm{int}}+(M+\sigma^2-1)\log_2e.
 }
@@ -225,10 +225,10 @@ Since $`\sum_j e_j\le nE`$, the average of $`x_j`$ is at most $`2E+2M`$. Hence f
 \le4n g(2+2M).
 ```
 
-Lemma 1 charges at most $`D(f_\sigma\Vertg_1)`$ to the smoothed output at each actual input. Adding the entropy cost just proved bounds the entanglement increment of each original use. The adaptive rate test consequently yields
+Lemma 1 charges at most $`D(f_\sigma\Vert g_1)`$ to the smoothed output at each actual input. Adding the entropy cost just proved bounds the entanglement increment of each original use. The adaptive rate test consequently yields
 
 ```math
-Q_{2,\mu}(E)\le D(f_\sigma\Vertg_1)+4g(2+2M).
+Q_{2,\mu}(E)\le D(f_\sigma\Vert g_1)+4g(2+2M).
 ```
 
 Finally apply [the smoothing entropy estimate](#relative-entropy-of-the-smoothed-law) with $`\sigma=(E+1)^{-1/2}`$:
@@ -273,7 +273,7 @@ Finite $`D(\mu\Vert\gamma)`$ implies that $`\mu`$ has a density with respect to 
 For $`t=2^m`$, let $`\mathcal P_m`$ be the countable partition of $`\mathbb R^2`$ into dyadic squares of side $`1/t`$. Write $`p_{m,k}`$ and $`q_{m,k}`$ for the probabilities of cell $`k`$ under $`\mu`$ and $`\gamma`$, and set
 
 ```math
-D_m=D(p_m\Vertq_m).
+D_m=D(p_m\Vert q_m).
 ```
 
 These are relative entropies of classical noise distributions. The partitions are nested and generate the Borel sigma algebra. Classical relative-entropy approximation therefore gives

@@ -128,7 +128,7 @@ If $`P_k`$ is the spectral projector of $`J`$ with eigenvalue $`k\in\mathbb Z`$,
 =\sum_{k\in\mathbb Z}P_k|\phi_0\rangle\langle\phi_0|P_k.
 ```
 
-Each nonzero summand has rank one, and different summands have orthogonal support. Therefore the nonzero eigenvalues of $`\rho_{RB}^{\rm out}`$ are exactly $`p_k=\VertP_k\phi_0\Vert^2`$. This reduces its entropy to a classical charge distribution without asserting that the channel itself is degradable.
+Each nonzero summand has rank one, and different summands have orthogonal support. Therefore the nonzero eigenvalues of $`\rho_{RB}^{\rm out}`$ are exactly $`p_k=\Vert P_k\phi_0\Vert^2`$. This reduces its entropy to a classical charge distribution without asserting that the channel itself is degradable.
 
 The characteristic function of this distribution is
 
