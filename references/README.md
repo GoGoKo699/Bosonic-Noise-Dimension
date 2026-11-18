@@ -2,7 +2,7 @@
 
 [Scientific comparison](../science/06-related-work.md) · [Structured bibliography](references.bib) · [Science route](../science/README.md)
 
-The capacity statements in this repository combine established coding, continuity and simulation tools with the displacement-resolution argument proved in the scientific account. The entries below identify the specific role of each source. Citation does not mean that a source proves the new combination or the circular-noise conclusions.
+The capacity statements in this repository combine established coding, entanglement and Gaussian-channel tools with the displacement-resolution argument proved in the scientific account. The entries below identify the specific role of each source. Citation does not mean that a source proves the new combination or the circular-noise conclusions.
 
 <a id="holevo"></a>
 ## Holevo: selected educational anchor
@@ -30,21 +30,21 @@ Theorem 9 gives the quantum-capacity continuity estimate used in the converse. T
 
 M. E. Shirokov, **Uniform continuity bounds for information characteristics of quantum channels depending on input dimension and on input energy**, *Journal of Physics A: Mathematical and Theoretical* **52**, 014001 (2019). [DOI](https://doi.org/10.1088/1751-8121/aaebac) · [arXiv:1610.08870v5](https://arxiv.org/abs/1610.08870v5).
 
-Theorem 2 provides a complementary published energy-constrained continuity treatment. The quantitative coefficient in this repository is derived using Winter's displayed bound, rather than silently substituting a different distance convention or modulus from this paper.
+Theorem 2 provides a complementary published energy-constrained continuity treatment and background for the original argument.
 
 <a id="plob"></a>
 ## PLOB: teleportation simulation and entanglement bounds
 
 Stefano Pirandola, Riccardo Laurenza, Carlo Ottaviani and Leonardo Banchi, **Fundamental limits of repeaterless quantum communications**, *Nature Communications* **8**, 15043 (2017). [DOI and journal](https://doi.org/10.1038/ncomms15043) · [arXiv:1510.08863](https://arxiv.org/abs/1510.08863).
 
-Teleportation covariance, channel simulation and relative-entropy-of-entanglement bounds are inherited tools. The converse applies them through finite-squeezing resource states, compares those states to an entanglement-breaking Gaussian channel, and makes the simulation-limit order explicit. It does not assume that a singular noise law has a finite classical relative entropy or that assisted and unassisted capacities are equal.
+This work established the adaptive relative-entropy-of-entanglement method and teleportation-simulation bounds for Gaussian channels. The revised proof uses a per-use comparison with an entanglement-breaking channel and a separate finite-energy smoothing argument.
 
 <a id="braunstein-kimble"></a>
 ## Braunstein–Kimble: continuous-variable teleportation
 
 Samuel L. Braunstein and H. J. Kimble, **Teleportation of Continuous Quantum Variables**, *Physical Review Letters* **80**, 869–872 (1998). [DOI and journal](https://doi.org/10.1103/PhysRevLett.80.869).
 
-The finite-squeezing teleportation protocol supplies the Gaussian simulation noise used in the converse. Its variance is translated to this repository's complex-displacement convention before taking the squeezing limit for a fixed code.
+The finite-squeezing teleportation protocol supplied the simulation noise in the earlier converse. It remains useful background for Gaussian displacement and teleportation covariance.
 
 <a id="conditional-simulation"></a>
 ## Conditional channel simulation
@@ -52,6 +52,27 @@ The finite-squeezing teleportation protocol supplies the Gaussian simulation noi
 Stefano Pirandola, Riccardo Laurenza and Leonardo Banchi, **Conditional channel simulation**, *Annals of Physics* **400**, 289–302 (2019). [DOI](https://doi.org/10.1016/j.aop.2018.11.014) · [arXiv:1807.00784v2](https://arxiv.org/abs/1807.00784v2).
 
 Sections II, IV and V treat channel mixtures, asymptotic simulations, continuous ensembles and non-Gaussian examples. Non-Gaussian channel simulation itself is therefore not claimed as a new method here.
+
+<a id="environment-parametrized"></a>
+## Wilde–Berta–Hirche–Kaur: comparing channel environments
+
+Mark M. Wilde, Mario Berta, Christoph Hirche and Eneet Kaur, **Amortized channel divergence for asymptotic quantum channel discrimination**, *Letters in Mathematical Physics* **110**, 2277–2336 (2020). [arXiv:1808.01498v2](https://arxiv.org/abs/1808.01498v2).
+
+Proposition 33 compares channels implemented by the same processor acting on different environment states. The converse here uses that argument with a continuous classical displacement law and an entanglement-breaking comparison channel. It proves the passage from finite kick bins to the exact normal channels.
+
+<a id="lami-shirokov"></a>
+## Lami–Shirokov: lower semicontinuity of relative entropy of entanglement
+
+Ludovico Lami and Maksim E. Shirokov, **Attainability and lower semi-continuity of the relative entropy of entanglement and variations on the theme**, *Annales Henri Poincaré* **24**, 4069–4137 (2023). [DOI](https://doi.org/10.1007/s00023-023-01313-1).
+
+Lower semicontinuity for general bipartite states justifies the finite-rank compression argument when the discarded bosonic modes have finite entropy. The finite-dimensional entropy bound is proved directly in the [converse](../science/03-converse.md#discarding-the-modes-costs-at-most-twice-their-entropy).
+
+<a id="sharma-wilde"></a>
+## Sharma–Wilde–Adhikari–Takeoka: Gaussian-channel decomposition
+
+Kunal Sharma, Mark M. Wilde, Sushovit Adhikari and Masahiro Takeoka, **Bounding the energy-constrained quantum and private capacities of phase-insensitive bosonic Gaussian channels**, *New Journal of Physics* **20**, 063025 (2018). [DOI](https://doi.org/10.1088/1367-2630/aac11a) · [arXiv:1708.07257v3](https://arxiv.org/abs/1708.07257v3).
+
+This work uses decompositions into elementary vacuum loss and amplification channels for Gaussian capacity bounds. Here the two-stage vacuum dilation represents an auxiliary Gaussian smoother. Its discarded outputs supply an entropy bound at the energy resolution of the actual adaptive code.
 
 <a id="renyi"></a>
 ## Rényi: information dimension

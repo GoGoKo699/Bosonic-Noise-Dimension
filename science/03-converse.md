@@ -1,128 +1,67 @@
 # Converse and bounded-capacity criterion
 
-This page proves the upper half of the [finite-resolution law](02-capacity-law.md) and the criterion for finite unrestricted capacity. The argument has three parts: compare smooth displacement noise with an entanglement-breaking reference channel, smooth an arbitrary noise law only below the energy resolution, and control the resulting change in quantum capacity.
+This page proves the upper bound in the [finite-resolution law](02-capacity-law.md) for arbitrary adaptive protocols. A comparison with an entanglement-breaking channel bounds the entanglement added by the smoothed displacement law. The two discarded modes of a Gaussian smoothing operation bound what is lost in passing from the original law to that smoothed law.
 
-The inherited quantum tools are the relative-entropy and teleportation-simulation framework of [PLOB 2017](../references/README.md#plob) and the energy-constrained capacity-continuity theorem of [Winter 2017](../references/README.md#winter). The entropy-resolution estimates below supply the link to arbitrary, including singular, displacement laws.
-
-Throughout, $`D(z)=\exp(za^\dagger-\overline z a)`$, $`g_1(z)=\pi^{-1}e^{-|z|^2}`$, $`G`$ has density $`g_1`$, and $`M=\mathbb E|Z|^2\lt \infty`$. A Gaussian displacement $`\sigma G`$ has complex variance $`\sigma^2`$. We use the [mean-photon coding model](01-model.md) and base-two relative entropy.
+Write $`g_1(z)=\pi^{-1}e^{-\lvert z\rvert^2}`$ for the density of the standard complex Gaussian law $`\gamma`$. Let $`G\sim\gamma`$ be independent of the original kick $`Z\sim\mu`$, and write $`M=\mathbb E\lvert Z\rvert^2`$. The entropy of a thermal mode with mean photon number $`x`$ is $`g(x)`$. All logarithms are base two.
 
 ## Smooth noise admits a classical relative-entropy upper bound
 
-**Lemma 1.** If a displacement law has a density $`f`$ satisfying $`D(f\|g_1)\lt \infty`$, then
+Let $`Q_{2,f}(E)`$ denote the adaptive two-way assisted quantum capacity for displacement density $`f`$, with the [unconditional transmitted-photon budget](01-model.md). For a bipartite state $`\rho`$, let $`E_{\mathrm R}(\rho)`$ be the infimum of its relative entropy to a separable state across the current Alice–Bob cut.
+
+**Lemma 1.** If $`D(f\|g_1)\lt\infty`$, a single use of the channel with law $`f`$ increases the relative entropy of entanglement by at most $`D(f\|g_1)`$, including arbitrary prior Alice–Bob correlations. In particular,
 
 ```math
-Q_f(E)\le D(f\|g_1)
+Q_f(E)\le Q_{2,f}(E)\le D(f\|g_1).
 ```
 
-for every finite $`E`$. In particular, the same bound holds after taking the supremum over all finite input energies.
+### Compare the two displacement laws on each use
 
-### A separable comparison state at every finite squeezing
-
-Let $`\Phi_R=|\phi_R\rangle\langle\phi_R|`$ be a two-mode squeezed vacuum with mean photon number $`R`$ in each mode. Define
+Immediately before a use, let $`A'A`$ belong to Alice and $`B'`$ to Bob. The sent oscillator is $`A`$. Write $`\rho`$ for the actual input and $`\omega`$ for any separable comparison state across $`A'A:B'`$. The two displacement channels can be realized by the same processor controlled by classical kicks with different laws. Relative-entropy data processing gives
 
 ```math
-\omega_R^f=(\mathrm{id}\otimes\mathcal N_f)(\Phi_R),
-\qquad
-\omega_R^\gamma=(\mathrm{id}\otimes\mathcal N_{g_1})(\Phi_R).
+D\!\left((\mathrm{id}\otimes\mathcal N_f)(\rho)\,\middle\|\,
+          (\mathrm{id}\otimes\mathcal N_{g_1})(\omega)\right)
+\le D(\rho\|\omega)+D(f\|g_1).
 ```
 
-The unit-variance Gaussian displacement channel is the heterodyne-and-prepare channel
+Here the identity acts on both memories. To justify the comparison for continuous kicks, partition a growing square into finitely many cells of shrinking diameter and take one additional tail cell. Replace each kick by the fixed representative of its cell, using the same representatives for both laws. The finite classical registers have relative entropy at most $`D(f\|g_1)`$ by coarse-graining. Tensoring each register with its respective input, applying the controlled displacement, and tracing out the register proves the inequality for the two discrete approximations. The channel outputs converge in trace norm on each fixed input by strong continuity of the displacements and dominated convergence. Joint lower semicontinuity of relative entropy gives the displayed bound for the exact channels. This is the displacement version of the [environment-parametrized comparison argument](../references/README.md#environment-parametrized).
+
+The channel with density $`g_1`$ has the heterodyne-and-prepare form
 
 ```math
-\mathcal N_{g_1}(\rho)
-=\int_{\mathbb C}
-\frac{\langle\alpha|\rho|\alpha\rangle}{\pi}
-|\alpha\rangle\langle\alpha|\,d^2\alpha.
+\mathcal N_{g_1}(\rho_A)
+=\int_{\mathbb C}\frac{\langle\alpha|\rho_A|\alpha\rangle}{\pi}
+  |\alpha\rangle\langle\alpha|\,\mathrm d^2\alpha.
 ```
 
-For example, both sides multiply the input Weyl characteristic function by $`e^{-|\xi|^2}`$. Thus this channel is entanglement breaking, and $`\omega_R^\gamma`$ is separable for every finite $`R`$.
+For example, both expressions multiply the Weyl characteristic function by $`e^{-\lvert\xi\rvert^2}`$. The channel is entanglement breaking. Its output on the separable comparison input is therefore separable across $`A':BB'`$, where $`B`$ is the received mode. Taking the infimum over $`\omega`$ gives Lemma 1's one-use inequality. This separability is needed for the exact comparison channel.
 
-The map that prepares
-$`(I\otimes D(z))\Phi_R(I\otimes D(z)^\dagger)`$ from the classical value $`z`$ is the same for $`f`$ and $`g_1`$. Relative-entropy data processing therefore gives
+### From entanglement accounting to a rate bound
+
+Local operations and classical communication do not increase $`E_{\mathrm R}`$. If the initial state is separable and the one-use increments sum to at most $`nL`$, the final state has relative entropy of entanglement at most $`nL`$. To transmit a $`d`$-dimensional quantum system, test the decoded state against a maximally entangled state $`\Phi_d`$. Write $`F`$ for the test acceptance probability on the actual state; a separable state passes with probability at most $`1/d`$. Relative entropy under this binary test gives
 
 ```math
-D(\omega_R^f\|\omega_R^\gamma)\le D(f\|g_1).
+F\log_2 d-h_2(F)\le E_{\mathrm R}(\rho_{\mathrm{dec}})\le nL.
 ```
 
-Writing $`E_{\mathrm R}`$ for relative entropy of entanglement,
-
-```math
-E_{\mathrm R}(\omega_R^f)\le D(f\|g_1).
-```
-
-This bound is uniform in $`R`$. It uses a finite-energy separable comparison state, without treating an infinitely squeezed state as a density operator.
-
-### The simulation limit is taken for a fixed finite code
-
-[Braunstein–Kimble continuous-variable teleportation](../references/README.md#braunstein-kimble) using resource $`\Phi_R`$ implements an additive Gaussian displacement with variance
-
-```math
-\xi_R=(\sqrt{R+1}-\sqrt R)^2.
-```
-
-Every random displacement channel is teleportation covariant:
-
-```math
-\mathcal N_f(D(\beta)\rho D(\beta)^\dagger)
-=D(\beta)\mathcal N_f(\rho)D(\beta)^\dagger.
-```
-
-Consequently, the same teleportation protocol with resource $`\omega_R^f`$ implements
-
-```math
-\mathcal N_f\circ\mathcal N_{\sqrt{\xi_R}G}.
-```
-
-This is the finite-squeezing form of the simulation used in the PLOB framework. The additional Gaussian noise tends to zero as $`R\to\infty`$.
-
-Fix a finite $`n`$-use unassisted code with average input energy at most $`nE`$. Replacing its channel calls by these simulations turns the protocol into local operations and classical communication acting on $`(\omega_R^f)^{\otimes n}`$ and local initial systems. Monotonicity and subadditivity of relative entropy of entanglement imply that its decoded state $`\rho_R`$ obeys
-
-```math
-E_{\mathrm R}(\rho_R)\le nD(f\|g_1).
-```
-
-For this fixed code, $`\rho_R`$ converges in trace norm to the actual decoded state as $`R\to\infty`$. One direct bound uses the displacement estimate proved below: if $`E_j`$ are the input marginals' energies, the half trace-norm error is at most
-
-```math
-\sqrt{\xi_R}\sum_{j=1}^n\sqrt{4E_j+2}
-\le n\sqrt{\xi_R}\sqrt{4E+2}.
-```
-
-The first inequality follows by telescoping the product channels; local trace-preserving maps on other factors do not change the relevant input marginal. The second uses concavity and $`\sum_jE_j\le nE`$.
-
-Suppose the decoded target is a maximally entangled state $`\Phi_d`$, with squared fidelity
-$`F=\mathrm{Tr}(\Phi_d\rho)`$. A separable state has overlap at most $`1/d`$ with $`\Phi_d`$. Applying the binary measurement $`\{\Phi_d,I-\Phi_d\}`$ to the relative entropy gives, for $`F\ge1/d`$,
-
-```math
-E_{\mathrm R}(\rho)\ge F\log_2d-h_2(F).
-```
-
-Apply this inequality to $`\rho_R`$, then let $`R\to\infty`$ while holding the finite code fixed. Its actual decoded fidelity therefore satisfies
-
-```math
-F\log_2d-h_2(F)\le nD(f\|g_1).
-```
-
-Only after this step do we take a sequence of reliable codes with $`n\to\infty`$ and $`F\to1`$. Their rates cannot exceed $`D(f\|g_1)`$, proving Lemma 1. No uniform finite-squeezing approximation to an infinite coding block is assumed.
+Along a reliable sequence, $`F\to1`$, so its asymptotic rate is at most $`L`$. Applying this with $`L=D(f\|g_1)`$ proves the capacity statement. The argument uses the states of the actual adaptive code.
 
 ### Gaussian reference variance can be optimized
 
-The same comparison is valid with any Gaussian density
+For any variance $`w\ge1`$, the density
 
 ```math
-g_w(z)=\frac{1}{\pi w}e^{-|z|^2/w},
-\qquad w\ge1.
+g_w(z)=\frac{1}{\pi w}e^{-\lvert z\rvert^2/w}
 ```
 
-For $`w=1`$ its channel is heterodyne-and-prepare. For $`w\gt1`$, it is that channel followed by independent Gaussian displacement noise of variance $`w-1`$, and is therefore still entanglement breaking. Replacing $`\omega_R^\gamma`$ by the corresponding separable channel state in the same finite-squeezing proof gives
+describes the heterodyne-and-prepare channel followed by independent Gaussian displacement of variance $`w-1`$. The same comparison therefore yields
 
 ```math
-Q_f(E)\le D(f\|g_w)
-=\log_2(\pi w)
- +\frac{\mathbb E_f|Z|^2}{w}\log_2e-h(f).
+Q_{2,f}(E)\le D(f\|g_w)
+=\log_2(\pi w)+\frac{\mathbb E_f\lvert Z\rvert^2}{w}\log_2e-h(f).
 ```
 
-The statement holds whenever the relative entropy is finite and is vacuous otherwise; taking the supremum over finite $`E`$ preserves it. The main finite-resolution proof uses $`w=1`$. A different $`w`$ can improve finite constants in the [broadened-circle bound](05-broadening.md).
+The main proof uses $`w=1`$. Optimizing $`w`$ is useful for a [finite bound on a broadened circle](05-broadening.md).
 
 ## Smoothing entropy and quantization entropy differ by a constant
 
@@ -232,187 +171,102 @@ D(f_\sigma\|g_1)
 In particular, when $`0\lt \sigma\le1`$, the last two terms are at most
 $`C_{\mathrm{int}}+M\log_2e`$. This estimate applies equally to atomic, singular-continuous, and absolutely continuous original laws.
 
-## Smoothing below the energy resolution changes capacity little
+## Adaptive converse at the energy resolution
 
-### Energy-constrained diamond distance
+### The two modes discarded by Gaussian smoothing
 
-For an input with arbitrary reference system and oscillator mean photon number at most $`E`$, purify the joint state if necessary. Write $`z=x+iy`$ and
-
-```math
-D(z)=e^{iA_z},\qquad A_z=\sqrt2(yq-xp),
-\qquad q^2+p^2=2\hat n+1.
-```
-
-The spectral inequality $`|e^{iu}-1|\le|u|`$ and Cauchy–Schwarz give
+For $`E\ge1`$, set $`v=(E+1)^{-1}`$ and $`\sigma=\sqrt v`$. The smoothing channel $`\mathcal N_{\sigma G}`$ can be realized as vacuum attenuation with transmissivity $`\eta=1/(1+v)`$ followed by quantum-limited vacuum amplification with gain $`1+v`$. If the input mode has annihilation operator $`a`$ and auxiliary independent vacuum modes have operators $`e_1,e_2`$, the signal output is
 
 ```math
-\begin{aligned}
-\frac12\|
-(I\otimes D(z))\rho(I\otimes D(z)^\dagger)-\rho
-\|_1
-&\le \|(D(z)-I)|\psi\rangle\|\\
-&\le \sqrt{\langle A_z^2\rangle}\\
-&\le |z|\sqrt{4E+2}.
-\end{aligned}
+b=a+\sqrt v(e_1+e_2^\dagger).
 ```
 
-The quadratic-form estimate uses
-$`\|(yq-xp)\psi\|^2\le(x^2+y^2)(\|q\psi\|^2+\|p\psi\|^2)`$.
-It remains valid for entangled inputs because only the oscillator's energy enters.
+The vacuum expectation of the Weyl operator on these two auxiliary modes contributes the factor $`e^{-v\lvert\xi\rvert^2}`$. Thus the signal channel is precisely the Gaussian displacement of complex variance $`v`$. If its input has mean photon number $`x`$, the two unused outputs have mean photon numbers
 
-Average this bound over $`\sigma G`$, use $`\mathbb E|G|\le1`$, and then use trace-norm contractivity under $`\mathcal N_\mu`$. The convolution identity for Weyl conjugations gives
+```math
+x_1=(1-\eta)x,
+\qquad
+x_2=v(\eta x+1).
+```
+
+The first output is the unused beam-splitter port. The second is the idler output of the amplifier, whose mean includes the vacuum term. This decomposition is a [standard Gaussian-channel tool](../references/README.md#sharma-wilde).
+
+### Discarding the modes costs at most twice their entropy
+
+For any state with a finite-entropy subsystem $`F`$ on Bob's side,
+
+```math
+E_{\mathrm R}(A:BF)
+\le E_{\mathrm R}(A:B)+2S(F).
+```
+
+In finite dimensions, use a separable comparator $`\omega_{AB}\otimes\rho_F`$. Its relative entropy from the state on $`ABF`$ equals $`D(\rho_{AB}\|\omega_{AB})+I(AB:F)_\rho`$. Infimize over comparisons and use $`I(AB:F)\le2S(F)`$. The same inequality holds in the oscillator setting with arbitrary local memories. Compress each local system onto increasing finite-rank subspaces, resetting the discarded tail to one local flag. Choose the projectors for $`F`$ in the eigenbasis of its marginal, so grouping tail eigenvalues cannot increase $`S(F)`$. The finite-dimensional inequalities then have right sides bounded by the original right side by local monotonicity. The compressed states converge in trace norm, and [lower semicontinuity of the relative entropy of entanglement](../references/README.md#lami-shirokov) yields the claim. This argument never forms a difference of possibly infinite marginal entropies.
+
+Apply the attenuation and amplification isometry locally at Bob, keeping the two unused modes together as $`F`$. The isometry preserves the original relative entropy of entanglement across the Alice–Bob cut. Tracing out $`F`$ gives the output for the smoothed noise density $`f_\sigma`$ by composition of the Weyl conjugations. The preceding inequality, subadditivity of entropy and the thermal maximum-entropy bound give a per-use loss of at most
+
+```math
+2 S(F)\le 2g((1-\eta)x)+2g(v(\eta x+1)).
+```
+
+The two modes are local auxiliaries in the converse. The communicating parties are not required to run the smoother.
+
+### Collecting the finite-resolution upper bound
+
+Let $`e_j`$ and $`x_j`$ be the actual mean photon numbers before and after the original channel in use $`j`$, unconditioned over all earlier outcomes. The displacement identity for the number operator and Cauchy–Schwarz give
+
+```math
+x_j\le e_j+2\sqrt{Me_j}+M\le2e_j+2M.
+```
+
+Since $`\sum_j e_j\le nE`$, the average of $`x_j`$ is at most $`2E+2M`$. Hence for each of the two auxiliary outputs its mean photon number, averaged over uses, is bounded by $`2+2M`$. Concavity of $`g`$ gives
+
+```math
+\sum_{j=1}^{n}\left[2g((1-\eta)x_j)+2g(v(\eta x_j+1))\right]
+\le4n g(2+2M).
+```
+
+Lemma 1 charges at most $`D(f_\sigma\|g_1)`$ to the smoothed output at each actual input. Adding the entropy cost just proved bounds the entanglement increment of each original use. The adaptive rate test consequently yields
+
+```math
+Q_{2,\mu}(E)\le D(f_\sigma\|g_1)+4g(2+2M).
+```
+
+Finally apply [the smoothing entropy estimate](#relative-entropy-of-the-smoothed-law) with $`\sigma=(E+1)^{-1/2}`$:
 
 ```math
 \boxed{
-\frac12\|\mathcal N_\mu-\mathcal N_{f_\sigma}\|_{\diamond,E}
-\le \sigma\sqrt{4E+2}.
+Q_{2,\mu}(E)\le\log_2(E+1)-H_{\sqrt{E+1}}(\mu)+C_M,
+\qquad
+C_M=C_{\mathrm{int}}+M\log_2e+4g(2+2M).
 }
 ```
 
-The phases in the Weyl multiplication law cancel in conjugation; this identity does not require the displacement operators themselves to commute.
-
-### A common output-energy bound
-
-For an input of mean photon number $`x`$,
-
-```math
-\mathrm{Tr}\!\left[\hat n\,\mathcal N_\mu(\rho)\right]
-\le x+M+2\sqrt{xM}
-\le2x+2M.
-```
-
-For $`\sigma\le1`$, the original and smoothed channels consequently share the affine energy bound
-
-```math
-\mathrm{Tr}\!\left[\hat n\,\mathcal N(\rho)\right]
-\le 2x+2M+2.
-```
-
-The oscillator number Hamiltonian is grounded and satisfies the Gibbs condition required for capacity continuity.
-
-### The inherited continuity estimate
-
-[Winter 2017, Theorem 9](../references/README.md#winter) states that two channels with common affine output-energy bound $`\alpha E+E_0`$ and half energy-constrained diamond distance at most $`\varepsilon\lt 1`$ satisfy
-
-```math
-\begin{aligned}
-|Q_1(E)-Q_2(E)|
-&\le
-56\sqrt\varepsilon\,
-g\!\left(\frac{4(\alpha E+E_0)}{\sqrt\varepsilon}\right)\\
-&\quad+6g(4\sqrt\varepsilon).
-\end{aligned}
-```
-
-The theorem already concerns the regularized mean-energy-constrained quantum capacity. Thus its use here controls arbitrary coding blocks, rather than only a single coherent-information expression.
-
-For $`E\ge1`$, choose
-
-```math
-L=\log_2(E+2),\qquad
-\varepsilon=L^{-2},\qquad
-\sigma=\frac{L^{-2}}{\sqrt{4E+2}}.
-```
-
-Then $`0\lt \sigma\lt 1`$, the diamond-distance condition holds, and
-
-```math
-|Q_\mu(E)-Q_{f_\sigma}(E)|
-\le W_M(E),
-```
-
-where
-
-```math
-W_M(E)=
-\frac{56}{L}\,g\!\left(8(E+M+1)L\right)
-+6g(4/L).
-```
-
-This function is bounded uniformly over $`E\ge1`$ at fixed $`M`$. For an explicit, deliberately nonoptimal bound, use
-$`g(x)\le\log_2(e(x+1))`$,
-$`E+M+1\le(E+2)(M+1)`$, and
-$`(\log_2L)/L\le1`$. They give
-
-```math
-W_M(E)\le
-56\!\left[2+\log_2(M+1)+\log_2(9e)\right]+6g(4).
-```
-
-## Collecting the finite-resolution upper bound
-
-Apply Lemma 1 to the smoothed law, Lemma 2 to its relative entropy, and the preceding continuity estimate:
-
-```math
-\begin{aligned}
-Q_\mu(E)
-&\le 2\log_2(1/\sigma)-H_{1/\sigma}(\mu)\\
-&\quad+C_{\mathrm{int}}+M\log_2e+W_M(E).
-\end{aligned}
-```
-
-The scale $`1/\sigma`$ is finer than $`t_E=\sqrt{E+1}`$. Each cell of the finer grid intersects at most four cells of the coarser grid, even when the two grids are not nested. Hence
-
-```math
-H_{1/\sigma}(\mu)\ge H_{t_E}(\mu)-2.
-```
-
-Also,
-
-```math
-\begin{aligned}
-2\log_2(1/\sigma)
-&=\log_2(4E+2)+4\log_2L\\
-&\le\log_2(E+1)+4\log_2L+2.
-\end{aligned}
-```
-
-It follows that
-
-```math
-Q_\mu(E)\le
-\log_2(E+1)-H_{t_E}(\mu)
-+4\log_2\log_2(E+2)+C_M,
-```
-
-with the explicit admissible constant
-
-```math
-\begin{aligned}
-C_M={}&C_{\mathrm{int}}+M\log_2e+4\\
-&+56\!\left[2+\log_2(M+1)+\log_2(9e)\right]
-+6g(4).
-\end{aligned}
-```
-
-Together with the thermal-input argument, this proves Theorem 1 of the [capacity-law page](02-capacity-law.md#the-finite-resolution-capacity-law).
-
-The double-logarithmic remainder comes from smoothing slightly below the energy resolution so that the capacity-continuity cost stays bounded. This proof does not establish a constant remainder for arbitrary noise laws.
+The input constraint has been imposed only on the average of the actual transmitted photon numbers. No per-use or per-outcome cutoff is needed. At this smoothing scale the two discarded modes carry a bounded entropy per use even when the code reallocates energy adaptively. Combining the converse with the [ordinary thermal-input lower bound](02-capacity-law.md#why-one-thermal-input-suffices-for-the-lower-bound) proves Theorem 1 for both capacities.
 
 ## When is the unconstrained capacity finite?
 
 Define
 
 ```math
-Q_\mu(\infty)=\sup_{E\lt \infty}Q_\mu(E).
+Q_\mu(\infty)=\sup_{E\lt\infty}Q_\mu(E),\qquad Q_{2,\mu}(\infty)=\sup_{E\lt\infty}Q_{2,\mu}(E).
 ```
 
 **Theorem 3.** Under $`M\lt \infty`$,
 
 ```math
 \boxed{
-Q_\mu(\infty)\lt \infty
+Q_\mu(\infty)\lt\infty\quad\Longleftrightarrow\quad Q_{2,\mu}(\infty)\lt\infty
 \quad\Longleftrightarrow\quad
 D(\mu\|\gamma)\lt \infty.
 }
 ```
 
 Moreover, when the relative entropy is finite,
-$`Q_\mu(\infty)\le D(\mu\|\gamma)`$.
+$`Q_\mu(\infty)\le Q_{2,\mu}(\infty)\le D(\mu\|\gamma)`$.
 
 ### Finite relative entropy implies finite capacity
 
-Finite $`D(\mu\|\gamma)`$ implies that $`\mu`$ has a density with respect to the strictly positive Gaussian density $`g_1`$, and hence with respect to Lebesgue measure. Lemma 1 bounds $`Q_\mu(E)`$ by the same finite number for every $`E`$. Taking the supremum proves this direction.
+Finite $`D(\mu\|\gamma)`$ implies that $`\mu`$ has a density with respect to the strictly positive Gaussian density $`g_1`$, and hence with respect to Lebesgue measure. Lemma 1 bounds $`Q_{2,\mu}(E)`$ by the same finite number for every $`E`$. Taking the supremum proves this direction.
 
 ### Infinite relative entropy is detected by resolved thermal inputs
 

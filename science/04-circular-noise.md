@@ -73,7 +73,7 @@ Applying the [capacity theorem](02-capacity-law.md) with $`t_E=\sqrt{E+1}`$ give
 ```math
 \boxed{
 Q_r(E)=\frac12\log_2(E+1)
-       +O_r\!\bigl(1+\log_2\log_2(E+2)\bigr).
+       +O_r(1).
 }
 ```
 
@@ -219,7 +219,7 @@ I_c(\tau_E,\mathcal C_r)
 =\frac12\log_2E+O_r(1).
 ```
 
-The [general converse](03-converse.md), rather than this single input calculation, establishes optimality of the coefficient against arbitrary collective codes.
+The [general converse](03-converse.md), also covers adaptive two-way assistance and establishes the coefficient with a bounded remainder.
 
 ## Comparison with covariance-matched Gaussian noise
 

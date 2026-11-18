@@ -8,7 +8,7 @@ We use the [model and conventions](01-model.md): one oscillator, independent uno
 M=\int_{\mathbb C}|z|^2\,\mu(dz)\lt \infty.
 ```
 
-The mean input photon number per channel use is at most $`E`$. The quantity $`Q_\mu(E)`$ is the ordinary unassisted quantum capacity, in qubits per use. No record of the sampled displacement is supplied to the receiver.
+The mean input photon number per channel use is at most $`E`$. The quantities $`Q_\mu(E)`$ and $`Q_{2,\mu}(E)`$ are the ordinary and adaptive two-way assisted quantum capacities, in qubits per use. No record of the sampled displacement is supplied to the receiver.
 
 For $`Z\sim\mu`$ and $`t\gt 0`$, define the square-grid entropy
 
@@ -29,12 +29,10 @@ g(x)=(x+1)\log_2(x+1)-x\log_2x,\qquad g(0)=0.
 **Theorem 1.** There is a universal finite constant $`C_0`$, and for every finite $`M`$ a finite constant $`C_M`$, such that every law with second moment at most $`M`$ and every $`E\ge1`$ obey
 
 ```math
-\begin{aligned}
 A_\mu(E)-C_0
-&\le Q_\mu(E)\\
-&\le A_\mu(E)
-   +4\log_2\log_2(E+2)+C_M,
-\end{aligned}
+\le Q_\mu(E)
+\le Q_{2,\mu}(E)
+\le A_\mu(E)+C_M.
 ```
 
 where
@@ -47,7 +45,7 @@ The lower bound can be replaced by its maximum with zero. One valid choice is $`
 
 The theorem is uniform over the stated second-moment class. It does not require a density, a regular support, an information dimension, or a decomposition into independent quadrature noises. It also does not require a single-letter formula for quantum capacity.
 
-The relevant displacement resolution is $`(E+1)^{-1/2}`$. The number $`\log_2(E+1)`$ is the leading entropy available to an energy-constrained oscillator, while $`H_{\sqrt{E+1}}(\mu)`$ measures the noise uncertainty at that resolution. The remainder is sublogarithmic in $`E`$.
+The relevant displacement resolution is $`(E+1)^{-1/2}`$. The number $`\log_2(E+1)`$ is the leading entropy available to an energy-constrained oscillator, while $`H_{\sqrt{E+1}}(\mu)`$ measures the noise uncertainty at that resolution. The errors are bounded independently of $`E`$.
 
 ## Why one thermal input suffices for the lower bound
 
@@ -200,7 +198,7 @@ In particular, if $`d(\mu)=\underline d(\mu)=\overline d(\mu)`$ exists, then
 ```
 
 To obtain this statement, substitute $`t=\sqrt{E+1}`$ in Theorem 1, divide by $`\log_2E`$, and use
-$`\log_2t/\log_2E\to1/2`$. The constant and double-logarithmic remainders vanish. This passage does not interchange a variable noise law with a fixed-law asymptotic limit.
+$`\log_2t/\log_2E\to1/2`$. The constant remainders vanish. Both equalities also hold for the two-way assisted capacity. This passage does not interchange a variable noise law with a fixed-law asymptotic limit.
 
 ### Consequences
 
@@ -208,10 +206,10 @@ $`\log_2t/\log_2E\to1/2`$. The constant and double-logarithmic remainders vanish
 $`H_t(\mu)=\log_2t+O_r(1)`$. Therefore
 
 ```math
-Q_\mu(E)=\frac12\log_2E+O_r(\log\log E).
+Q_\mu(E)=\frac12\log_2E+O_r(1).
 ```
 
-Although its covariance is isotropic and nonzero in both quadratures, its noise measure has dimension one. The [circular-noise analysis](04-circular-noise.md) gives the model-specific argument and a finite-energy coherent-information witness.
+Although its covariance is isotropic and nonzero in both quadratures, its noise measure has dimension one. The two-way assisted capacity satisfies the same estimate. The [circular-noise analysis](04-circular-noise.md) gives the model-specific argument and a finite-energy coherent-information witness.
 
 **Finite random kick alphabets.** For a fixed finite set of distinct displacements, $`H_t(\mu)`$ equals the entropy of the finite alphabet once the grid is sufficiently fine. The capacity consequently has leading term $`\log_2E`$. This conclusion allows noncommuting displacement errors.
 
@@ -241,7 +239,7 @@ The [bounded-capacity criterion](03-converse.md#when-is-the-unconstrained-capaci
 
 ```math
 \boxed{
-\sup_{E\lt \infty}Q_\mu(E)\lt \infty
+\sup_{E\lt\infty}Q_\mu(E)\lt\infty\quad\Longleftrightarrow\quad\sup_{E\lt\infty}Q_{2,\mu}(E)\lt\infty
 \quad\Longleftrightarrow\quad
 D(\mu\|\gamma)\lt \infty.
 }
@@ -251,8 +249,40 @@ If the relative entropy is finite, it is an upper bound on the unrestricted capa
 
 Every singular component therefore forces unbounded capacity. An absolutely continuous law can also have unbounded capacity when its differential entropy is $`-\infty`$, even though its information dimension is two and its logarithmic coefficient is zero. Conversely, a regular full-dimensional density with finite differential entropy has bounded capacity. None of these statements gives the exact bounded value.
 
-## What is established and what is not
+## A full-dimensional noise density with unbounded capacity
 
-The finite-resolution theorem constrains the fully regularized unassisted capacity. Its lower bound is an achievable coherent-information rate, and its upper bound permits arbitrary encoders and collective decoding. The result does not identify a computationally efficient code, determine the exact finite-energy optimum, or solve the fixed-noise Gaussian quantum-capacity problem.
+The constant remainder distinguishes saturation from very slow growth even when the information dimension is two. Here is a bounded-support density exhibiting this distinction.
 
-The fixed-law assumption matters. The [broadening analysis](05-broadening.md) separately treats a circular law with additional Gaussian noise and identifies the energy range over which the singular-law growth remains useful. At every fixed positive broadening, the unrestricted capacity is finite.
+Take an integer $`J\ge0`$ with tail law
+
+```math
+\Pr(J\gt k)=\frac{c}{(k+2)\ln(k+2)},\qquad
+k=0,1,\ldots,\qquad 0\lt c\le 2\ln 2.
+```
+
+Conditional on $`J=j`$, draw $`Z`$ uniformly from the square $`[0,2^{-j})^2`$ in displacement space. The resulting mixture is absolutely continuous and supported in the unit square. The mass at $`j\ge2`$ is $`O(1/(j^2\ln j))`$, so $`H(J)\lt\infty`$.
+
+Let $`B_m`$ be the quantized displacement index at dyadic resolution $`t=2^m`$. For fixed $`j\le m`$ the grid exactly partitions the conditional square into $`2^{2(m-j)}`$ equally likely cells. When $`j\gt m`$ everything lies in one cell. Therefore,
+
+```math
+2m-H(B_m)=2\mathbb E\min(J,m)-I(J:B_m).
+```
+
+The mutual information is at most $`H(J)`$. Summing the tail and comparing with the integral of $`1/(x\ln x)`$ gives $`\mathbb E\min(J,m)=c\ln\ln m+O(1)`$. Thus the entropy divided by $`m`$ tends to two. The same limit holds between dyadic grid scales because the entropy difference between grids within a factor of two is bounded by a constant.
+
+At energies $`E_m=2^{2m}-1`$, the capacity law now yields
+
+```math
+\begin{aligned}
+Q_\mu(E_m)&=2c\ln\ln m+O(1),\\
+Q_{2,\mu}(E_m)&=2c\ln\ln m+O(1).
+\end{aligned}
+```
+
+Both capacities are nondecreasing in the allowed energy. Interpolate between successive $`E_m`$ to obtain growth $`2c\ln\ln\ln E+O(1)`$ for each capacity as $`E\to\infty`$. The logarithms in this explicit rate are natural, as in the definition of the tail. The rate itself is in qubits per use because the deficit above is measured in bits.
+
+## Scope of the capacity law
+
+The finite-resolution theorem uses a thermal-input achievable rate and a converse for adaptive local operations and two-way classical communication. The two rates lie in the same constant-width interval. Exact single-use optimality, efficient capacity-achieving codes, finite-block errors and the exact fixed-noise Gaussian capacity remain open here.
+
+The theorem applies to a fixed known law with independent kicks. The [broadening analysis](05-broadening.md) gives a joint formula for energy and added Gaussian noise, uniform in the variance of that added noise up to one. At each fixed positive broadening the unrestricted capacity is finite.

@@ -37,9 +37,9 @@ The key local calculation places displacement space into squares of side $`(E+1)
 
 ### A different argument limits arbitrary codes
 
-A good thermal input alone would leave open whether a complicated collective code can do much better. The upper bound addresses that question separately. Slightly smooth the noise law with Gaussian jitter; compare the smoothed channel to an entanglement-breaking Gaussian through relative entropy; and control the effect of removing that jitter with energy-constrained capacity continuity.
+The upper bound follows an adaptive protocol one channel use at a time. First smooth the noise law with Gaussian jitter and compare its output to that of an entanglement-breaking Gaussian. Relative-entropy data processing bounds how much entanglement the smoothed channel can add in one use, even when the parties already hold memories.
 
-The [simulation proof](../science/03-converse.md#the-simulation-limit-is-taken-for-a-fixed-finite-code) first fixes a finite code and takes its squeezing approximation to the channel limit. Only then does it consider a sequence of increasingly long reliable codes. This order avoids treating an infinitely squeezed object as a physical state. The smoothing scale is chosen small enough to keep the continuity cost bounded, and its extra grid refinement produces the double-logarithmic upper remainder.
+To use this estimate on the original channel, add the smoothing locally to each actual receiver output in the proof. The transformation can be realized by pure loss followed by vacuum amplification. The entanglement lost by discarding the two environments is bounded by twice their entropy. At smoothing variance $`(E+1)^{-1}`$, their average energy stays bounded because the actual protocol obeys an unconditional mean input constraint. Summing these one-use bounds gives a constant entropy cost per use at the physical noise resolution. See the [adaptive converse](../science/03-converse.md) for the energy accounting and its conversion to a rate.
 
 Write
 
@@ -47,29 +47,27 @@ Write
 A_\mu(E)=\log_2(E+1)-H_{\sqrt{E+1}}(\mu).
 ```
 
-Here $`H_t(\mu)`$ is the discrete entropy of the two-dimensional grid label at scale $`t`$. The two arguments together give, for $`E\ge1`$,
+Here $`H_t(\mu)`$ is the discrete entropy of the two-dimensional grid label at scale $`t`$. Together the two arguments give, for $`E\ge1`$,
 
 ```math
-\begin{aligned}
-Q_\mu(E)&\ge A_\mu(E)-2g(2),\\
-Q_\mu(E)&\le A_\mu(E)+4\log_2\log_2(E+2)+C_M.
-\end{aligned}
+A_\mu(E)-2g(2)\le Q_\mu(E)\le Q_{2,\mu}(E)\le A_\mu(E)+C_M.
 ```
 
-The constant $`C_M`$ depends only on a bound on the noise second moment. These are capacity bounds for unrestricted collective codes, with a thermal input furnishing the lower side.
+The constant $`C_M`$ depends only on the noise second-moment bound. The unassisted and two-way quantum capacities share the same entropy law up to a bounded term.
 
 ### Geometry determines how quickly resolved uncertainty grows
 
-If $`H_t(\mu)=d\log_2t+o(\log t)`$, substituting $`t=\sqrt{E+1}`$ converts the classical coefficient $`d`$ into
+If $`H_t(\mu)=d\log_2t+o(\log t)`$, substituting $`t=\sqrt{E+1}`$ converts the classical coefficient $`d`$ into the same high-energy coefficient for both quantum capacities.
 
 ```math
 \lim_{E\to\infty}\frac{Q_\mu(E)}{\log_2E}
+=\lim_{E\to\infty}\frac{Q_{2,\mu}(E)}{\log_2E}
 =1-\frac d2.
 ```
 
 For a finite kick alphabet, grid entropy eventually stops growing, so the coefficient is one. A uniformly random kick around a fixed nonzero circle has coefficient one for its grid entropy and one-half for capacity. An ordinary two-dimensional density has information dimension two and zero logarithmic capacity coefficient. These examples compare entropy growth under finer resolution; covariance rank alone cannot make the classification. [The theorem and its hypotheses](../science/02-capacity-law.md#information-dimension-fixes-the-leading-energy-dependence) also cover unequal lower and upper information dimensions.
 
-A zero coefficient leaves open slower unbounded growth. The [separate boundedness theorem](../science/03-converse.md#when-is-the-unconstrained-capacity-finite) resolves that distinction: under the finite-second-moment hypothesis, capacity is bounded over all finite energy budgets exactly when the noise law has finite classical relative entropy to a standard complex Gaussian.
+A zero coefficient leaves open slower unbounded growth. One full-dimensional example freezes a sparse sequence of binary digits, losing one bit of resolved noise entropy for each frozen digit. The number of missing bits grows on a triple-logarithmic energy scale. The [boundedness theorem](../science/03-converse.md#when-is-the-unconstrained-capacity-finite) gives the exact alternative. Under the finite-second-moment hypothesis, bounded capacity over all finite budgets is equivalent to finite classical relative entropy to the standard complex Gaussian.
 
 ## A physical example and its limits
 
@@ -77,6 +75,6 @@ The exact circle has isotropic covariance in both quadratures, yet its capacity 
 
 The [worked calculation](HOLEVO_BRIDGE.md#worked-example-a-broadened-ring-versus-its-gaussian-comparator) adds nonzero Gaussian jitter. At radius $`r=2`$, energy $`E=100`$ and jitter width $`\sigma=0.01`$, it proves a lower bound of **1.0598044894 qubits per use**; the matched Gaussian still has zero capacity. The calculation follows the Gaussian intermediate state's entropy and then bounds the entropy created by averaging its charge sectors. [Verification](../verification/README.md) reproduces the numbers and documents numerical limits.
 
-At any fixed positive jitter, the broadened circle eventually has a finite capacity ceiling. The [joint crossover](../science/05-broadening.md#the-joint-energybroadening-crossover) uses the effective energy $`\min\{E,\sigma^{-2}\}`$: input energy improves resolution until the ring's thickness is resolved. This is why the exact-circle asymptotic law and the positive finite-jitter example coexist without implying unlimited growth at fixed jitter.
+At any fixed positive jitter, the broadened circle has a finite capacity ceiling. The [general crossover](../science/05-broadening.md) adds the jitter variance to the variance $`(E+1)^{-1}`$ set by the carrier. For the circle, this gives an effective energy of order $`\min\{E,\sigma^{-2}\}`$ at small positive jitter width $`\sigma`$. The same variance rule applies to any base law with bounded second moment.
 
-Throughout, the fixed-law statements concern ordinary unassisted communication under a known iid law with finite second moment. Its realized kicks remain hidden, and the finite mean-photon budget applies to the encoded block on average. There is no photon loss in the model. The result establishes asymptotic communication rates; it supplies neither an efficient encoder or decoder nor a finite-block error guarantee.
+Both capacity statements use a known IID law with finite second moment, with each actual kick hidden and the mean-photon budget averaged over the block. The physical channel applies displacements only. Loss and amplification enter the converse as an auxiliary operation on the receiver's output. The capacity theorem describes asymptotic rates. Efficient implementations and guarantees at fixed blocklength are separate questions.
