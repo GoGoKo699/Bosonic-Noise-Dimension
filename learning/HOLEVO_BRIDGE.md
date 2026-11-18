@@ -24,7 +24,7 @@ Earlier foundations can be located at §2.2, p. 13, for states; §3.1.3, p. 37, 
 | Layer | What it contributes | Where the contribution enters |
 |---|---|---|
 | Textbook foundations | States, purifications, channels, entropy, coherent information, canonical variables and Gaussian states. | Definitions and calculations throughout the [model](../science/01-model.md), lower bound and examples. |
-| Primary research tools | [Wilde–Qi](../references/README.md#wilde-qi) for the mean-energy coding theorem, relative entropy of entanglement for adaptive rate bounds, and [Rényi](../references/README.md#renyi) for information dimension. | The operational lower bound, the [converse](../science/03-converse.md) and the meaning of the limiting dimension. |
+| Primary research tools | [Wilde–Qi](../references/README.md#wilde-qi) for the mean-energy coding theorem, [Wilde–Berta–Hirche–Kaur](../references/README.md#environment-parametrized) and [Lami–Shirokov](../references/README.md#lami-shirokov) for relative-entropy tools, [Sharma–Wilde–Adhikari–Takeoka](../references/README.md#sharma-wilde) for Gaussian channel decomposition, and [Rényi](../references/README.md#renyi) for information dimension. | The operational lower bound, the [converse](../science/03-converse.md) and the meaning of the limiting dimension. |
 | Derivations supplied here | Bin-conditioned entropy exchange, smoothing at the energy resolution, the entropy budget of the local smoothing dilation and the noisy-law examples. | [Capacity law](../science/02-capacity-law.md), [converse](../science/03-converse.md), [circle](../science/04-circular-noise.md) and [broadening](../science/05-broadening.md). |
 
 Chapter 10 provides the quantum-coding foundation. Wilde–Qi supplies the average-photon operational theorem used for the lower bound. Sections 7.1–7.3 give the entropy tools used to follow entanglement through the adaptive converse, and Chapter 12 gives the Gaussian transformations used for the smoothing environments.
@@ -196,7 +196,7 @@ A_\mu(E)-2g(2)\le Q_\mu(E)\le Q_{2,\mu}(E)\le A_\mu(E)+C_M,
 A_\mu(E)=\log_2(E+1)-H_{\sqrt{E+1}}(\mu).
 ```
 
-The constant $`C_M`$ depends only on the noise second-moment bound. Both capacities have the high-energy coefficient $`1-d(\mu)/2`$ whenever the information dimension exists. The [boundedness argument](../science/03-converse.md#when-is-the-unconstrained-capacity-finite) proves that both capacities are bounded over all input energies exactly when $`D(\mu\Vert g_1)\lt\infty`$. A zero logarithmic coefficient can coexist with slow unbounded growth, as in the full-dimensional examples with triple-logarithmic growth in the [capacity account](../science/02-capacity-law.md).
+The constant $`C_M`$ depends only on the noise second-moment bound. Both capacities have the high-energy coefficient $`1-d(\mu)/2`$ whenever the information dimension exists. The [boundedness argument](../science/03-converse.md#when-is-the-unconstrained-capacity-finite) proves that both capacities are bounded over all input energies exactly when $`D(\mu\Vert g_1)\lt\infty`$. A zero logarithmic coefficient can coexist with slow unbounded growth, as in the [full-dimensional density with triple-logarithmic growth](../science/02-capacity-law.md#a-full-dimensional-noise-density-with-unbounded-capacity).
 
 ## Worked example: a broadened ring versus its Gaussian comparator
 

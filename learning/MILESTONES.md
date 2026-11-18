@@ -131,7 +131,7 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 - **Understanding target.** Distinguish an achievable rate, a one-use coherent-information expression and the capacity optimized over arbitrary collective codes. Understand regularization and the extra structural assumption needed to simplify it through degradability.
 - **Dependencies and story role.** M04 and M09. Expands a local rate calculation into the full optimization that a converse must cover.
 - **Conceptual connection.** The unassisted coding theorem provides a regularized benchmark. The adaptive model allows classical messages and local operations between uses.
-- **Sources.** **Holevo:** §§10.2.1–10.2.2 (pp. 195, 197), 10.3.1–10.3.3 (pp. 202, 206, 208). **Science:** [what capacity counts](../science/01-model.md#what-the-capacity-counts); [established scope](../science/02-capacity-law.md#scope-of-the-capacity-law).
+- **Sources.** **Holevo:** §§10.2.1–10.2.2 (pp. 195, 197), 10.3.1–10.3.3 (pp. 202, 206, 208). **Science:** [what capacity counts](../science/01-model.md#what-the-capacity-counts); [scope of the capacity law](../science/02-capacity-law.md#scope-of-the-capacity-law).
 
 ### M11 — Energy constraints and infinite-dimensional limits
 
@@ -173,7 +173,7 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 - **Understanding target.** Compare the actual input and a separable input with the same displacement processor, driven by a smooth density $`f`$ and the unit-variance Gaussian density $`g_1`$, respectively. Track the input relative entropy and the classical cost $`D(f\|g_1)`$ through data processing. Explain why the exact Gaussian output remains separable across the new sender–receiver split.
 - **Dependencies and story role.** M05, M07, M08, M11 and M12. Turns classical relative entropy into a bound on the relative entropy of entanglement gained per use.
 - **Conceptual connection.** Sender and receiver memories can be present in both inputs, so the comparison applies inside an adaptive protocol.
-- **Sources.** **Holevo:** §§7.1–7.2 (pp. 126, 127), 11.7 (p. 248), 12.4.4 (p. 294). **Science:** [smooth-noise comparison](../science/03-converse.md).
+- **Sources.** **Holevo:** §§7.1–7.2 (pp. 126, 127), 11.7 (p. 248), 12.4.4 (p. 294). **Science:** [smooth-noise comparison](../science/03-converse.md#compare-the-two-displacement-laws-on-each-use).
 
 ### M16 — From a one-use estimate to an adaptive converse
 
@@ -181,7 +181,7 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 - **Understanding target.** Begin with a separable state, sum the entanglement gained at channel uses and apply monotonicity under the local operations and classical communication between them. Convert the final bound into a rate with a maximally entangled-state test whose acceptance probability on any separable comparison is at most the reciprocal of the target dimension.
 - **Dependencies and story role.** M08, M10, M11 and M15. Shows why the smooth-law upper bound covers adaptive codes.
 - **Conceptual connection.** The rate bound follows the actual protocol, even when inputs correlate with earlier messages and channel outputs.
-- **Sources.** **Holevo:** §§3.3.2 (p. 46), 7.1–7.2 (pp. 126, 127), 10.3.1 (p. 202), 11.1 (p. 233). **Science:** [adaptive converse](../science/03-converse.md).
+- **Sources.** **Holevo:** §§3.3.2 (p. 46), 7.1–7.2 (pp. 126, 127), 10.3.1 (p. 202), 11.1 (p. 233). **Science:** [adaptive converse](../science/03-converse.md#from-entanglement-accounting-to-a-rate-bound).
 
 ### M17 — Smoothing entropy equals resolved entropy up to scale
 
@@ -197,7 +197,7 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 - **Understanding target.** Set the Gaussian displacement variance to $`v=(E+1)^{-1}`$. Follow receiver-side pure loss and vacuum amplification with net gain one. Compare the relative entropy of entanglement before and after discarding the two environments. Bound their mean energies using the actual transmitted energies and the noise moment, then apply the thermal entropy bound and concavity.
 - **Dependencies and story role.** M02, M03, M11, M16 and M17. Transfers the smooth-law upper bound to the actual channel at the same resolution as achievability.
 - **Conceptual connection.** The environments belong to a local comparison operation in the proof. Their entropy budget is averaged over actual uses and their histories.
-- **Sources.** **Holevo:** §§7.3 (p. 132), 7.6 (p. 141), 11.5 (p. 243), 12.3.4 (p. 281), 12.6.2 (p. 324). **Science:** [smoothing comparison and environment budget](../science/03-converse.md).
+- **Sources.** **Holevo:** §§7.3 (p. 132), 7.6 (p. 141), 11.5 (p. 243), 12.3.4 (p. 281), 12.6.2 (p. 324). **Science:** [smoothing comparison and environment budget](../science/03-converse.md#adaptive-converse-at-the-energy-resolution).
 
 ### M19 — The finite-resolution capacity law
 
@@ -226,10 +226,10 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 ### M22 — Boundedness and very slow divergence
 
 - **Central question.** What can happen to capacity at full information dimension?
-- **Understanding target.** Explain why finite relative entropy $`D(\mu\|\gamma)`$ to the standard Gaussian gives bounded capacity, and how nested dyadic grids detect infinite relative entropy in the thermal lower bound. Follow a full-dimensional example that freezes sparse binary digits. At dyadic resolution every frozen digit removes one bit of entropy, and the number of removed bits grows on a triple-logarithmic energy scale.
+- **Understanding target.** Explain why finite relative entropy $`D(\mu\|\gamma)`$ to the standard Gaussian gives bounded capacity, and how nested dyadic grids detect infinite relative entropy in the thermal lower bound. For the full-dimensional mixture of nested squares, relate the entropy deficit at dyadic grid depth $`m`$ to the truncated mean of the random square depth. The slowly decaying tail produces triple-logarithmic growth in energy.
 - **Dependencies and story role.** M07, M14, M16, M19 and M20. Refines the slope classification and uses the constant-error theorem to resolve a slow growth law.
 - **Conceptual connection.** Full information dimension permits either bounded capacity or unbounded sublogarithmic growth. The resolved entropy deficit decides which occurs.
-- **Sources.** **Holevo:** §§7.1–7.2 (pp. 126, 127), 11.2 (p. 237), for relative-entropy foundations. **Science:** [bounded-capacity criterion and proof](../science/03-converse.md#when-is-the-unconstrained-capacity-finite) and [full-dimensional examples](../science/02-capacity-law.md).
+- **Sources.** **Holevo:** §§7.1–7.2 (pp. 126, 127), 11.2 (p. 237), for relative-entropy foundations. **Science:** [bounded-capacity criterion and proof](../science/03-converse.md#when-is-the-unconstrained-capacity-finite) and [full-dimensional example](../science/02-capacity-law.md#a-full-dimensional-noise-density-with-unbounded-capacity).
 
 ### M23 — Circular geometry with isotropic covariance
 
@@ -277,7 +277,7 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 - **Understanding target.** For jitter variance $`b`$, combine the independent Gaussian variances into $`b+(E+1)^{-1}`$. Use the smoothing entropy comparison to identify that effective variance for an arbitrary finite-second-moment noise law. Recover the circular result with effective energy $`\min\{E,\sigma^{-2}\}`$ for $`b=\sigma^2`$ and the coefficient $`\min\{1/2,\alpha\}`$ for $`\sigma(E)=E^{-\alpha}`$ with positive $`\alpha`$.
 - **Dependencies and story role.** M17, M19 and M25–M27. Reconciles the ideal circle and its finite-jitter limits using the general crossover law.
 - **Conceptual connection.** Input energy improves resolution until it reaches the thickness created by independent Gaussian jitter.
-- **Sources.** **Holevo:** §§11.5 (p. 243), 12.3.4 (p. 281), 12.6.4 (p. 328), as constraint and entropy foundations. **Science:** [joint crossover and order of limits](../science/05-broadening.md).
+- **Sources.** **Holevo:** §§11.5 (p. 243), 12.3.4 (p. 281), 12.6.4 (p. 328), as constraint and entropy foundations. **Science:** [general crossover](../science/05-broadening.md#the-general-energybroadening-crossover) and [order of limits](../science/05-broadening.md#orders-of-limits-and-scope).
 
 ### M29 — Relation to existing capacity mechanisms
 
