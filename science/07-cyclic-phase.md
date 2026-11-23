@@ -1,6 +1,6 @@
 # Weak displacement with a growing cyclic phase alphabet
 
-[Scientific account](README.md) · [Gaussian broadening](05-broadening.md) · [Capacity theorem in Discrete Phase Loss Capacity](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity/blob/16be1722f0b2b9a1a020f6d74b37a7a7824d2f11/science/critical-displacement.md)
+[Scientific account](README.md) · [Gaussian broadening](05-broadening.md) · [Capacity theorem in Discrete Phase Loss Capacity](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity/blob/6dca96266a9e2522a45427ae6c0483012b471a2a/science/critical-displacement.md)
 
 The displacement-resolution law describes an oscillator subject to additive kicks alone. Add an independent cyclic phase twirl before the kicks, and two channels with identical photon-number transition probabilities can have different capacities. In this comparison the missing information is the overlap between the environment states that produce the same net shift.
 
@@ -15,15 +15,15 @@ With Gaussian displacement alone, take the base law $`\mu=\delta_0`$ in the [bro
 =\log_2 J+O(1).
 ```
 
-With the cyclic phase twirl and $`J(1-\eta_J)\to\lambda`$ for finite $`\lambda\ge0`$, the [companion theorem](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity/blob/16be1722f0b2b9a1a020f6d74b37a7a7824d2f11/science/critical-displacement.md) gives a finite common limit for the ordinary quantum, two-way entanglement-generation and two-way secret-key capacities. This includes the comparison at exactly zero physical loss. The phase twirl removes coherence between input residues modulo $`J`$, so a code can fix the residue and carry quantum data in the photon-number quotient instead.
+With the cyclic phase twirl and $`J(1-\eta_J)\to\lambda`$ for finite $`\lambda\ge0`$, the [companion theorem](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity/blob/6dca96266a9e2522a45427ae6c0483012b471a2a/science/critical-displacement.md) gives a finite common limit for the ordinary quantum, two-way entanglement-generation and two-way secret-key capacities. This includes the comparison at exactly zero physical loss. The phase twirl removes coherence between input residues modulo $`J`$, so a code can fix the residue and carry quantum data in the photon-number quotient instead.
 
 ## What the shift discards
 
 Use the attenuator–amplifier representation of additive Gaussian noise. After including physical loss, the attenuator has transmissivity $`\tau_J=\eta_J/(1+b_J)`$ and the amplifier has gain $`1+b_J`$. Write a photon number $`n`$ as $`JU+r`$, where $`r`$ is the input residue. At $`n/J\to x=A+U`$, with $`A`$ the normalized residue, the attenuation and amplification counts tend to conditionally independent Poisson variables,
 
 ```math
-L\sim\operatorname{Pois}((\lambda+\beta)x),\qquad
-G\sim\operatorname{Pois}(\beta x),\qquad
+L\sim\mathrm{Pois}((\lambda+\beta)x),\qquad
+G\sim\mathrm{Pois}(\beta x),\qquad
 S=G-L.
 ```
 
@@ -43,7 +43,7 @@ One can construct a comparison channel with the same photon-number transitions. 
 | Gaussian displacement with optional weak physical loss | $`\sup_{\mathbb E[A+U]\le e} H(U\mid A,S,\mathsf E)`$ |
 | Comparison channel with the same Fock transition probabilities | $`\sup_{\mathbb E[A+U]\le e} H(U\mid A,S)`$ |
 
-The register $`\mathsf E`$ represents the conditional quantum environment within each shift. For $`e\gt 0`$ and $`\beta\gt 0`$, the first optimum is strictly smaller. The two expressions coincide when $`\beta=0`$. In that case each shift corresponds to a single loss count, and the limit reduces to the pure-loss Poisson formula. [Proof and energy-tail control](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity/blob/16be1722f0b2b9a1a020f6d74b37a7a7824d2f11/science/critical-displacement.md)
+The register $`\mathsf E`$ represents the conditional quantum environment within each shift. For $`e\gt 0`$ and $`\beta\gt 0`$, the first optimum is strictly smaller. The two expressions coincide when $`\beta=0`$. In that case each shift corresponds to a single loss count, and the limit reduces to the pure-loss Poisson formula. [Proof and energy-tail control](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity/blob/6dca96266a9e2522a45427ae6c0483012b471a2a/science/critical-displacement.md)
 
 ## A binary example
 

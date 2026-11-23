@@ -48,7 +48,7 @@ The [Gaussian-broadening theorem](science/05-broadening.md#the-general-energybro
 
 ## With cyclic phase noise
 
-[Discrete Phase Loss Capacity](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity) analyzes weak Gaussian displacement after a growing cyclic phase twirl. At linear input energy, displacement alone gives logarithmic quantum capacity growth, while the twirled channel has a finite capacity limit. Two twirled channels can agree on every photon-number transition and have different capacities because their environments retain different information at the same net shift. [Displacement comparison](science/07-cyclic-phase.md) · [Critical capacity theorem](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity/blob/16be1722f0b2b9a1a020f6d74b37a7a7824d2f11/science/critical-displacement.md)
+[Discrete Phase Loss Capacity](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity) analyzes weak Gaussian displacement after a growing cyclic phase twirl. At linear input energy, displacement alone gives logarithmic quantum capacity growth, while the twirled channel has a finite capacity limit. Two twirled channels can agree on every photon-number transition and have different capacities because their environments retain different information at the same net shift. [Displacement comparison](science/07-cyclic-phase.md) · [Critical capacity theorem](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity/blob/6dca96266a9e2522a45427ae6c0483012b471a2a/science/critical-displacement.md)
 
 ## Read the science
 

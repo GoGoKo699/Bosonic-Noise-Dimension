@@ -91,7 +91,7 @@ The attenuator and amplifier operator sums supply the Fock photon-loss and photo
 
 Amir Arqand and Graeme Smith, **No advantage from classical assistance for energy-constrained bosonic dephasing channels** (2026). [arXiv:2610.13854](https://arxiv.org/abs/2610.13854).
 
-The authors compare number-preserving dephasing with complete dephasing to bound the entanglement generated in each adaptive use. The phase-loss companion adapts that comparison to a channel with net-shift flags and bounds the cost of inferring the shift through the physical modulo measurement. [Critical capacity theorem](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity/blob/16be1722f0b2b9a1a020f6d74b37a7a7824d2f11/science/critical-displacement.md)
+The authors compare number-preserving dephasing with complete dephasing to bound the entanglement generated in each adaptive use. The phase-loss companion adapts that comparison to a channel with net-shift flags and bounds the cost of inferring the shift through the physical modulo measurement. [Critical capacity theorem](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity/blob/6dca96266a9e2522a45427ae6c0483012b471a2a/science/critical-displacement.md)
 
 The entropy growth of progressively finer quantizations defines information dimension. The present theorem identifies its coefficient in an energy-constrained quantum communication problem; the classical concept itself is inherited.
 
