@@ -46,6 +46,10 @@ The circular channel has an exact thermal-input exchange entropy. It equals the 
 
 The [Gaussian-broadening theorem](science/05-broadening.md#the-general-energybroadening-crossover) applies to every admissible base law. For $`E\ge1`$ and independent complex Gaussian jitter of variance $`b=\sigma^2\in[0,1]`$, the resolution for both capacities is $`t_{\mathrm{eff}}=(b+(E+1)^{-1})^{-1/2}`$. Their common estimate, up to bounded error, is $`2\log_2 t_{\mathrm{eff}}-H_{t_{\mathrm{eff}}}(\mu)`$. For a circle this gives the half-logarithmic law at effective energy $`\min\{E,\sigma^{-2}\}`$, with a finite ceiling at fixed positive jitter.
 
+## With cyclic phase noise
+
+[Discrete Phase Loss Capacity](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity) analyzes weak Gaussian displacement after a growing cyclic phase twirl. At linear input energy, displacement alone gives logarithmic quantum capacity growth, while the twirled channel has a finite capacity limit. Two twirled channels can agree on every photon-number transition and have different capacities because their environments retain different information at the same net shift. [Displacement comparison](science/07-cyclic-phase.md) · [Critical capacity theorem](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity/blob/16be1722f0b2b9a1a020f6d74b37a7a7824d2f11/science/critical-displacement.md)
+
 ## Read the science
 
 Start with the [scientific overview](science/README.md) and [model](science/01-model.md). The proof proceeds from [thermal achievability and information dimension](science/02-capacity-law.md) to the [adaptive converse](science/03-converse.md), followed by the [circle](science/04-circular-noise.md) and [Gaussian broadening](science/05-broadening.md).
@@ -60,11 +64,11 @@ The [learning route](learning/README.md) connects the physical question to the p
 
 ## Reproduce the finite calculations
 
-From the repository root, run the commands in [verification](verification/README.md). The program evaluates the circular entropy and the nonzero-jitter witness, and checks the charge-distribution formula against a separate finite-Fock calculation. It documents truncation and numerical error controls. The general capacity law follows from the analytical proofs.
+From the repository root, run the commands in [verification](verification/README.md). The program evaluates the circular entropy and the nonzero-jitter witness, checks the charge-distribution formula against a separate finite-Fock calculation, and reconstructs the binary environment spectrum in the cyclic-phase comparison. It documents truncation and numerical error controls. The capacity results follow from the analytical proofs.
 
 ## Scope
 
-The noise law is fixed and known, with finite second moment. Each channel use draws an independent hidden displacement. The model treats additive noise without photon loss. The photon budget constrains the mean encoded input across channel uses, averaging over adaptive histories when applicable. The capacities describe unrestricted asymptotic communication rates.
+The main capacity law is for known finite-second-moment displacement laws with independent hidden draws on each use. The broadening crossover allows the Gaussian variance to vary with the input budget. The cyclic-phase comparison additionally includes a growing phase alphabet and optional weak photon loss. Each model constrains the mean encoded input across channel uses, averaging over adaptive histories when applicable.
 
 ## Purpose and contact
 

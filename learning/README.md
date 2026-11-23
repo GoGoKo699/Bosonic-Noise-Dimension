@@ -17,7 +17,7 @@ The [common map](MILESTONES.md) contains exactly thirty understanding targets, o
 | M13–M19 | Why do the achievable and upper bounds contain the same finite-resolution noise entropy? | [Lower bound](../science/02-capacity-law.md) and [converse](../science/03-converse.md) |
 | M20–M22 | What do information dimension and relative entropy each classify? | [Dimension consequences](../science/02-capacity-law.md#consequences) and [boundedness criterion](../science/03-converse.md#when-is-the-unconstrained-capacity-finite) |
 | M23–M28 | How do the circle, the finite-jitter example and the crossover express the result physically? | [Circle](../science/04-circular-noise.md), [worked example](HOLEVO_BRIDGE.md#worked-example-a-broadened-ring-versus-its-gaussian-comparator) and [broadening](../science/05-broadening.md) |
-| M29–M30 | What is inherited, what is established here, and which conclusions remain outside the model? | [Related work](../science/06-related-work.md) and [scope](../science/01-model.md#boundaries-of-the-physical-comparison) |
+| M29–M30 | How do the displacement law, a growing phase alphabet, and same-shift environment coherence lead to different rate predictions? | [Cyclic phase comparison](../science/07-cyclic-phase.md) and [related work](../science/06-related-work.md) |
 
 ## The mechanism in one connected account
 
@@ -77,4 +77,10 @@ The [worked calculation](HOLEVO_BRIDGE.md#worked-example-a-broadened-ring-versus
 
 At any fixed positive jitter, the broadened circle has a finite capacity ceiling. The [general crossover](../science/05-broadening.md) adds the jitter variance to the variance $`(E+1)^{-1}`$ set by the carrier. For the circle, this gives an effective energy of order $`\min\{E,\sigma^{-2}\}`$ at small positive jitter width $`\sigma`$. The same variance rule applies to any base law with bounded second moment.
 
-Both capacity statements use a known IID law with finite second moment, with each actual kick hidden and the mean-photon budget averaged over the block. The physical channel applies displacements only. Loss and amplification enter the converse as an auxiliary operation on the receiver's output. The capacity theorem describes asymptotic rates. Efficient implementations and guarantees at fixed blocklength are separate questions.
+The displacement-only capacity estimates use a known IID law with finite second moment, with each actual kick hidden and the mean-photon budget averaged over the block. The smoothing dilation enters that converse as an auxiliary operation on the receiver's output. Efficient implementations and guarantees at fixed blocklength are separate questions.
+
+## Add a growing cyclic phase alphabet
+
+For weak Gaussian displacement by itself, the same resolution argument gives a logarithmically growing capacity when input energy is proportional to the alphabet size and displacement variance decreases inversely with it. Now apply the cyclic phase twirl before the displacement. A code can use one number residue and encode in the quotient, but loss and gain add a net shift that the receiver learns only modulo the alphabet size. At these scales the unresolved part of the shift costs vanishing entropy.
+
+The environment can still distinguish two inputs that give the same shift. Work through the [zero-shift binary example](../science/07-cyclic-phase.md#a-binary-example) and its [Holevo bridge](HOLEVO_BRIDGE.md#when-a-bosonic-environment-retains-more-than-the-shift). Identify the overlap of the two environmental states that subtracts from the achievable rate even after the shift is resolved. The [comparison of optimized limits](../science/07-cyclic-phase.md#what-the-shift-discards) shows how the same observed photon-number statistics can coexist with different capacities.

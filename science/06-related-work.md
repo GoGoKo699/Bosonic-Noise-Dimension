@@ -59,5 +59,9 @@ At finite noise second moment, capacity stays bounded as energy increases exactl
 
 Adding fixed positive Gaussian jitter gives the circular law a density and caps its capacity. The [broadening analysis](05-broadening.md) gives a joint bound for every displacement law with finite second moment. The effective bin scale combines jitter and input-energy resolution. For a circle this leads to half-logarithmic growth up to an energy scale proportional to the inverse jitter variance. The finite-energy witness gives a positive unassisted rate at explicit nonzero jitter against a covariance-matched entanglement-breaking Gaussian channel.
 
-The rate estimate concerns asymptotic communication through independent, undisclosed displacements. Efficient code construction, finite-block guarantees, photon loss and correlated noise are separate problems.
+The displacement-resolution estimate concerns asymptotic communication through independent, undisclosed displacements. Efficient code construction, finite-block guarantees and correlated noise are separate problems.
+
+## Combining weak displacement with cyclic phase noise
+
+The [cyclic-phase comparison](07-cyclic-phase.md) adds a growing finite phase alphabet and optional weak physical loss. It uses the standard [Gaussian operator sums](../references/README.md#ivan-sabapathy-simon) to retain coherence between attenuator and amplifier counts with the same net shift. [Arqand and Smith](../references/README.md#arqand-smith) obtain an adaptive converse by comparing number-preserving dephasing to complete dephasing. The [phase-loss companion theorem](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity/blob/16be1722f0b2b9a1a020f6d74b37a7a7824d2f11/science/critical-displacement.md) uses this comparison on a channel with the exact shift supplied to the receiver and controls the loss from keeping only the modular syndrome. This leads to an exact limiting capacity and a strict optimized gap between channels that have the same Fock transition law.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproduce finite examples and independent Fock-space checks.
+"""Reproduce capacity examples and independent Fock-space checks.
 
 Run from the repository root:
     python3 verification/verify_examples.py
@@ -17,7 +17,7 @@ from pathlib import Path
 
 import numpy as np
 from scipy.linalg import expm
-from scipy.special import logsumexp
+from scipy.special import i0, logsumexp
 from scipy.stats import poisson, skellam
 
 
@@ -39,6 +39,40 @@ def entropy(weights: np.ndarray) -> float:
         raise AssertionError("A numerical probability/eigenvalue is negative")
     p = p[p > 0]
     return float(-np.dot(p, np.log2(p)))
+
+
+def cyclic_phase_binary_check() -> dict:
+    """Compare the limiting binary prior for channels with the same shifts."""
+    # The two Poisson means are 1/2 at the upper input and zero at vacuum.
+    # At nonzero shift the upper input is known. Only the zero block contributes.
+    bessel = float(i0(1.0))
+    p_zero_upper = math.exp(-1.0) * bessel
+    mass = (1.0 + p_zero_upper) / 2.0
+    upper_posterior = p_zero_upper / (1.0 + p_zero_upper)
+    shift_only = mass * entropy(np.array([1.0 - upper_posterior, upper_posterior]))
+    overlap = 1.0 / math.sqrt(bessel)
+    cross = math.sqrt(upper_posterior * (1.0 - upper_posterior)) * overlap
+    gram = np.array([[1.0 - upper_posterior, cross], [cross, upper_posterior]])
+    environment_cost = mass * entropy(np.linalg.eigvalsh(gram))
+    rate = shift_only - environment_cost
+
+    if not 0.0 < rate < shift_only:
+        raise AssertionError("The same-shift environment must reduce the binary rate")
+    if not (
+        math.isclose(shift_only, 0.6610054, abs_tol=5e-8)
+        and math.isclose(rate, 0.4578631, abs_tol=5e-8)
+    ):
+        raise AssertionError("The binary comparison disagrees with the stated values")
+    return {
+        "mean_photons_over_alphabet_size": 0.5,
+        "physical_loss_scale": 0.0,
+        "displacement_variance_scale": 0.5,
+        "zero_shift_probability_upper_input": p_zero_upper,
+        "zero_shift_squared_environment_overlap": overlap**2,
+        "limiting_shift_only_bits": shift_only,
+        "limiting_environment_cost_bits": environment_cost,
+        "limiting_coherent_information_bits": rate,
+    }
 
 
 def jitter_bound(E: float, r: float, sigma: float) -> dict:
@@ -293,6 +327,7 @@ def main() -> None:
         "gaussian_entropy_check": gaussian_check,
         "gaussian_exact_entropy_exchange_bits": gaussian_exact_entropy,
         "gaussian_entropy_difference_bits": gaussian_entropy_difference,
+        "cyclic_phase_binary_prior": cyclic_phase_binary_check(),
         "limits": [
             "The asymptotic capacity theorems are analytic, not numerical conclusions.",
             "The Skellam omitted-tail bound is analytic; floating-point errors are separate.",

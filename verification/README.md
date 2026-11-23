@@ -1,6 +1,6 @@
 # Reproducing the finite examples
 
-[Overview](../README.md) · [Circular noise](../science/04-circular-noise.md) · [Gaussian broadening](../science/05-broadening.md)
+[Overview](../README.md) · [Circular noise](../science/04-circular-noise.md) · [Gaussian broadening](../science/05-broadening.md) · [Cyclic phase comparison](../science/07-cyclic-phase.md)
 
 The scientific statements are proved analytically. The program here reproduces the finite-jitter rate and checks the displacement, charge, and Gaussian conventions through independent finite-dimensional calculations.
 
@@ -30,6 +30,7 @@ The script exits unsuccessfully if a declared numerical check fails. The calcula
 | Displacement-matrix calculations in finite Fock spaces | Constructs the purified state directly, then compares its charge probabilities to the Skellam formula; this checks signs, factors of two, and the reference charge. |
 | Gaussian quadrature of actual displacement matrices, followed by charge twirling | Computes a broadened-circle coherent information independently of the entropy upper bound; refines both the Fock cutoff and quadrature order. |
 | Zero-radius Gaussian specialization | Compares the directly integrated state's entropy to the two-mode symplectic-eigenvalue expression. |
+| Binary prior in the cyclic phase comparison | Diagonalizes the conditional two-vector Gram matrix and compares the environment information with the shift-only uncertainty. |
 
 For the highlighted witness, the script evaluates
 
@@ -61,6 +62,10 @@ The finite-jitter rate is an achievable lower bound supplied by the [analytical 
 The Fock-space and Gaussian-quadrature checks are finite numerical consistency checks. Increasing both resolutions tests a concrete truncation concern, but the observed agreement is not a rigorous infinite-dimensional simulation error bound. It also does not certify the general capacity converse, information-dimension law, or joint crossover. Those conclusions depend on the mathematical arguments in `science/`.
 
 The program never labels a single-input coherent information as an optimized capacity. Negative coherent-information lower bounds are retained in the detailed output and clipped to zero only when reporting an achievable nonnegative rate.
+
+## Cyclic phase comparison
+
+The same command evaluates the binary prior with mean input $`J/2`$, no physical loss, and limiting displacement variance scale $`1/2`$. It obtains the zero-shift probability from the modified Bessel function and diagonalizes the environment's two-by-two Gram matrix. The limiting shift-only uncertainty is about **0.661005 bits per use**. The limiting coherent information with the environment term is about **0.457863 qubits per use**. This calculation needs no Fock cutoff. The [comparison chapter](../science/07-cyclic-phase.md#a-binary-example) explains the terms and links the optimized capacity proof.
 
 ## Hosted mathematics
 

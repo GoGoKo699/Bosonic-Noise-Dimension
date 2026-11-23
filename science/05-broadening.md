@@ -231,3 +231,5 @@ For example, if $`\sigma(E)=E^{-\alpha}`$ with fixed $`\alpha\gt 0`$, then (B14)
 ```
 
 The estimates describe known iid displacement laws under the input-photon constraint. The finite-energy witness concerns the specified Gaussian perturbation. The costs of preparing the noise law or implementing the encoder lie outside the model.
+
+The [cyclic-phase comparison](07-cyclic-phase.md) uses this uniform estimate with base law $`\delta_0`$ as the displacement-only benchmark. It then adds a growing cyclic phase alphabet before displacement, a change that brings the rate to a finite limit under the same Gaussian variance and energy scales.
