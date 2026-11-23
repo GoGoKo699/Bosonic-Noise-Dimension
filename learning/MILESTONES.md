@@ -14,7 +14,7 @@ The anchor supplies foundations in entropy, quantum channels, coding, infinite-d
 
 **Background/preliminaries comprises M01–M12.** It begins with a single oscillator and displacement, then connects quantum and classical entropy to channel comparisons, coding and infinite-dimensional limits. Its final milestone assembles the operational setting and the two proof obligations.
 
-**Narrative/innovation comprises M13–M30.** It begins with the entropy cost of a small displacement cell, combines the lower and upper bounds into a capacity law, and then develops classification, explicit examples and robustness. Its final milestones connect those results to their antecedents and to the physical question.
+**Narrative/innovation comprises M13–M30.** It begins with the entropy cost of a small displacement cell, combines the lower and upper bounds into a capacity law, and then develops classification, explicit examples and robustness. Its final milestones test how the result changes under a growing cyclic phase alphabet and connect that comparison to the original physical question.
 
 The twelve/eighteen allocation reflects the project's structure: several kinds of background must meet, but the main explanatory work lies in the noncommuting-noise proof and its consequences. Within each phase, the order moves from individual objects and mechanisms to the global argument. Dependencies below name earlier milestones; they do not impose a separate reading programme.
 
@@ -48,8 +48,8 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 | M26 | Narrative/innovation | A positive finite-energy rate with nonzero Gaussian jitter |
 | M27 | Narrative/innovation | The finite ceiling created by fixed broadening |
 | M28 | Narrative/innovation | The general joint energy–broadening crossover |
-| M29 | Narrative/innovation | How the mechanism relates to existing capacity results |
-| M30 | Narrative/innovation | The complete contribution and its operational boundaries |
+| M29 | Narrative/innovation | The growing cyclic phase alphabet and the quantum environment of a shift |
+| M30 | Narrative/innovation | What photon statistics and resolved displacement entropy determine |
 
 ## Phase I — Background/preliminaries
 
@@ -279,18 +279,18 @@ The twelve/eighteen allocation reflects the project's structure: several kinds o
 - **Conceptual connection.** Input energy improves resolution until it reaches the thickness created by independent Gaussian jitter.
 - **Sources.** **Holevo:** §§11.5 (p. 243), 12.3.4 (p. 281), 12.6.4 (p. 328), as constraint and entropy foundations. **Science:** [general crossover](../science/05-broadening.md#the-general-energybroadening-crossover) and [order of limits](../science/05-broadening.md#orders-of-limits-and-scope).
 
-### M29 — Relation to existing capacity mechanisms
+### M29 — A growing cyclic phase alphabet changes the rate
 
-- **Central question.** Which parts of the argument are inherited, and what changes when the errors are noncommuting displacements?
-- **Understanding target.** Relate the resolved-entropy principle to the commuting phase-noise antecedent while distinguishing its resolution scale and degradability route. Distinguish the two-way classical assistance used here from entanglement assistance and classical communication tasks. Attribute energy-constrained coding, Gaussian channel dilation and relative-entropy tools to their sources.
-- **Dependencies and story role.** M10, M12, M19, M22 and M28. Places the integrated contribution in the correct scientific landscape.
-- **Conceptual connection.** The new conclusion combines the matched-scale entropy estimate with an adaptive converse that pays for the local smoothing environments.
-- **Sources.** **Holevo:** §§9.1 (p. 173), 10.3.2–10.3.3 (pp. 206, 208), 12.6.4 (p. 328). **Science:** [relation to prior work](../science/06-related-work.md), which supplies the primary research references.
+- **Central question.** What changes when weak Gaussian displacement follows a cyclic phase twirl with a growing alphabet?
+- **Understanding target.** Use the displacement-only estimate with base law $`\delta_0`$ to obtain $`\log_2 J+O(1)`$ at energy $`eJ`$ and variance $`\beta/J`$. Explain how the twirl leaves a code within one residue, how the output residue resolves the net shift modulo $`J`$, and why different loss and gain alternatives can still contribute to the same environmental vector.
+- **Dependencies and story role.** M04, M09, M17, M24 and M28. Compares a new noise composition with the displacement-only result under the same energy and Gaussian variance.
+- **Conceptual connection.** The two vacuum modes in the Gaussian dilation can retain conditional quantum information within a single observed shift.
+- **Sources.** **Holevo:** §§6.6–6.7 (pp. 115, 119), 10.3.2–10.3.3 (pp. 206, 208), 12.6.2–12.6.4 (pp. 324–328). **Science:** [cyclic phase and weak displacement](../science/07-cyclic-phase.md).
 
 ### M30 — The complete operational conclusion
 
 - **Central question.** What does the project establish about quantum communication through random phase-space noise, and where does the conclusion stop?
-- **Understanding target.** Connect the finite-resolution law, dimension coefficient, boundedness criterion, slow full-dimensional example, circular separation and broadening crossover. Keep the assumptions visible for both capacities, including IID unobserved kicks, finite second moment and the unconditional input budget. Identify efficient implementation, physical loss and correlated drift as separate scientific questions.
+- **Understanding target.** Connect the finite-resolution law, dimension coefficient, boundedness criterion, circular separation and broadening crossover. Keep the model and input budget explicit. In the cyclic comparison, explain the strict gap between two limiting capacities with identical Fock transitions. Attribute the coding, Gaussian dilation and relative-entropy comparison to their sources and identify the distinct scope of the two capacity laws.
 - **Dependencies and story role.** M12, M19–M22 and M25–M29. Synthesizes the narrative rather than adding another independent result.
-- **Conceptual connection.** The physically relevant description is noise uncertainty at the resolution supported by the carrier, with smoothing setting a second scale when present.
-- **Sources.** **Holevo:** §§10.3.1–10.3.2 (pp. 202, 206), 11.5 (p. 243), 12.6.4 (p. 328). **Science:** [connected scientific account](../science/README.md#the-connected-argument); [theorem scope](../science/02-capacity-law.md#scope-of-the-capacity-law); [physical boundaries](../science/01-model.md#boundaries-of-the-physical-comparison); [broadening limits](../science/05-broadening.md#orders-of-limits-and-scope).
+- **Conceptual connection.** Resolved noise entropy controls the displacement-only law. Under the growing cyclic twirl, the overlaps within each shift determine the order-one rate as well.
+- **Sources.** **Holevo:** §§7.1–7.3 (pp. 126–132), 10.3.2–10.3.3 (pp. 206, 208), 11.5 (p. 243), 12.6.4 (p. 328). **Science:** [connected scientific account](../science/README.md#the-connected-argument), [related work](../science/06-related-work.md), and [same-transition comparison](../science/07-cyclic-phase.md#what-the-shift-discards).

@@ -153,6 +153,16 @@
   },
   "gaussian_exact_entropy_exchange_bits": 0.6409705481748432,
   "gaussian_entropy_difference_bits": 5.3734794391857577e-14,
+  "cyclic_phase_binary_prior": {
+    "mean_photons_over_alphabet_size": 0.5,
+    "physical_loss_scale": 0.0,
+    "displacement_variance_scale": 0.5,
+    "zero_shift_probability_upper_input": 0.4657596075936404,
+    "zero_shift_squared_environment_overlap": 0.7898483148251119,
+    "limiting_shift_only_bits": 0.6610053745422152,
+    "limiting_environment_cost_bits": 0.20314231643379085,
+    "limiting_coherent_information_bits": 0.4578630581084243
+  },
   "limits": [
     "The asymptotic capacity theorems are analytic, not numerical conclusions.",
     "The Skellam omitted-tail bound is analytic; floating-point errors are separate.",

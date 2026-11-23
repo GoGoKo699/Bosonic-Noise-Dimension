@@ -11,6 +11,7 @@ The project studies one-mode iid random Weyl displacement channels. The noise la
 - Circular displacement noise, exact Skellam entropy and Gaussian covariance comparison (science/04-circular-noise.md).
 - Uniform energy–jitter crossover for arbitrary base laws, the broadened-circle witness and the order of limits (science/05-broadening.md).
 - Inherited mechanisms and distinctions from prior work (science/06-related-work.md).
+- Weak Gaussian displacement after a growing cyclic phase twirl, a comparison of channels with the same Fock transitions, and the link to the exact capacity proof (science/07-cyclic-phase.md).
 - Primary-source identities and exact imported ingredients (references/README.md and references/references.bib).
 - Reproducible finite calculations, dependencies and numerical error limits (verification/README.md).
 - Conceptual introduction and connected learning route (learning/README.md).
@@ -24,3 +25,5 @@ Thermal coherent information is an achievable ordinary-rate lower bound. The ada
 At information dimension two the logarithmic energy coefficient vanishes. The explicit bounded-support density nevertheless gives triple-logarithmic growth. Finite Gaussian-relative entropy supplies the exact boundedness criterion under the noise-moment hypothesis. For independent Gaussian jitter of variance b, the broadening law uses the effective resolution (b + 1/(E+1))^(-1/2). Fixed positive jitter gives a finite ceiling. The capacity definition takes the blocklength to infinity at fixed channel parameters and energy.
 
 The proofs establish unrestricted asymptotic rates with bounded additive errors. The constants need not coincide at the lower and upper endpoints. The phase-noise antecedent supplies the shared entropy-resolution principle. Weyl displacements have a different error algebra, relevant resolution and converse.
+
+The cyclic-phase comparison is a separate composed-channel result. At mean energy eJ and displacement variance beta/J, the displacement-only quantum capacities grow as log2(J)+O(1). Adding a J-point cyclic phase twirl makes the limiting quantum, two-way entanglement and two-way key capacities finite and equal. The environment within each net shift has a coherent loss-and-gain vector. An artificial channel with only a shift record and identical Fock transitions has a strictly greater optimized limiting rate at positive e and beta.

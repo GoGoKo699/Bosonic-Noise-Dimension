@@ -81,6 +81,20 @@ Alfréd Rényi, **On the dimension and entropy of probability distributions**, *
 
 The entropy growth of progressively finer quantizations defines information dimension. The present theorem identifies its coefficient in an energy-constrained quantum communication problem; the classical concept itself is inherited.
 
+<a id="ivan-sabapathy-simon"></a>
+## Ivan, Sabapathy and Simon on Gaussian operator sums
+
+J. Solomon Ivan, Krishna Kumar Sabapathy and R. Simon, **Operator-sum representation for bosonic Gaussian channels**, *Physical Review A* **84**, 042311 (2011). [DOI](https://doi.org/10.1103/PhysRevA.84.042311) · [arXiv:1012.4266](https://arxiv.org/abs/1012.4266).
+
+The attenuator and amplifier operator sums supply the Fock photon-loss and photon-gain amplitudes used in the [cyclic-phase comparison](../science/07-cyclic-phase.md#what-the-shift-discards).
+
+<a id="arqand-smith"></a>
+## Arqand and Smith on adaptive dephasing converses
+
+Amir Arqand and Graeme Smith, **No advantage from classical assistance for energy-constrained bosonic dephasing channels** (2026). [arXiv:2610.13854](https://arxiv.org/abs/2610.13854).
+
+The authors compare number-preserving dephasing with complete dephasing to bound the entanglement generated in each adaptive use. The phase-loss companion adapts that comparison to a channel with net-shift flags and bounds the cost of inferring the shift through the physical modulo measurement. [Critical capacity theorem](https://github.com/GoGoKo699/Discrete-Phase-Loss-Capacity/blob/6dca96266a9e2522a45427ae6c0483012b471a2a/science/critical-displacement.md)
+
 <a id="huber-koenig"></a>
 ## Huber–König: non-Gaussian classical communication
 

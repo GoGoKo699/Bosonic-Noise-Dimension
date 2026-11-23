@@ -265,6 +265,12 @@ Now replace the noise by a centered Gaussian with the same added covariance. Its
 
 The broadened ring has a bounded smooth density and finite second moment, so its capacity is bounded as the input budget increases. The exact ring has grid entropy $`H_t=\log_2t+O_r(1)`$, giving capacity coefficient $`1/2`$. In the [general crossover](../science/05-broadening.md), Gaussian jitter and the energy resolution contribute the combined variance $`\sigma^2+(E+1)^{-1}`$. For the ring this gives an effective energy of order $`\min(E,\sigma^{-2})`$ at small positive $`\sigma`$.
 
+## When a bosonic environment retains more than the shift
+
+Sections 6.6–6.7 and 12.6.2–12.6.4 supply the channel-complement and Gaussian-channel language for the [cyclic-phase comparison](../science/07-cyclic-phase.md). Apply a discrete phase twirl first, then represent the weak Gaussian kick by an attenuator and an amplifier. The receiver observes a change in photon number, while the environment carries a pair of counts. Several pairs can have that same difference, so grouping by difference still leaves a quantum state.
+
+Use the binary example to see why the direction of this state matters. At a fixed residue, the inputs are vacuum and one step up the number lattice. At zero net shift, the vacuum environment is the zero-count vector. The excited input also has a component in the subspace with equal positive loss and gain counts. The conditional environment mixture therefore has nonzero entropy. Sections 7.3 and 10.3.2–10.3.3 provide the entropy and channel tools to interpret this term. The [binary calculation](../science/07-cyclic-phase.md#a-binary-example) puts it alongside the classical uncertainty given the shift.
+
 ## What the bridge leaves to the scientific account
 
-The textbook concepts organize the calculations, and the linked scientific pages give the full hypotheses, constants and limit order. The decisive steps are the bounded entropy inside a displacement bin and the upper bound obtained by charging the entropy of the smoothing environments. The circle and nonzero-jitter example show how these estimates distinguish physically different noise laws with identical covariance.
+The textbook concepts organize the calculations, and the linked scientific pages give the full hypotheses, constants and limit order. The displacement-only proof bounds entropy inside a displacement bin and charges for discarding the smoothing environments. The cyclic-phase result instead compares the conditional quantum states inside shift subspaces. These comparisons explain why covariance in one case and photon-number transitions in the other leave different capacity questions unresolved.
